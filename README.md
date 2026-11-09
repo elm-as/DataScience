@@ -48,7 +48,6 @@ The master hub orchestrating autonomous, production-grade data science initiativ
 ## Overview & Vision
 
 `DataScience/` is not a loose collection of ad-hoc Jupyter notebooks. It is an industrial-grade **monorepo and submodule hub** where every project operates as an independent, fully tested, domain-driven package following the strict **[ELMAS.md](./ELMAS.md)** standard:
-- **Zero code spaghetti**: Strict 3-indentation limit, early guard clauses, pure functions.
 - **Strict 350-line ceiling per file**: Monolithic scripts are prohibited.
 - **Dual documentation**: Every project ships with an illustrated, publication-grade `README.md` and an interactive walkthrough `notebook/`.
 
