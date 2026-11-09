@@ -1,7 +1,7 @@
 <div align="center">
 
 # ElmasCore — Data Science & Competitive Machine Learning Hub
-### Production Data Systems, Econometric Research & Competitive Kaggle Architectures
+### Production Data Systems, Econometric Research & Medical Deep Learning Architectures
 
 <br/>
 
@@ -12,7 +12,7 @@
 ![License](https://img.shields.io/badge/License-MIT-22C55E?style=flat-square)
 
 **"From Data to Systems"**  
-The master hub orchestrating production-grade data science initiatives, Kaggle competitive pipelines, and causal econometric monographs.
+The master hub orchestrating production-grade data science initiatives, Kaggle competitive pipelines, causal econometric monographs, and medical deep learning systems.
 
 </div>
 
@@ -20,12 +20,12 @@ The master hub orchestrating production-grade data science initiatives, Kaggle c
 
 <table align="center">
 <tr>
-<td align="center"><h2>2</h2><sub>active systems</sub></td>
-<td align="center"><h2>1,003,120</h2><sub>analyzed records</sub></td>
+<td align="center"><h2>3</h2><sub>active systems</sub></td>
+<td align="center"><h2>1,008,976</h2><sub>analyzed records</sub></td>
 <td align="center"><h2>0.94860</h2><sub>PCCF ROC-AUC</sub></td>
+<td align="center"><h2>99.23%</h2><sub>Pneumonia Sensitivity</sub></td>
 <td align="center"><h2>&rho; = 0.00</h2><sub>GGVCF paradox resolved</sub></td>
 <td align="center"><h2>100%</h2><sub>ELMAS.md compliant</sub></td>
-<td align="center"><h2>1</h2><sub>interactive dashboard</sub></td>
 </tr>
 </table>
 
@@ -38,6 +38,7 @@ The master hub orchestrating production-grade data science initiatives, Kaggle c
 3. [Active Systems Showcase](#active-systems-showcase)
    - [PCCF — Predicting Credit Card Fraud (Kaggle S6E11)](#1-pccf--predicting-credit-card-fraud-kaggle-s6e11)
    - [GGVCF — Global Gun Violence & Civilian Firearms (2000–2024)](#2-ggvcf--global-gun-violence--civilian-firearms-20002024)
+   - [Pneumonia — Pediatric Chest Radiography Deep Diagnostic System](#3-pneumonia--pediatric-chest-radiography-deep-diagnostic-system)
 4. [Protocole de Gouvernance & Synchronisation Multi-Dépôts](#protocole-de-gouvernance--synchronisation-multi-dépôts)
 5. [Full Setup & Cloning](#full-setup--cloning)
 6. [The ElmasCore Charter](#the-elmascore-charter)
@@ -61,6 +62,7 @@ flowchart TD
     ROOT --> CHARTER[ELMAS.md<br/>ElmasCore Quality Charter]
     ROOT --> SUB1[PCCF Submodule<br/>elm-as/PCCF]
     ROOT --> SUB2[GGVCF Submodule<br/>elm-as/GGVCF]
+    ROOT --> SUB3[Pneumonia Submodule<br/>elm-as/Pneumonia]
 
     SUB1 --> P_SRC[src/ Domain Architecture]
     SUB1 --> P_NB[notebooks/ Walkthrough]
@@ -70,9 +72,14 @@ flowchart TD
     SUB2 --> G_NB[notebooks/ Econometric Monograph]
     SUB2 --> G_DASH[artifacts/ Interactive Dashboard]
 
+    SUB3 --> PN_SRC[src/ Medical CNN & Trainer]
+    SUB3 --> PN_NB[notebooks/ Radiography Monograph]
+    SUB3 --> PN_CAM[images/ Grad-CAM Heatmaps]
+
     style ROOT fill:#EEF2FF,stroke:#6366F1,color:#1e1b4b
     style SUB1 fill:#ECFDF5,stroke:#10B981,color:#064e3b
     style SUB2 fill:#FEF3C7,stroke:#D97706,color:#78350F
+    style SUB3 fill:#FCE7F3,stroke:#DB2777,color:#831843
 ```
 
 ---
@@ -128,6 +135,32 @@ flowchart TD
 
 ---
 
+### 3. [Pneumonia — Pediatric Chest Radiography Deep Diagnostic System](./Pneumonia)
+> **Dépôt officiel** : [`elm-as/Pneumonia`](https://github.com/elm-as/Pneumonia) &bull; **Benchmark** : `Cell 2018 (Kermany)` &bull; **Cible** : `Sensitivity & ROC-AUC`
+
+<table align="center">
+<tr>
+<td width="60%">
+
+- **Objectif** : Détection et triage assisté par IA des pneumonies pédiatriques aiguës sur 5,856 radiographies thoraciques antéro-postérieures.
+- **Innovations** :
+  - **Résolution de l'anomalie de validation** : Restructuration d'un split de validation stratifié (10%) sur les étiologies pathologiques (Sain, Bactérien, Viral) tout en sanctuarisant le test set indépendant de 624 patients.
+  - **Architecture ResNet-18 & Tête MLP clinique** : Transfer learning avec régularisation par Dropout (30%), projection dense 256-d et Batch Normalization.
+  - **Pondération des classes asymétrique** : Fonction de coût à entropie croisée inversement pondérée pour neutraliser le déséquilibre ~2.9:1.
+  - **Optimisation de Youden** : Maximisation de l'indice $J = \text{Sensibilité} + \text{Spécificité} - 1$.
+  - **Explicabilité Grad-CAM** : Cartographie d'activation thermique localisant les consolidations lobaires bactériennes et infiltrats interstitiels viraux.
+- **Résultats** : **`99.23%` Sensibilité clinique** (seuls 3 faux négatifs sur 390 pneumonies) et **`0.9415` ROC-AUC** sur la cohorte test de 624 patients, avec un taux de détection parfait de **`100.0%` (148/148)** sur les pneumonies virales et **`98.8%` (239/242)** sur les bactériennes.
+
+</td>
+<td width="40%" align="center">
+<img src="images/pneumonia_gradcam_panel.png" alt="Pneumonia Grad-CAM Panel" width="100%" /><br/>
+<sub><b>Explicabilité Clinique Grad-CAM.</b> Mise en évidence des foyers d'opacification.</sub>
+</td>
+</tr>
+</table>
+
+---
+
 ## Protocole de Gouvernance & Synchronisation Multi-Dépôts
 
 L'orchestration des sous-modules et la cohérence de livraison entre les dépôts sont régies par le protocole strict défini dans **[`WORKFLOW.md`](./WORKFLOW.md)** :
@@ -159,12 +192,5 @@ Consultez **[`ELMAS.md`](./ELMAS.md)** pour le manifeste complet des règles de 
 
 ---
 
-## Author & Contact
-
-<div align="center">
-
-**ElmasCore** &bull; *From Data to Systems*
-
-[![GitHub](https://img.shields.io/badge/GitHub-elm--as-181717?style=for-the-badge&logo=github)](https://github.com/elm-as)
-
-</div>
+**Author**: ElmasCore Research & Engineering  
+**Contact**: [`elm-as`](https://github.com/elm-as)

@@ -4,3 +4,6 @@
 [submodule "GGVCF"]
 	path = GGVCF
 	url = https://github.com/elm-as/GGVCF.git
+[submodule "Pneumonia"]
+	path = Pneumonia
+	url = https://github.com/elm-as/Pneumonia.git
