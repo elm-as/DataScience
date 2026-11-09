@@ -32,16 +32,4 @@ DataScience/
 
 ---
 
-## Ajouter un Nouveau Sous-Projet
-
-Chaque nouveau projet Data Science doit être créé dans son propre répertoire dédié à la racine de `DataScience/` :
-
-1. Créer le dossier du projet (`mkdir NomDuProjet`) ou l'ajouter en tant que sous-module (`git submodule add <url> NomDuProjet`).
-2. Copier la charte `ELMAS.md` à la racine du sous-projet.
-3. Structurer le code exclusivement par domaine métier (`data_pipeline/`, `feature_engineering/`, `modeling/`, `validation/`, `ensembling/`, `submission/`).
-4. Ne jamais versionner de données brutes (`data/raw/`) ni de clés d'API (`kaggle.json`, `.env`).
-5. Référencer le sous-projet dans le tableau ci-dessus.
-
----
-
 — **Elmas**, ElmasCore
