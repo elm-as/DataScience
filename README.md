@@ -12,7 +12,7 @@
 ![License](https://img.shields.io/badge/License-MIT-22C55E?style=flat-square)
 
 **"From Data to Systems"**  
-The master hub orchestrating autonomous, production-grade data science initiatives, Kaggle competitive pipelines, and causal econometric monographs.
+The master hub orchestrating production-grade data science initiatives, Kaggle competitive pipelines, and causal econometric monographs.
 
 </div>
 
@@ -22,7 +22,7 @@ The master hub orchestrating autonomous, production-grade data science initiativ
 <tr>
 <td align="center"><h2>2</h2><sub>active systems</sub></td>
 <td align="center"><h2>1,003,120</h2><sub>analyzed records</sub></td>
-<td align="center"><h2>0.94387</h2><sub>PCCF ROC-AUC</sub></td>
+<td align="center"><h2>0.94860</h2><sub>PCCF ROC-AUC</sub></td>
 <td align="center"><h2>&rho; = 0.00</h2><sub>GGVCF paradox resolved</sub></td>
 <td align="center"><h2>100%</h2><sub>ELMAS.md compliant</sub></td>
 <td align="center"><h2>1</h2><sub>interactive dashboard</sub></td>
@@ -38,7 +38,7 @@ The master hub orchestrating autonomous, production-grade data science initiativ
 3. [Active Systems Showcase](#active-systems-showcase)
    - [PCCF — Predicting Credit Card Fraud (Kaggle S6E11)](#1-pccf--predicting-credit-card-fraud-kaggle-s6e11)
    - [GGVCF — Global Gun Violence & Civilian Firearms (2000–2024)](#2-ggvcf--global-gun-violence--civilian-firearms-20002024)
-4. [AI Agent Governance Protocol](#ai-agent-governance-protocol)
+4. [Protocole de Gouvernance & Synchronisation Multi-Dépôts](#protocole-de-gouvernance--synchronisation-multi-dépôts)
 5. [Full Setup & Cloning](#full-setup--cloning)
 6. [The ElmasCore Charter](#the-elmascore-charter)
 7. [Author & Contact](#author--contact)
@@ -57,7 +57,7 @@ The master hub orchestrating autonomous, production-grade data science initiativ
 
 ```mermaid
 flowchart TD
-    ROOT[DataScience Master Hub<br/>elm-as/DataScience] --> AGENTS[AGENTS.md<br/>AI Agent Governance Protocol]
+    ROOT[DataScience Master Hub<br/>elm-as/DataScience] --> WORKFLOW[WORKFLOW.md<br/>Gouvernance & Synchronisation]
     ROOT --> CHARTER[ELMAS.md<br/>ElmasCore Quality Charter]
     ROOT --> SUB1[PCCF Submodule<br/>elm-as/PCCF]
     ROOT --> SUB2[GGVCF Submodule<br/>elm-as/GGVCF]
@@ -91,11 +91,11 @@ flowchart TD
   - Décomposition fine des décimales (`cents_key`, `tenth_key`, premier chiffre de Benford) capturant les artefacts de génération synthétique (CTGAN/Copula).
   - Target encoding cross-fitté 100% sans fuite avec lissage bayésien ($m=20.0$).
   - Ensemble multi-familles (Spline-GLM, LightGBM Shallow, CatBoost Shallow, XGBoost Hist) optimisé par Nelder-Mead Rank-Logit.
-- **Résultats** : **`0.94387` ROC-AUC** dès le run rapide de validation, surclassant tous les modèles individuels isolés.
+- **Résultats** : **`0.94860` ROC-AUC** sur validation croisée stratifiée 5-folds (Ensemble Rank-Logit), surclassant tous les modèles individuels isolés (Spline-GLM: 0.94272, LightGBM: 0.94838, XGBoost: 0.94802, CatBoost: 0.94793).
 
 </td>
 <td width="40%" align="center">
-<img src="PCCF/images/model_benchmark_auc.png" alt="PCCF Model Benchmark" width="100%" /><br/>
+<img src="images/model_benchmark_auc.png" alt="PCCF Model Benchmark" width="100%" /><br/>
 <sub><b>Performance du Blend.</b> Gain systématique de l'assemblage Rank-Logit.</sub>
 </td>
 </tr>
@@ -120,7 +120,7 @@ flowchart TD
 
 </td>
 <td width="40%" align="center">
-<img src="GGVCF/images/quadrant_scatter.png" alt="GGVCF Quadrant Scatter" width="100%" /><br/>
+<img src="images/quadrant_scatter.png" alt="GGVCF Quadrant Scatter" width="100%" /><br/>
 <sub><b>Le Paradoxe Empirique.</b> Découplage complet armement vs létalité.</sub>
 </td>
 </tr>
@@ -128,12 +128,12 @@ flowchart TD
 
 ---
 
-## AI Agent Governance Protocol
+## Protocole de Gouvernance & Synchronisation Multi-Dépôts
 
-Tous les agents d'intelligence artificielle (Claude Code, Cursor, Codex, Gemini, Antigravity) contribuant à ce dépôt doivent obligatoirement appliquer le protocole défini dans **[`AGENTS.md`](./AGENTS.md)** :
+L'orchestration des sous-modules et la cohérence de livraison entre les dépôts sont régies par le protocole strict défini dans **[`WORKFLOW.md`](./WORKFLOW.md)** :
 
-1. **Règle de synchronisation parent-enfant** : Tout ajout ou mise à jour dans un sous-projet doit immédiatement mettre à jour le `README.md` racine de `DataScience/`, le pointeur de sous-module Git et être commité sur GitHub.
-2. **Standard esthétique "LatentHealth"** : Aucun README plat. Présence systématique de badges, tableau KPI en en-tête, diagrammes Mermaid, visualisations graphiques dans `images/`, et notebook Jupyter de démonstration.
+1. **Synchronisation parent-enfant** : Toute modification, entraînement ou enrichissement au sein d'un sous-projet déclenche obligatoirement la mise à jour des métriques dans le `README.md` racine de `DataScience/`, le rafraîchissement des visualisations dans `images/`, et la synchronisation des pointeurs de commit Git.
+2. **Standard de publication "LatentHealth"** : Aucune documentation brute. Chaque initiative intègre un en-tête métrique, des diagrammes Mermaid d'architecture, des visualisations graphiques haute résolution et un notebook Jupyter autonome de reproduction.
 
 ---
 

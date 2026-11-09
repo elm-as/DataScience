@@ -1,7 +1,7 @@
 # ELMAS.md — Charte de développement ElmasCore
 
 > Ce fichier est la signature d'un projet ElmasCore. Il définit les règles non négociables
-> à respecter par tout humain ou tout agent IA qui contribue à ce dépôt. Il doit être lu
+> à respecter par tout contributeur à ce dépôt. Il doit être lu
 > avant toute génération de code, toute refonte, tout ajout de dépendance.
 >
 > "From Data to Systems" — un projet ElmasCore se reconnaît à sa rigueur, pas à sa rapidité d'exécution.
@@ -93,9 +93,9 @@
 - Un README à jour à la racine : ce que fait le projet, comment le lancer, comment
   contribuer. Un projet sans README à jour n'est pas considéré comme livrable.
 - Les décisions structurantes sont consignées.
-- **Protocole multi-dépôts & Agents IA** : Tout contributeur ou agent IA intervenant
+- **Protocole de gouvernance multi-projets** : Tout contributeur intervenant
   sur un sous-projet doit impérativement respecter le protocole défini dans
-  [`AGENTS.md`](./AGENTS.md) (mise à jour systématique du README parent, enrichissement
+  [`WORKFLOW.md`](./WORKFLOW.md) (mise à jour systématique du README parent, enrichissement
   visuel et notebooks de référence).
 
 ---
