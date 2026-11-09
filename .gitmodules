@@ -1,3 +1,6 @@
 [submodule "PCCF"]
 	path = PCCF
 	url = https://github.com/elm-as/PCCF.git
+[submodule "GGVCF"]
+	path = GGVCF
+	url = https://github.com/elm-as/GGVCF.git
