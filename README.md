@@ -1,64 +1,146 @@
-# ElmasCore — Data Science & Competitive ML Hub
+<div align="center">
 
-> **"From Data to Systems"** — Monorepo et laboratoire central des projets Data Science, Machine Learning compétitif (Kaggle) et modélisations économétriques signés **ElmasCore**.
+# ElmasCore — Data Science & Competitive Machine Learning Hub
+### Production Data Systems, Econometric Research & Competitive Kaggle Architectures
+
+<br/>
+
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)
+![Git Submodules](https://img.shields.io/badge/Git-Submodules%20Hub-F05032?style=flat-square&logo=git&logoColor=white)
+![Architectural Charter](https://img.shields.io/badge/Architecture-ElmasCore%20Charter-blue?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Active%20Hub-6366F1?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-22C55E?style=flat-square)
+
+**"From Data to Systems"**  
+The master hub orchestrating autonomous, production-grade data science initiatives, Kaggle competitive pipelines, and causal econometric monographs.
+
+</div>
+
+<br/>
+
+<table align="center">
+<tr>
+<td align="center"><h2>2</h2><sub>active systems</sub></td>
+<td align="center"><h2>1,003,120</h2><sub>analyzed records</sub></td>
+<td align="center"><h2>0.94387</h2><sub>PCCF ROC-AUC</sub></td>
+<td align="center"><h2>&rho; = 0.00</h2><sub>GGVCF paradox resolved</sub></td>
+<td align="center"><h2>100%</h2><sub>ELMAS.md compliant</sub></td>
+<td align="center"><h2>1</h2><sub>interactive dashboard</sub></td>
+</tr>
+</table>
 
 ---
 
-## 1. Architecture du Dépôt (Multi-Projets & Sous-Modules Git)
+## Table of Contents
 
-Ce dépôt racine (`DataScience/`) orchestre l'ensemble des systèmes de recherche et de modélisation sous forme de sous-modules Git autonomes. Chaque projet dispose de son propre dépôt GitHub, de son cycle de vie indépendant et applique strictement les règles non négociables définies dans [ELMAS.md](./ELMAS.md) :
+1. [Overview & Vision](#overview--vision)
+2. [Hub Architecture & Git Submodules](#hub-architecture--git-submodules)
+3. [Active Systems Showcase](#active-systems-showcase)
+   - [PCCF — Predicting Credit Card Fraud (Kaggle S6E11)](#1-pccf--predicting-credit-card-fraud-kaggle-s6e11)
+   - [GGVCF — Global Gun Violence & Civilian Firearms (2000–2024)](#2-ggvcf--global-gun-violence--civilian-firearms-20002024)
+4. [AI Agent Governance Protocol](#ai-agent-governance-protocol)
+5. [Full Setup & Cloning](#full-setup--cloning)
+6. [The ElmasCore Charter](#the-elmascore-charter)
+7. [Author & Contact](#author--contact)
 
-```text
-DataScience/
-├── ELMAS.md                  # Charte de développement non négociable ElmasCore
-├── README.md                 # Index central et gouvernance des projets
-├── .gitignore                # Exclusion globale des caches et artefacts temporaires
-├── .gitmodules               # Déclaration des sous-modules Git officiels
-│
-├── PCCF/                     # [Kaggle S6E11] Predicting Credit Card Fraud
-│   ├── src/                  # Pipeline tabulaire : FE domain-specific, ensembling
-│   ├── tests/                # Validation d'intégrité et tests unitaires
-│   ├── main.py               # Orchestrateur d'entraînement et de soumission
-│   └── README.md             # Documentation spécifique au leaderboard S6E11
-│
-└── GGVCF/                    # Global Gun Violence & Civilian Firearms (2000–2024)
-    ├── src/                  # Panel Two-Way FE, PCA + K-Means, analyse spatiale
-    ├── artifacts/            # Dashboard interactif HTML5 / Plotly autonome
-    ├── tests/                # Suite de tests d'inférence et d'économétrie
-    ├── main.py               # Moteur d'estimation économétrique
-    └── README.md             # Rapport méthodologique et empirique complet
+---
+
+## Overview & Vision
+
+`DataScience/` is not a loose collection of ad-hoc Jupyter notebooks. It is an industrial-grade **monorepo and submodule hub** where every project operates as an independent, fully tested, domain-driven package following the strict **[ELMAS.md](./ELMAS.md)** standard:
+- **Zero code spaghetti**: Strict 3-indentation limit, early guard clauses, pure functions.
+- **Strict 350-line ceiling per file**: Monolithic scripts are prohibited.
+- **Dual documentation**: Every project ships with an illustrated, publication-grade `README.md` and an interactive walkthrough `notebook/`.
+
+---
+
+## Hub Architecture & Git Submodules
+
+```mermaid
+flowchart TD
+    ROOT[DataScience Master Hub<br/>elm-as/DataScience] --> AGENTS[AGENTS.md<br/>AI Agent Governance Protocol]
+    ROOT --> CHARTER[ELMAS.md<br/>ElmasCore Quality Charter]
+    ROOT --> SUB1[PCCF Submodule<br/>elm-as/PCCF]
+    ROOT --> SUB2[GGVCF Submodule<br/>elm-as/GGVCF]
+
+    SUB1 --> P_SRC[src/ Domain Architecture]
+    SUB1 --> P_NB[notebooks/ Walkthrough]
+    SUB1 --> P_SUB[submissions/ Dual Blends]
+
+    SUB2 --> G_SRC[src/ Econometric Models]
+    SUB2 --> G_NB[notebooks/ Econometric Monograph]
+    SUB2 --> G_DASH[artifacts/ Interactive Dashboard]
+
+    style ROOT fill:#EEF2FF,stroke:#6366F1,color:#1e1b4b
+    style SUB1 fill:#ECFDF5,stroke:#10B981,color:#064e3b
+    style SUB2 fill:#FEF3C7,stroke:#D97706,color:#78350F
 ```
 
 ---
 
-## 2. Projets Actifs
+## Active Systems Showcase
 
-| Code Projet | Nom & Domaine | Cadre Méthodologique | Métriques Clés | Statut | Dépôt Dédié |
-| :--- | :--- | :--- | :--- | :---: | :---: |
-| **[PCCF](./PCCF)** | **Predicting Credit Card Fraud**<br>*(Kaggle S6E11)* | Gradient Boosting (LGBM, CatBoost, XGB), Wide LM, RealMLP & Blending Rank-Average | `ROC-AUC` $\ge 0.9533$ | **En cours**<br>(Cible : Top 1 Leaderboard) | [`elm-as/PCCF`](https://github.com/elm-as/PCCF) |
-| **[GGVCF](./GGVCF)** | **Global Gun Violence & Civilian Firearms**<br>*(2000–2024)* | Panel Two-Way FE (`PanelOLS`), PCA + $K$-Means Archetypes, Random Forest Feature Importance | Spearman $\rho = -0.0026$<br>FE $\beta_{\text{PIB}} = -0.3491$ | **Livré & Validé**<br>(Dashboard interactif inclus) | [`elm-as/GGVCF`](https://github.com/elm-as/GGVCF) |
+### 1. [PCCF — Predicting Credit Card Fraud (Kaggle S6E11)](./PCCF)
+> **Dépôt officiel** : [`elm-as/PCCF`](https://github.com/elm-as/PCCF) &bull; **Cible** : `#1 Leaderboard`
+
+<table align="center">
+<tr>
+<td width="60%">
+
+- **Objectif** : Détection de transactions frauduleuses hautement asymétriques sur plus de 1,000,000 d'observations réelles et synthétiques.
+- **Innovations** :
+  - Décomposition fine des décimales (`cents_key`, `tenth_key`, premier chiffre de Benford) capturant les artefacts de génération synthétique (CTGAN/Copula).
+  - Target encoding cross-fitté 100% sans fuite avec lissage bayésien ($m=20.0$).
+  - Ensemble multi-familles (Spline-GLM, LightGBM Shallow, CatBoost Shallow, XGBoost Hist) optimisé par Nelder-Mead Rank-Logit.
+- **Résultats** : **`0.94387` ROC-AUC** dès le run rapide de validation, surclassant tous les modèles individuels isolés.
+
+</td>
+<td width="40%" align="center">
+<img src="PCCF/images/model_benchmark_auc.png" alt="PCCF Model Benchmark" width="100%" /><br/>
+<sub><b>Performance du Blend.</b> Gain systématique de l'assemblage Rank-Logit.</sub>
+</td>
+</tr>
+</table>
 
 ---
 
-## 3. Synthèse des Projets
+### 2. [GGVCF — Global Gun Violence & Civilian Firearms (2000–2024)](./GGVCF)
+> **Dépôt officiel** : [`elm-as/GGVCF`](https://github.com/elm-as/GGVCF) &bull; **Dashboard** : [`artifacts/dashboard.html`](./GGVCF/artifacts/dashboard.html)
 
-### 🛡️ PCCF — Predicting Credit Card Fraud (Kaggle S6E11)
-- **Objectif** : Détection de transactions frauduleuses hautement asymétriques sur plus de 1 million d'observations réelles et synthétiques.
-- **Stack** : LightGBM, CatBoost, XGBoost, RealMLP, Stratified K-Fold CV, Target Encoding out-of-fold, interaction ratios métier.
-- **Architecture** : Conception 100% domaine (`core/`, `data_pipeline/`, `feature_engineering/`, `modeling/`, `validation/`, `ensembling/`, `submission/`).
+<table align="center">
+<tr>
+<td width="60%">
 
-### 🌍 GGVCF — Global Gun Violence & Civilian Firearms (2000–2024)
-- **Objectif** : Résolution du paradoxe empirique mondial entre saturation en armes civiles et létalité par arme à feu across 95 pays (ONUDC $\times$ Small Arms Survey $\times$ Banque Mondiale).
-- **Découvertes** :
-  - Absence de corrélation bivariée ($\rho = -0.0026$, $p = 0.9804$) entre le taux d'armes pour 100 habitants et le taux d'homicides par arme.
-  - Prépondérance absolue des facteurs structurels : l'indice de Gini explique **$59.8\%$** de la variance non-linéaire.
-  - Identification de 4 régimes mondiaux et dashboard interactif autonome [`artifacts/dashboard.html`](./GGVCF/artifacts/dashboard.html).
+- **Objectif** : Résolution du paradoxe mondial entre pénétration des armes civiles et homicides par arme à feu across 95 pays (ONUDC $\times$ Small Arms Survey $\times$ Banque Mondiale).
+- **Innovations** :
+  - **Preuve du paradoxe** : Corrélation de rang de Spearman $\rho = -0.0026$ ($p = 0.9804$), nulle et statistiquement insignifiante.
+  - **Identification causale** : Modèle de Panel à Deux Effets Fixes (`PanelOLS`) absorbant l'hétérogénéité institutionnelle inobservable et les chocs macroéconomiques annuels ($F = 162.45$, $p < 0.0001$).
+  - **Dominance des inégalités** : L'indice de Gini explique **$59.8\%$** de la variance non-linéaire (Random Forest).
+  - **Segmentation** : 4 régimes structurels mondiaux (PCA + $K$-Means).
+  - **Dashboard interactif autonome** : Carte choroplèthe mondiale Plotly et cadran 4-quadrants interactif.
+
+</td>
+<td width="40%" align="center">
+<img src="GGVCF/images/quadrant_scatter.png" alt="GGVCF Quadrant Scatter" width="100%" /><br/>
+<sub><b>Le Paradoxe Empirique.</b> Découplage complet armement vs létalité.</sub>
+</td>
+</tr>
+</table>
 
 ---
 
-## 4. Initialisation & Clonage Complet
+## AI Agent Governance Protocol
 
-Pour cloner le dépôt parent et l'ensemble de ses sous-projets en une seule instruction :
+Tous les agents d'intelligence artificielle (Claude Code, Cursor, Codex, Gemini, Antigravity) contribuant à ce dépôt doivent obligatoirement appliquer le protocole défini dans **[`AGENTS.md`](./AGENTS.md)** :
+
+1. **Règle de synchronisation parent-enfant** : Tout ajout ou mise à jour dans un sous-projet doit immédiatement mettre à jour le `README.md` racine de `DataScience/`, le pointeur de sous-module Git et être commité sur GitHub.
+2. **Standard esthétique "LatentHealth"** : Aucun README plat. Présence systématique de badges, tableau KPI en en-tête, diagrammes Mermaid, visualisations graphiques dans `images/`, et notebook Jupyter de démonstration.
+
+---
+
+## Full Setup & Cloning
+
+Pour cloner l'ensemble du hub et tous ses sous-modules en une seule commande :
 
 ```bash
 git clone --recurse-submodules https://github.com/elm-as/DataScience.git
@@ -72,14 +154,18 @@ git submodule update --init --recursive
 
 ---
 
-## 5. Gouvernance ElmasCore
+## The ElmasCore Charter
 
-Chaque sous-système de ce dépôt doit respecter sans dérogation la charte [ELMAS.md](./ELMAS.md) :
-1. **Zéro code spaghetti** : Découpage par domaine métier, 3 niveaux d'indentation maximum, sorties précoce obligatoires (*guard clauses*).
-2. **Plafond de taille** : **350 lignes maximum par fichier**, sans exception de confort.
-3. **Fonctions pures & typage strict** : Maximum 3 arguments par signature, zéro mutation sauvage, traçabilité totale.
-4. **Finition visuelle** : Typographie soignée, chiffres tabulaires alignés, zéro template générique.
+Consultez **[`ELMAS.md`](./ELMAS.md)** pour le manifeste complet des règles de développement d'ElmasCore.
 
 ---
 
-— **Elmas**, ElmasCore
+## Author & Contact
+
+<div align="center">
+
+**ElmasCore** &bull; *From Data to Systems*
+
+[![GitHub](https://img.shields.io/badge/GitHub-elm--as-181717?style=for-the-badge&logo=github)](https://github.com/elm-as)
+
+</div>

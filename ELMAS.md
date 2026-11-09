@@ -93,6 +93,10 @@
 - Un README à jour à la racine : ce que fait le projet, comment le lancer, comment
   contribuer. Un projet sans README à jour n'est pas considéré comme livrable.
 - Les décisions structurantes sont consignées.
+- **Protocole multi-dépôts & Agents IA** : Tout contributeur ou agent IA intervenant
+  sur un sous-projet doit impérativement respecter le protocole défini dans
+  [`AGENTS.md`](./AGENTS.md) (mise à jour systématique du README parent, enrichissement
+  visuel et notebooks de référence).
 
 ---
 
