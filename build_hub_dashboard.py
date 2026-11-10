@@ -287,7 +287,7 @@ HTML_CONTENT = """<!DOCTYPE html>
             </div>
             <div class="flex justify-between items-center py-1">
               <span class="text-slate-300">elm-as/ISML</span>
-              <span class="text-emerald-400">● Synced (9a820ff)</span>
+              <span class="text-emerald-400">● Synced (9208004)</span>
             </div>
           </div>
         </div>
