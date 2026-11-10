@@ -10,3 +10,6 @@
 [submodule "GCMDL"]
 	path = GCMDL
 	url = https://github.com/elm-as/GCMDL.git
+[submodule "ISML"]
+	path = ISML
+	url = https://github.com/elm-as/ISML.git
