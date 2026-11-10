@@ -335,7 +335,7 @@ git submodule update --init --recursive
 ## La Charte de Développement ElmasCore
 
 Consultez **[`ELMAS.md`](./ELMAS.md)** pour le manifeste complet des règles de développement d'ElmasCore :
-- Limite stricte de **350 lignes maximum par fichier** dans les modules applicatifs.
+- Limite stricte de **350 lignes maximum par fichier** dans les modules applicatifs. Faites pas chier avec vos fichiers à +1000 lignes
 - Fonctions pures, déterministes et sans effets de bord.
 - Découpage par domaine métier et typage statique systématique.
 
