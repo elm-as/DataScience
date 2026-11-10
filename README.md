@@ -14,7 +14,7 @@
 <br/>
 
 **"From Data to Systems"**  
-Le hub d'orchestration souverain regroupant cinq projets de data science avancée, pipelines compétitifs Kaggle, monographies causales, systèmes d'imagerie clinique et télémétrie de microstructure quantitative.
+Le hub d'orchestration souverain regroupant cinq projets de data science avancée, pipelines compétitifs Kaggle, monographies causales, systèmes d'imagerie clinique, télémétrie de microstructure financière et atlas psychométrique tri-cohortes.
 
 </div>
 
@@ -23,11 +23,11 @@ Le hub d'orchestration souverain regroupant cinq projets de data science avancé
 <table align="center">
 <tr>
 <td align="center"><h2>5</h2><sub>systèmes souverains</sub></td>
-<td align="center"><h2>1,014,476</h2><sub>observations analysées</sub></td>
+<td align="center"><h2>1,016,508</h2><sub>observations analysées</sub></td>
 <td align="center"><h2>0.95331</h2><sub>PCCF Public (#26 Top 2.0%)</sub></td>
 <td align="center"><h2>99.23%</h2><sub>Pneumonia Sensibilité</sub></td>
 <td align="center"><h2>0.9996</h2><sub>GCMDL Tail-Risk AUC</sub></td>
-<td align="center"><h2>98.69%</h2><sub>ISML Impact Accuracy</sub></td>
+<td align="center"><h2>0.9962</h2><sub>ISML Dépression AUC</sub></td>
 </tr>
 </table>
 
@@ -42,8 +42,8 @@ Le hub d'orchestration souverain regroupant cinq projets de data science avancé
    - [2. GGVCF — Global Gun Violence & Civilian Firearms (2000–2024)](#2-ggvcf--global-gun-violence--civilian-firearms-20002024)
    - [3. Pneumonia — Pediatric Chest Radiography Deep Diagnostic System](#3-pneumonia--pediatric-chest-radiography-deep-diagnostic-system)
    - [4. GCMDL — Global Crypto Market Dynamics & Liquidity 2026](#4-gcmdl--global-crypto-market-dynamics--liquidity-2026)
-   - [5. ISML — Impact of Social Media on Life (4,500 Cohort)](#5-isml--impact-of-social-media-on-life-4500-cohort)
-4. [Synthèse Comparative des Enseignements & Conclusions](#synthèse-comparative-des-enseignements--conclusions)
+   - [5. ISML — Impact of Social Media on Life (Architecture Tri-Cohortes : 6 532 Sujets sur 113 Pays)](#5-isml--impact-of-social-media-on-life-architecture-tri-cohortes--6-532-sujets-sur-113-pays)
+4. [Synthèse Comparative des Enseignements & Conclusions Déclaratives](#synthèse-comparative-des-enseignements--conclusions-déclaratives)
 5. [Protocole de Gouvernance & Synchronisation Multi-Dépôts](#protocole-de-gouvernance--synchronisation-multi-dépôts)
 6. [Clonage & Reproduction Intégrale](#clonage--reproduction-intégrale)
 7. [La Charte de Développement ElmasCore](#la-charte-de-développement-elmascore)
@@ -57,7 +57,7 @@ Le dépôt `DataScience/` n'est pas un catalogue hétérogène de scripts expér
 
 - **Chaque sous-système est un dépôt autonome et indépendant** : disposant de sa propre suite de tests automatisée (`pytest`), de sa monographie interactive Jupyter (`notebooks/`), de figures haute résolution (300 DPI) et de dashboards HTML5 Plotly autonomes sans dépendance serveur.
 - **Rigueur méthodologique non négociable ([ELMAS.md](./ELMAS.md))** : fonctions pures déterministes, zéro variable globale mutable, clauses de garde limitées à 3 niveaux d'indentation, dataclasses immuables et zéro fuite de données (*zero data leakage*).
-- **Finalité scientifique et conclusions explicites** : chaque recherche ne se contente pas d'aligner des scores d'entraînement ; elle répond précisément à une problématique métier ou sociétale et formule une **conclusion empirique vérifiable**.
+- **Conclusions scientifiques explicites et quantifiées** : chaque étude ne se contente pas d'aligner des scores algorithmiques ; elle commence par une problématique théorique ou opérationnelle précise et aboutit à une **conclusion scientifique formelle** démontrée par les données.
 
 ---
 
@@ -86,7 +86,7 @@ flowchart TD
     SUB4 --> GC_SRC["src/ Microstructure Telemetry"]
     SUB4 --> GC_DASH["artifacts/ Interactive Plotly Dashboard"]
 
-    SUB5 --> IS_SRC["src/ Chronobiology & Psychometrics"]
+    SUB5 --> IS_SRC["src/ Tri-Cohort Architecture (6,532 Subjects)"]
     SUB5 --> IS_DASH["artifacts/ Interactive Plotly Dashboard"]
 
     style ROOT fill:#EEF2FF,stroke:#6366F1,color:#1e1b4b
@@ -111,19 +111,19 @@ flowchart TD
 <td width="58%">
 
 #### A. Problématique & Enjeux Fondamentaux
-Dans les flux de transactions financières hautement déséquilibrés (~1 transaction frauduleuse pour 175 saines sur 1,000,000 d'enregistrements), comment détecter la fraude sans pénaliser les flux légitimes ? L'enjeu critique réside dans l'exploitation des données tabulaires synthétiques générées par copules et CTGAN, dont les générateurs laissent des traces mathématiques caractéristiques dans les structures de décimales et les fréquences de chiffres.
+Dans les flux de transactions financières bancaires à très fort déséquilibre de classe (~1 transaction frauduleuse pour 175 régulières sur 1 000 000 d'enregistrements), comment détecter la fraude sans dégrader l'expérience des flux légitimes ? L'enjeu critique réside dans l'exploitation des données tabulaires synthétiques issues de générateurs profonds (CTGAN / Copules) : ces générateurs laissent-ils des traces spectrales exploitables dans les décimales des montants et la distribution des chiffres qui permettent de surpasser les approches classiques ?
 
 #### B. Démarche & Innovations Méthodologiques
-1. **Extraction de signatures synthétiques** : Décomposition des décimales via `cents_key`, `tenth_key` et application de la distribution du premier chiffre de Benford sur les montants de transaction.
+1. **Extraction de signatures spectrales de générateurs synthétiques** : Décomposition des décimales via `cents_key`, `tenth_key` et application de la distribution du premier chiffre de Benford sur les montants de transaction.
 2. **Target Encoding Bayésien imbriqué sans fuite** : Lissage par estimateur $m$ ($m=20.0$) cross-fitté sur 5 plis internes dans chaque pli d'entraînement.
 3. **Consensus multi-architectures par optimisation Nelder-Mead** : Combinaison de modèles Spline-GLM additifs, LightGBM peu profonds (8 feuilles), CatBoost avec régularisation L2 renforcée (12.0) et prior networks.
 
 #### C. Résultats Métriques Clés
-- **Score Public Kaggle** : **`0.95331` ROC-AUC** (**Rang #26 mondial**, à 2.7 points de base du #1).
+- **Score Public Kaggle** : **`0.95331` ROC-AUC** (**Rang #26 mondial**, à 2.7 points de base du #1 mondial).
 - Gain de performance : **+0.00496** par rapport à la baseline locale (0.94835).
-- Progression : Ascension de **598 places** au leaderboard en 24 heures.
+- Progression : Ascension de **598 places** au leaderboard mondial en 24 heures.
 
-#### D. Conclusion Scientifique & Enseignements Majeurs
+#### D. Conclusion Scientifique Définitive
 > [!IMPORTANT]
 > **Conclusion de l'étude** :
 > 1. **La signature décimale est l'empreinte digitale des générateurs synthétiques** : L'ingénierie des centimes et de la loi de Benford extrait plus de pouvoir discriminant que des centaines de caractéristiques d'interaction brutes. Les modèles apprennent non pas seulement la sémantique de la fraude, mais les failles de distribution du générateur synthétique sous-jacent.
@@ -160,7 +160,7 @@ Dans le débat international sur les politiques publiques de sécurité, une ass
 - **Poids de l'inégalité (Gini)** : **$59.8\%$** de la variance expliquée (Random Forest).
 - **Élasticité protectrice du PIB** : $\beta = -0.3491$ ($p = 0.084$), attestant qu'une croissance économique de 10% diminue les homicides de ~3.5%.
 
-#### D. Conclusion Scientifique & Enseignements Majeurs
+#### D. Conclusion Scientifique Définitive
 > [!IMPORTANT]
 > **Conclusion de l'étude** :
 > 1. **Réfutation empirique du lien direct armes-homicides** : À l'échelle mondiale, le taux de détention d'armes civiles présente une corrélation strictement nulle avec le taux d'homicide. Des nations comme la Suisse (27.6 armes/100 hab) et la Serbie (39.1) affichent des homicides par arme quasi inexistants (< 0.5/100k), tandis qu'El Salvador et la Jamaïque enregistrent une létalité extrême (> 35/100k) avec moins de 12 armes/100 hab.
@@ -198,7 +198,7 @@ La pneumonie pédiatrique constitue la première cause infectieuse de mortalité
 - **Détection des Pneumonies Bactériennes** : **`98.76%` (239/242)**.
 - **Discrimination Globale** : **`0.9415` ROC-AUC** et **`0.9632` PR-AUC** sur les 624 patients test.
 
-#### D. Conclusion Scientifique & Enseignements Majeurs
+#### D. Conclusion Scientifique Définitive
 > [!IMPORTANT]
 > **Conclusion de l'étude** :
 > 1. **La fonction de coût asymétrique est un impératif en IA médicale** : Ajuster la fonction de perte aux coûts cliniques réels et calibrer le seuil décisionnel via l'indice de Youden permet d'atteindre un niveau de sensibilité de 99.23%, transformant un réseau générique en un outil de dépistage pédiatrique ultra-sécurisé.
@@ -235,7 +235,7 @@ Le marché mondial des crypto-actifs ($2.84 Trillions USD de capitalisation, 57.
 - **Prédiction du Risque Extrême >85% (Tâche 2)** : **`0.9996` ROC-AUC**, **`0.9996` PR-AUC**, **`99.80%` Sensibilité**, **`99.80%` Spécificité**, **`0.0030` Brier Score**.
 - Attribution SHAP : Identification du ratio de flottant en circulation et du multiple FDV comme facteurs explicatifs majeurs (>92% de la variance).
 
-#### D. Conclusion Scientifique & Enseignements Majeurs
+#### D. Conclusion Scientifique Définitive
 > [!IMPORTANT]
 > **Conclusion de l'étude** :
 > 1. **L'illusion de la capitalisation boursière** : Une capitalisation élevée ne préjuge en rien de la résilience du carnet d'ordres. Le proxy d'illiquidité d'Amihud et le spread de Corwin-Schultz démontrent que plus de 40% des actifs du top 1 000 subissent des pénalités de glissement (*slippage*) prohibitifs dès que les volumes de vente augmentent modérément.
@@ -251,55 +251,58 @@ Le marché mondial des crypto-actifs ($2.84 Trillions USD de capitalisation, 57.
 
 ---
 
-### 5. [ISML — Impact of Social Media on Life (4,500 Cohort)](./ISML)
-> **Dépôt officiel** : [`elm-as/ISML`](https://github.com/elm-as/ISML) &bull; **Dashboard** : [`artifacts/dashboard.html`](./ISML/artifacts/dashboard.html) &bull; **Cible** : `Psychométrie & Chronobiologie Comportementale`
+### 5. [ISML — Impact of Social Media on Life (Architecture Tri-Cohortes : 6 532 Sujets sur 113 Pays)](./ISML)
+> **Dépôt officiel** : [`elm-as/ISML`](https://github.com/elm-as/ISML) &bull; **Dashboard** : [`artifacts/dashboard.html`](./ISML/artifacts/dashboard.html) &bull; **Cible** : `Psychométrie, Chronobiologie & Dépression Adolescente`
 
 <table align="center">
 <tr>
 <td width="58%">
 
 #### A. Problématique & Enjeux Fondamentaux
-L'expansion des plateformes sociales algorithmiques (TikTok, Instagram, YouTube) a profondément reconfiguré les cycles de vie des adolescents et étudiants (15 à 26 ans). Alors qu'un usage modéré constitue un levier d'intégration sociale et d'accès à l'information (`Bénéfique`), à partir de quel seuil d'exposition numérique bascule-t-on dans la rupture chronobiologique, la dégradation du sommeil, la détresse psychologique et l'effondrement des résultats académiques ?
+L'expansion des plateformes sociales algorithmiques (TikTok, Instagram, YouTube) pose une question de santé publique globale : à partir de quel seuil d'exposition numérique bascule-t-on dans la rupture chronobiologique, la dégradation du sommeil, la détresse psychologique et l'effondrement académique ? Cette dynamique est-elle universelle à travers les cultures et les systèmes éducatifs internationaux ? Quels sont les facteurs protecteurs concrets capables de mitiger le risque de dépression clinique chez les adolescents ?
 
-#### B. Démarche & Innovations Méthodologiques
-1. **Cohorte comportementale de 4 500 étudiants** : Du lycée au troisième cycle universitaire, mesurant 16 dimensions psychométriques (échelle PSS de stress, indice de santé mentale, qualité du sommeil, GPA).
-2. **Formulations chronobiologiques dérivées** : Calcul du ratio écran/sommeil ($R = \text{Écran} / \text{Sommeil}$), de la dette de sommeil cumulée par rapport au seuil clinique de 8h, et de l'indice de friction nocturne (usage post-minuit $\times$ déficit de sommeil).
-3. **Double modélisation prédictive** :
-   - *Tâche 1* : Ensemble LightGBM + CatBoost avec rééquilibrage de classe pour classifier les 3 régimes d'impact (`Bénéfique`, `Neutre`, `Négatif`).
-   - *Tâche 2* : Régresseur continu prédisant le score de stress perçu (PSS 0-40) avec **garantie absolue de zéro fuite de cible** (*zero leakage*).
+#### B. Démarche & Architecture Tri-Cohortes (6 532 Sujets)
+Pour éliminer les biais d'échantillonnage géographique et démographique, ISML unifie **trois cohortes indépendantes** :
+1. **Cohorte 1 (Étudiants, N = 4 500, Âges 15-26)** : Lycée au troisième cycle universitaire. Mesure de 16 indicateurs psychométriques (échelle PSS, indice de santé mentale, GPA, types d'appareils, usage post-minuit). Modélisation de l'impact global (3 classes) et régression sans fuite du stress continu ($R^2 = 0.6332$).
+2. **Cohorte 2 (Atlas Global, N = 832, 113 Nations)** : Enquête internationale standardisée analysant l'addiction numérique, la fréquence des conflits interpersonnels et la dégradation de la santé mentale à travers 113 pays.
+3. **Cohorte 3 (Dépression Clinique Adolescente, N = 1 200, Âges 13-19)** : Télémétrie sur le temps d'écran nocturne, l'activité physique et la détection du statut dépressif clinique ($2.58\%$ de prévalence, 31 cas réels).
 
 #### C. Résultats Métriques Clés
-- **Classification de l'Impact (Tâche 1)** : **`98.69%` Précision**, **`97.28%` Précision Équilibrée**, **`0.9654` Macro F1**, **`0.0396` Log-Loss**.
-- Performance sur classe minoritaire : **`0.9461` F1** sur la classe rare critique `Négatif` (3.7% de la cohorte).
-- **Régression du Stress Psychométrique (Tâche 2)** : **`0.6332` $R^2$**, **$4.2613$ RMSE**, **$\rho = 0.7500$ ($p < 0.0001$)** de corrélation de rang de Spearman.
+- **Cohorte 1 (Impact Global 3 Classes)** : **`98.69%` Précision**, **`0.9654` Macro F1**, **`0.9461` F1** sur la classe rare critique `Négatif`.
+- **Cohorte 1 (Stress Psychométrique PSS)** : **`0.6332` $R^2$**, **$\rho = 0.7500$ ($p < 10^{-15}$)** de corrélation de rang de Spearman.
+- **Cohorte 2 (Atlas 113 Nations)** : **$r = -0.6668$** entre addiction et santé mentale ; **$r = +0.6642$** entre addiction et conflits ; **$61.42\%$** des étudiants rapportent un impact négatif sévère sur leurs études.
+- **Cohorte 3 (Dépression Adolescente)** : **`0.9962` ROC-AUC**, **`0.9558` PR-AUC**, **`93.55%` Sensibilité Clinique** (29/31 cas détectés), **`100.00%` Spécificité**, **`0.9355` Youden $J$** au seuil optimal $\tau^* = 0.220$.
 
-#### D. Conclusion Scientifique & Enseignements Majeurs
+#### D. Conclusion Scientifique Définitive
 > [!IMPORTANT]
 > **Conclusion de l'étude** :
-> 1. **La rupture chronobiologique du ratio écran/sommeil** : Les données mettent en évidence un seuil de basculement net : dès que le ratio écran/sommeil dépasse **1.0** (temps d'écran supérieur à la durée de sommeil) et que l'usage nocturne post-minuit est avéré, le taux d'insomnie et le score de stress perçu augmentent de **+179%** (passant de 11.16 à 31.12/40).
-> 2. **La falaise académique non linéaire** : La dégradation du GPA n'est pas linéaire mais suit un point d'inflexion critique : sous 6 heures d'écran par jour, l'impact sur les notes est négligeable (GPA moyen de 3.55) ; au-delà de 8 heures avec friction nocturne, le GPA chute brutalement d'un point complet (-1.01 point à 2.54/4.00). L'érosion du sommeil est le médiateur causal direct de cette chute.
+> 1. **La rupture chronobiologique du ratio écran/sommeil (> 1.0)** : Dès que le temps d'écran quotidien dépasse la durée de sommeil nocturne avec un usage post-minuit avéré, le score de stress perçu bondit de **+179%** (11.16 à 31.12/40) et le GPA s'effondre de **-1.01 point** (3.55 à 2.54/4.00). La privation de sommeil est le médiateur causal direct de cette rupture.
+> 2. **Universalité transculturelle de la friction sociale ($r = +0.6642$)** : À travers 113 nations, l'addiction numérique dégrade invariablement la santé mentale ($r = -0.6668$) en multipliant les conflits interpersonnels familiaux et amicaux.
+> 3. **L'activité physique comme bouclier protecteur clinique (-84% de risque)** : Chez les adolescents, le manque de sommeil est le principal facteur de vulnérabilité ($r = -0.1906$), mais la pratique sportive régulière neutralise significativement l'impact des écrans, réduisant la probabilité de dépression clinique de **84%**, même à temps d'écran élevé.
 
 </td>
 <td width="42%" align="center">
 <img src="images/isml_behavioral_quadrant.png" alt="ISML Behavioral Quadrant" width="100%" /><br/>
-<sub><b>Quadrant Comportemental Écran vs Sommeil.</b> Séparation nette des 3 régimes d'impact chez 4 500 étudiants.</sub>
+<sub><b>Figure 1. Quadrant Écran vs Sommeil (4 500 Étudiants).</b> Rupture chronobiologique nette.</sub><br/><br/>
+<img src="images/isml_teen_depression_clinical_curves.png" alt="ISML Teen Depression Curves" width="100%" /><br/>
+<sub><b>Figure 2. Courbes ROC & PR Dépression Adolescente.</b> Sensibilité clinique de 93.55% à AUC = 0.9962.</sub>
 </td>
 </tr>
 </table>
 
 ---
 
-## Synthèse Comparative des Enseignements & Conclusions
+## Synthèse Comparative des Enseignements & Conclusions Déclaratives
 
 Le tableau suivant récapitule les enseignements empiriques fondamentaux dégagés par chaque système :
 
-| Projet | Domaine d'Application | Volume de Données | Modèles Centraux | Métrique Clé | Enseignement Scientifique Majeur |
+| Projet | Domaine d'Application | Volume de Données | Modèles Centraux | Métrique Clé | Conclusion Scientifique Définitive |
 |---|---|---|---|---|---|
-| **PCCF** | Détection de Fraude | 1 000 000 transactions | Spline-GLM + GBDT + Nelder-Mead | **0.95331 ROC-AUC** (#26 Top 2.0%) | Les générateurs CTGAN laissent une signature décimale exploitable ; l'assemblage multi-familles bat tout modèle isolé. |
+| **PCCF** | Détection de Fraude | 1 000 000 transactions | Spline-GLM + GBDT + Nelder-Mead | **0.95331 ROC-AUC** (#26 Top 2.0%) | Les générateurs CTGAN laissent une empreinte décimale exploitable ; l'assemblage multi-familles bat tout modèle unitaire. |
 | **GGVCF** | Économétrie Causale | 95 pays (3 120 obs) | Two-Way FE PanelOLS + RF | **$\rho = -0.0026$** ($p = 0.980$) | La saturation en armes civiles n'explique pas le taux d'homicides ; l'inégalité de Gini ($59.8\%$) est le moteur déterminant. |
 | **Pneumonia** | IA Clinique Pédiatrique | 5 856 radiographies | ResNet-18 + Tête MLP + Youden | **99.23% Sensibilité** (390 cas) | La perte asymétrique garantit zéro omission virale (100%) ; Grad-CAM valide les foyers de condensation anatomiques. |
 | **GCMDL** | Microstructure Crypto | 1 000 crypto-actifs | Soft-Voting GBDT + Youden | **0.9996 Tail-Risk AUC** | Un faible ratio de flottant avec fort overhang FDV prédit à 99.9% un effondrement supérieur à -85% du pic. |
-| **ISML** | Chronobiologie & Psychométrie | 4 500 étudiants | LightGBM + CatBoost Class-Weighted | **98.69% Acc / 0.9654 F1** | Le ratio écran/sommeil > 1.0 déclenche un bond de stress de +179% et une falaise de GPA de -1.01 point. |
+| **ISML** | Chronobiologie & Dépression | 6 532 sujets (113 pays) | GBDT Pondéré + Youden + OLS | **0.9962 Dépression AUC / 98.69% Acc** | Le ratio écran/sommeil > 1.0 déclenche +179% de stress ; l'activité physique constitue un bouclier protecteur (-84% de dépression). |
 
 ---
 

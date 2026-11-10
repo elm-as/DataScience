@@ -117,9 +117,9 @@ HTML_CONTENT = """<!DOCTYPE html>
         <div class="text-[10px] text-emerald-400 font-mono mt-0.5">ROC-AUC (1,000 assets)</div>
       </div>
       <div class="p-3 rounded-lg bg-brand-surface border border-brand-border">
-        <div class="text-[11px] font-mono uppercase text-slate-400 tracking-wider">ISML Accuracy</div>
-        <div class="text-2xl font-bold font-mono text-purple-400 mt-1 tabular-nums">98.69%</div>
-        <div class="text-[10px] text-slate-400 font-mono mt-0.5">Macro F1: 0.9654</div>
+        <div class="text-[11px] font-mono uppercase text-slate-400 tracking-wider">ISML Tri-Cohort (6,532)</div>
+        <div class="text-2xl font-bold font-mono text-purple-400 mt-1 tabular-nums">0.9962</div>
+        <div class="text-[10px] text-slate-400 font-mono mt-0.5">Depression AUC • 93.55% Sens</div>
       </div>
     </div>
   </section>
@@ -244,13 +244,13 @@ HTML_CONTENT = """<!DOCTYPE html>
             <!-- Card 5: ISML -->
             <div class="p-4 rounded-xl bg-brand-surface border border-brand-border hover:border-purple-500/50 transition space-y-2.5 sm:col-span-2">
               <div class="flex items-center justify-between">
-                <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-purple-950 text-purple-400 border border-purple-800/60">ISML</span>
-                <span class="text-xs font-mono text-purple-400 font-semibold">98.69% Impact Accuracy • Macro F1: 0.9654</span>
+                <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-purple-950 text-purple-400 border border-purple-800/60">ISML Tri-Cohort</span>
+                <span class="text-xs font-mono text-purple-400 font-semibold">AUC 0.9962 • 98.69% Acc • 6,532 Subjects (113 Nations)</span>
               </div>
-              <h3 class="text-sm font-bold text-white">Impact of Social Media on Life (4,500 Cohort)</h3>
-              <p class="text-xs text-slate-400">Chronobiological disruption, sleep debt erosion, and academic GPA impairment. Proving that screen/sleep ratios > 1.0 trigger a +179% surge in stress.</p>
+              <h3 class="text-sm font-bold text-white">Impact of Social Media on Life (Tri-Cohort Architecture)</h3>
+              <p class="text-xs text-slate-400">Chronobiological disruption, 113-nation cross-national addiction atlas, and adolescent clinical depression detection with physical activity protective buffering.</p>
               <div class="flex items-center justify-between text-xs font-mono pt-1 text-slate-400 border-t border-brand-border/60">
-                <span>Stack: LightGBM + CatBoost + Zero-Leakage Regressor</span>
+                <span>Stack: GBDT + Cost-Sensitive Youden J + OLS Panel</span>
                 <button onclick="switchTab('tab-isml')" class="text-purple-400 hover:underline">Explore &rarr;</button>
               </div>
             </div>
@@ -283,11 +283,11 @@ HTML_CONTENT = """<!DOCTYPE html>
             </div>
             <div class="flex justify-between items-center py-1 border-b border-brand-border/40">
               <span class="text-slate-300">elm-as/GCMDL</span>
-              <span class="text-emerald-400">● Synced (5c9a86d)</span>
+              <span class="text-emerald-400">● Synced (2cdfc2a)</span>
             </div>
             <div class="flex justify-between items-center py-1">
               <span class="text-slate-300">elm-as/ISML</span>
-              <span class="text-emerald-400">● Synced (e2ca6ad)</span>
+              <span class="text-emerald-400">● Synced (9a820ff)</span>
             </div>
           </div>
         </div>
@@ -506,12 +506,12 @@ HTML_CONTENT = """<!DOCTYPE html>
       <div class="p-5 rounded-xl bg-brand-surface border border-brand-border space-y-4">
         <div class="flex flex-wrap items-center justify-between gap-2 border-b border-brand-border pb-3">
           <div>
-            <h2 class="text-lg font-bold text-white">ISML — Impact of Social Media on Life (4,500 Cohort)</h2>
-            <p class="text-xs text-slate-400 font-mono">Ages 15–26 &bull; High School to Postgraduate &bull; Screen Time vs Sleep Hygiene</p>
+            <h2 class="text-lg font-bold text-white">ISML — Impact of Social Media on Life (Tri-Cohort Architecture: 6,532 Subjects, 113 Nations)</h2>
+            <p class="text-xs text-slate-400 font-mono">Cohorts 1, 2 & 3 &bull; 4,500 Primary Students + 832 Global (113 Countries) + 1,200 Adolescents (Ages 13-19)</p>
           </div>
           <div class="flex items-center space-x-2">
-            <span class="px-3 py-1 rounded bg-purple-950 text-purple-400 border border-purple-800 font-mono text-xs">Accuracy: 98.69%</span>
-            <span class="px-3 py-1 rounded bg-emerald-950 text-emerald-400 border border-emerald-800 font-mono text-xs">Macro F1: 0.9654</span>
+            <span class="px-3 py-1 rounded bg-purple-950 text-purple-400 border border-purple-800 font-mono text-xs">Depression AUC: 0.9962</span>
+            <span class="px-3 py-1 rounded bg-emerald-950 text-emerald-400 border border-emerald-800 font-mono text-xs">Clinical Sens: 93.55%</span>
           </div>
         </div>
 
@@ -520,42 +520,49 @@ HTML_CONTENT = """<!DOCTYPE html>
             <div id="plot-isml-gpa-stress" class="w-full h-[340px] rounded-lg bg-brand-surfaceLight/30 border border-brand-border/60 p-2"></div>
             
             <div class="p-4 rounded-lg bg-brand-surfaceLight/40 border border-brand-border font-mono text-xs space-y-2">
-              <div class="text-purple-400 font-bold uppercase text-[11px]">Scientific Conclusion</div>
+              <div class="text-purple-400 font-bold uppercase text-[11px]">Scientific Conclusions Across Tri-Cohort Architecture</div>
               <p class="text-slate-300 text-xs font-sans leading-relaxed">
-                &bull; <strong>Le ratio écran/sommeil > 1.0 comme seuil de rupture</strong> : Lorsque le temps d'écran quotidien dépasse la durée de sommeil et que l'usage post-minuit est avéré, le score de stress PSS grimpe de +179% (de 11.16 à 31.12/40).
+                &bull; <strong>Cohorte 1 (Rupture chronobiologique ratio > 1.0)</strong> : Lorsque le temps d'écran quotidien dépasse la durée de sommeil avec usage post-minuit, le stress bondit de +179% (de 11.16 à 31.12/40) et le GPA s'effondre de -1.01 point (-28.4%).
               </p>
               <p class="text-slate-300 text-xs font-sans leading-relaxed">
-                &bull; <strong>La falaise académique non linéaire</strong> : En dessous de 6h d'écran, le GPA reste stable (~3.55) ; au-delà de 8h avec friction nocturne, le GPA chute brutalement d'un point complet (-1.01 point à 2.54/4.00).
+                &bull; <strong>Cohorte 2 (Universalité de la friction sociale sur 113 pays)</strong> : L'addiction numérique dégrade invariablement la santé mentale (r = -0.6668) en alimentant les conflits interpersonnels (r = +0.6642), affectant 61.42% des études universitaires.
+              </p>
+              <p class="text-slate-300 text-xs font-sans leading-relaxed">
+                &bull; <strong>Cohorte 3 (L'activité physique comme bouclier protecteur clinique)</strong> : Chez les adolescents (13-19 ans), le manque de sommeil est le principal inducteur dépressif (r = -0.1906), mais le sport régulier réduit la probabilité de dépression de 84%, même à temps d'écran élevé.
               </p>
             </div>
           </div>
 
           <div class="space-y-4">
             <div class="p-4 rounded-xl bg-brand-surfaceLight/30 border border-brand-border space-y-2 text-xs font-mono">
-              <div class="text-slate-400 uppercase text-[11px] font-bold">ISML Model Scores</div>
+              <div class="text-slate-400 uppercase text-[11px] font-bold">Tri-Cohort Unified Benchmarks</div>
               <div class="space-y-1 text-[11px]">
                 <div class="flex justify-between p-1.5 rounded bg-slate-900 border border-slate-800">
-                  <span>Rare Negative Impact F1</span>
-                  <span class="text-rose-400 font-bold">0.9461</span>
+                  <span>Teen Depression ROC-AUC</span>
+                  <span class="text-rose-400 font-bold">0.9962</span>
                 </div>
                 <div class="flex justify-between p-1.5 rounded bg-slate-900 border border-slate-800">
-                  <span>Balanced Accuracy</span>
-                  <span class="text-emerald-400 font-bold">97.28%</span>
+                  <span>Teen Clinical Sensitivity</span>
+                  <span class="text-rose-400 font-bold">93.55% (Youden J: 0.9355)</span>
                 </div>
                 <div class="flex justify-between p-1.5 rounded bg-slate-900 border border-slate-800">
-                  <span>Stress Regressor R²</span>
-                  <span class="text-amber-400 font-bold">0.6332</span>
+                  <span>Global Addiction vs Health (r)</span>
+                  <span class="text-amber-400 font-bold">-0.6668 (113 Pays)</span>
                 </div>
                 <div class="flex justify-between p-1.5 rounded bg-slate-900 border border-slate-800">
-                  <span>Spearman Rho (p < 0.001)</span>
-                  <span class="text-cyan-400 font-bold">0.7500</span>
+                  <span>Cohort 1 Impact Accuracy</span>
+                  <span class="text-emerald-400 font-bold">98.69% (Macro F1: 0.9654)</span>
+                </div>
+                <div class="flex justify-between p-1.5 rounded bg-slate-900 border border-slate-800">
+                  <span>Cohort 1 Stress Regressor R²</span>
+                  <span class="text-purple-400 font-bold">0.6332 (Spearman: 0.7500)</span>
                 </div>
               </div>
             </div>
 
             <div class="p-4 rounded-xl bg-brand-surfaceLight/30 border border-brand-border font-mono text-xs space-y-2">
               <a href="ISML/artifacts/dashboard.html" target="_blank" class="block w-full py-2 text-center rounded bg-purple-500/20 text-purple-300 hover:bg-purple-500/30 border border-purple-500/40 transition">
-                Launch ISML Standalone Dashboard ↗
+                Launch Tri-Cohort Interactive Atlas ↗
               </a>
             </div>
           </div>
