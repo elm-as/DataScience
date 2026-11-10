@@ -22,7 +22,7 @@ The master hub orchestrating production-grade data science initiatives, Kaggle c
 <tr>
 <td align="center"><h2>3</h2><sub>active systems</sub></td>
 <td align="center"><h2>1,008,976</h2><sub>analyzed records</sub></td>
-<td align="center"><h2>0.94835</h2><sub>PCCF Public LB</sub></td>
+<td align="center"><h2>0.95330</h2><sub>PCCF Public (Top 4.2%)</sub></td>
 <td align="center"><h2>99.23%</h2><sub>Pneumonia Sensitivity</sub></td>
 <td align="center"><h2>&rho; = 0.00</h2><sub>GGVCF paradox resolved</sub></td>
 <td align="center"><h2>100%</h2><sub>ELMAS.md compliant</sub></td>
@@ -98,7 +98,7 @@ flowchart TD
   - Décomposition fine des décimales (`cents_key`, `tenth_key`, premier chiffre de Benford) capturant les artefacts de génération synthétique (CTGAN/Copula).
   - Target encoding cross-fitté 100% sans fuite avec lissage bayésien ($m=20.0$).
   - Ensemble multi-familles (Spline-GLM, LightGBM Shallow, CatBoost Shallow, XGBoost Hist) optimisé par Nelder-Mead Rank-Logit.
-- **Résultats** : **`0.94860` ROC-AUC** sur validation croisée stratifiée 5-folds et **`0.94835`** sur le Leaderboard Public Kaggle (Ref: #58176028, écart $|\Delta| = 0.00025$ confirmant l'absence totale de fuite de données), surclassant tous les modèles individuels isolés (Spline-GLM: 0.94272, LightGBM: 0.94838, XGBoost: 0.94802, CatBoost: 0.94793).
+- **Résultats** : **`0.95330` Public ROC-AUC** sur le Leaderboard Kaggle (Rank #55 / 1,290, Top 4.2% mondial, gain de +0.00495 vs baseline locale) via un ensemble consensus multi-familles (Multi-Family Deep Stack + Wide Tabular LM + RealMLP + Décomposition décimale fine).
 
 </td>
 <td width="40%" align="center">
