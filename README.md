@@ -1,7 +1,7 @@
 <div align="center">
 
 # ElmasCore — Data Science & Competitive Machine Learning Hub
-### Production Data Systems, Econometric Research & Medical Deep Learning Architectures
+### Production Data Systems, Econometric Research, Medical Deep Learning & Financial Telemetry Architectures
 
 <br/>
 
@@ -11,8 +11,10 @@
 ![Status](https://img.shields.io/badge/Status-Active%20Hub-6366F1?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-22C55E?style=flat-square)
 
+<br/>
+
 **"From Data to Systems"**  
-The master hub orchestrating production-grade data science initiatives, Kaggle competitive pipelines, causal econometric monographs, and medical deep learning systems.
+The master hub orchestrating production-grade data science initiatives, Kaggle competitive pipelines, causal econometric monographs, medical deep learning systems, and quantitative crypto telemetry.
 
 </div>
 
@@ -20,11 +22,11 @@ The master hub orchestrating production-grade data science initiatives, Kaggle c
 
 <table align="center">
 <tr>
-<td align="center"><h2>3</h2><sub>active systems</sub></td>
-<td align="center"><h2>1,008,976</h2><sub>analyzed records</sub></td>
-<td align="center"><h2>0.95331</h2><sub>PCCF Public (Top 2.0%)</sub></td>
+<td align="center"><h2>4</h2><sub>active systems</sub></td>
+<td align="center"><h2>1,009,976</h2><sub>analyzed records</sub></td>
+<td align="center"><h2>0.95331</h2><sub>PCCF Public (#26 Top 2.0%)</sub></td>
 <td align="center"><h2>99.23%</h2><sub>Pneumonia Sensitivity</sub></td>
-<td align="center"><h2>&rho; = 0.00</h2><sub>GGVCF paradox resolved</sub></td>
+<td align="center"><h2>0.9996</h2><sub>GCMDL Tail-Risk ROC-AUC</sub></td>
 <td align="center"><h2>100%</h2><sub>ELMAS.md compliant</sub></td>
 </tr>
 </table>
@@ -39,6 +41,7 @@ The master hub orchestrating production-grade data science initiatives, Kaggle c
    - [PCCF — Predicting Credit Card Fraud (Kaggle S6E11)](#1-pccf--predicting-credit-card-fraud-kaggle-s6e11)
    - [GGVCF — Global Gun Violence & Civilian Firearms (2000–2024)](#2-ggvcf--global-gun-violence--civilian-firearms-20002024)
    - [Pneumonia — Pediatric Chest Radiography Deep Diagnostic System](#3-pneumonia--pediatric-chest-radiography-deep-diagnostic-system)
+   - [GCMDL — Global Crypto Market Dynamics & Liquidity 2026](#4-gcmdl--global-crypto-market-dynamics--liquidity-2026)
 4. [Protocole de Gouvernance & Synchronisation Multi-Dépôts](#protocole-de-gouvernance--synchronisation-multi-dépôts)
 5. [Full Setup & Cloning](#full-setup--cloning)
 6. [The ElmasCore Charter](#the-elmascore-charter)
@@ -63,10 +66,11 @@ flowchart TD
     ROOT --> SUB1[PCCF Submodule<br/>elm-as/PCCF]
     ROOT --> SUB2[GGVCF Submodule<br/>elm-as/GGVCF]
     ROOT --> SUB3[Pneumonia Submodule<br/>elm-as/Pneumonia]
+    ROOT --> SUB4[GCMDL Submodule<br/>elm-as/GCMDL]
 
     SUB1 --> P_SRC[src/ Domain Architecture]
     SUB1 --> P_NB[notebooks/ Walkthrough]
-    SUB1 --> P_SUB[submissions/ Dual Blends]
+    SUB1 --> P_SUB[submissions/ Rank-Logit Consensus]
 
     SUB2 --> G_SRC[src/ Econometric Models]
     SUB2 --> G_NB[notebooks/ Econometric Monograph]
@@ -76,10 +80,15 @@ flowchart TD
     SUB3 --> PN_NB[notebooks/ Radiography Monograph]
     SUB3 --> PN_CAM[images/ Grad-CAM Heatmaps]
 
+    SUB4 --> GC_SRC[src/ Microstructure & ML Ensembles]
+    SUB4 --> GC_NB[notebooks/ Crypto Monograph]
+    SUB4 --> GC_DASH[artifacts/ Interactive Dashboard & CLI]
+
     style ROOT fill:#EEF2FF,stroke:#6366F1,color:#1e1b4b
     style SUB1 fill:#ECFDF5,stroke:#10B981,color:#064e3b
     style SUB2 fill:#FEF3C7,stroke:#D97706,color:#78350F
     style SUB3 fill:#FCE7F3,stroke:#DB2777,color:#831843
+    style SUB4 fill:#E0F2FE,stroke:#0284C7,color:#0c4a6e
 ```
 
 ---
@@ -87,7 +96,7 @@ flowchart TD
 ## Active Systems Showcase
 
 ### 1. [PCCF — Predicting Credit Card Fraud (Kaggle S6E11)](./PCCF)
-> **Dépôt officiel** : [`elm-as/PCCF`](https://github.com/elm-as/PCCF) &bull; **Cible** : `#1 Leaderboard`
+> **Dépôt officiel** : [`elm-as/PCCF`](https://github.com/elm-as/PCCF) &bull; **Kaggle Standing** : **`Rank #26 / 1,294 (Top 2.0%)`** &bull; **Public ROC-AUC** : **`0.95331`**
 
 <table align="center">
 <tr>
@@ -98,7 +107,7 @@ flowchart TD
   - Décomposition fine des décimales (`cents_key`, `tenth_key`, premier chiffre de Benford) capturant les artefacts de génération synthétique (CTGAN/Copula).
   - Target encoding cross-fitté 100% sans fuite avec lissage bayésien ($m=20.0$).
   - Ensemble multi-familles (Spline-GLM, LightGBM Shallow, CatBoost Shallow, XGBoost Hist) optimisé par Nelder-Mead Rank-Logit.
-- **Résultats** : **`0.95331` Public ROC-AUC** sur le Leaderboard Kaggle (Rank #26 / 1,294, Top 2.0% mondial, gain de +0.00496 vs baseline locale) via un consensus multi-fondations (Multi-Family Deep Stack + Target-First GPT-2 LM + AmanAtar Frontier + TabPFN-3.5 Prior Network).
+- **Résultats** : **`0.95331` Public ROC-AUC** sur le Leaderboard Kaggle (**Rank #26 / 1,294**, Top 2.0% mondial, distance au 1er : 2.7 points de base) via un consensus souverain multi-architectures.
 
 </td>
 <td width="40%" align="center">
@@ -154,7 +163,32 @@ flowchart TD
 </td>
 <td width="40%" align="center">
 <img src="images/pneumonia_gradcam_panel.png" alt="Pneumonia Grad-CAM Panel" width="100%" /><br/>
-<sub><b>Explicabilité Clinique Grad-CAM.</b> Mise en évidence des foyers d'opacification.</sub>
+<sub><b>Explicabilité Clinique Grad-CAM.</b> Localisation des foyers d'opacification.</sub>
+</td>
+</tr>
+</table>
+
+---
+
+### 4. [GCMDL — Global Crypto Market Dynamics & Liquidity 2026](./GCMDL)
+> **Dépôt officiel** : [`elm-as/GCMDL`](https://github.com/elm-as/GCMDL) &bull; **Dashboard** : [`artifacts/dashboard.html`](./GCMDL/artifacts/dashboard.html) &bull; **Cible** : `Liquidity Microstructure & Tail-Risk`
+
+<table align="center">
+<tr>
+<td width="60%">
+
+- **Objectif** : Modélisation quantitative des régimes de rotation de liquidité (turnover order book), du risque de dilution FDV et prédiction du risque extrême de drawdown (>85%) sur les 1,000 premières cryptomonnaies mondiales ($2.84T de capitalisation globale, 57.72% de dominance BTC).
+- **Innovations** :
+  - **Pipeline d'annotation cognitive bi-niveaux** : Extraction quantitative et arbitrage expert de cas limites vérifiés à un score d'accord inter-annotateurs de **Cohen's Kappa $\kappa = 0.9407$**, débruité par *Cleanlab Confident Learning*.
+  - **Ingénierie de microstructure financière** : Calcul de la vitesse de turnover $V = \text{Volume}_{24h}/\text{MCap}$, proxy d'illiquidité d'Amihud $I_{\text{Amihud}}$, estimateur de spread de Corwin-Schultz et coefficient de dilution d'overhang FDV.
+  - **Ensemble multi-classes soft-voting 5-folds** : LightGBM + CatBoost classant les régimes de turnover avec **`99.50%` de précision** (Macro F1 = `0.9958`, LogLoss = `0.0141`, Brier = `0.0073`).
+  - **Prédicteur de risque extrême (Tail-Risk)** : Prédiction des drawdowns catastrophiques (>85% du pic historique) atteignant **`0.9996` ROC-AUC** et **`0.9996` PR-AUC** (Sensibilité 99.80%, Spécificité 99.80%).
+  - **Dashboard interactif & CLI de triage** : Interface autonome HTML5/Plotly.js sans dépendance serveur et outil CLI d'évaluation unitaire en temps réel (`python predict.py --symbol BTC`).
+
+</td>
+<td width="40%" align="center">
+<img src="images/gcmdl_liquidity_map.png" alt="GCMDL Microstructure Map" width="100%" /><br/>
+<sub><b>Cartographie de Microstructure.</b> Distribution multidimensionnelle des 1,000 actifs crypto.</sub>
 </td>
 </tr>
 </table>
@@ -172,7 +206,7 @@ L'orchestration des sous-modules et la cohérence de livraison entre les dépôt
 
 ## Full Setup & Cloning
 
-Pour cloner l'ensemble du hub et tous ses sous-modules en une seule commande :
+Pour cloner l'ensemble du hub et tous ses 4 sous-modules en une seule commande :
 
 ```bash
 git clone --recurse-submodules https://github.com/elm-as/DataScience.git

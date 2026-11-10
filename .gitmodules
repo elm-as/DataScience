@@ -7,3 +7,6 @@
 [submodule "Pneumonia"]
 	path = Pneumonia
 	url = https://github.com/elm-as/Pneumonia.git
+[submodule "GCMDL"]
+	path = GCMDL
+	url = https://github.com/elm-as/GCMDL.git
