@@ -312,16 +312,31 @@ Pour éliminer les biais d'échantillonnage géographique et démographique, ISM
 <tr>
 <td width="58%">
 
-- **Données réelles (DE-LU 2024)** : `8 784` heures réelles téléchargées depuis l'API publique Fraunhofer ISE Energy-Charts (`data/de_lu_2024_hourly.csv`), incluant **457 heures à prix négatifs**.
-- **Méthodologie** : *Double Machine Learning* pour l'effet *merit-order* + prévision causale sous *Split Conformal Prediction* en validation glissante (6 folds, embargo 24h).
-- **Résultats Clés** : Effet causal **`-3.1763 EUR/MWh/GW`** (`SE = 0.0283`), **`90.88%` PICP (90%)**, **`17.37%` wMAPE**, **`7.5233` Pinball Loss (q50)**.
+#### A. Problématique & Enjeux Énergétiques
+L'essor massif du solaire et de l'éolien sur le réseau électrique européen transforme la formation des prix spot *day-ahead* : à demande égale, l'injection renouvelable à coût marginal quasi nul évince les centrales thermiques et multiplie les épisodes de prix négatifs. Comment isoler **causalement** cet effet *merit-order* sans biais de confusion lié à la demande, et produire des intervalles de prévision probabilistes calibrés sans fuite temporelle ?
+
+#### B. Démarche & Architecture Empirique (8 784 Heures DE-LU 2024)
+1. **Ingestion & Alignement UTC (`download_energy_charts.py`)** : Téléchargement de l'intégralité de l'année 2024 sur la zone germano-luxembourgeoise (`DE-LU`, Fraunhofer ISE Energy-Charts API) : prix spot horaires, charge réseau, solaire et éolien (onshore + offshore) rééchantillonnés à 1h (`8 784` observations).
+2. **Inférence Causale Double ML (`merit_order_dml.py`)** : Orthogonalisation de Frisch-Waugh-Lovell du traitement renouvelable (GW) et du prix spot par rapport à la charge électrique.
+3. **Prévision Conforme Glissante (`quantile_conformal.py` & `rolling_backtest.py`)** : Features strictement causales (lags `t`, `t-24`) évaluées sur **6 folds *rolling-origin*** avec fenêtre d'**embargo de 24h** et calibration conformale sur 20 % disjoints.
+
+#### C. Résultats Métriques Clés
+- **Effet Causal *Merit-Order* (DML)** : **`-3.1763 EUR/MWh/GW`** ($\text{SE} = 0.0283$).
+- **Prévision Probabiliste (6 Folds)** : **`90.88%` PICP** (couverture empirique pour une cible à 90 %), **`17.37%` wMAPE**, **`7.5233 EUR/MWh`** Pinball Loss médiane (`q50`).
+- **Régime extrême** : **`457` heures à prix négatifs** (5.20 % de l'année 2024) identifiées et modélisées.
+
+#### D. Conclusion Scientifique Définitive
+> [!IMPORTANT]
+> **Conclusion de l'étude** :
+> 1. **Compression causale mesurée du prix marginal** : Chaque gigawatt renouvelable supplémentaire injecté sur la zone `DE-LU` réduit causalement le prix *day-ahead* de **3.18 EUR/MWh** à demande constante.
+> 2. **Calibration conformale robuste en série temporelle** : L'encapsulation de la prévision dans des bornes conformales calibrées sous embargo de 24h maintient une couverture réelle de **90.88%** sur 6 folds saisonniers successifs.
 
 </td>
 <td width="42%" align="center">
 <img src="images/ergf_merit_order_causal.png" alt="ERGF Merit Order" width="100%" /><br/>
-<sub><b>Figure 1. Effet Merit-Order (DE-LU 2024).</b> Compression des prix spot par les renouvelables.</sub><br/><br/>
+<sub><b>Figure 1. Effet Merit-Order (DE-LU 2024).</b> Compression des prix spot par les renouvelables et 457 h négatives.</sub><br/><br/>
 <img src="images/ergf_conformal_forecast.png" alt="ERGF Conformal Forecast" width="100%" /><br/>
-<sub><b>Figure 2. Prévision Conforme 168h.</b> Couverture empirique de 90.88%.</sub>
+<sub><b>Figure 2. Prévision Conforme 168h.</b> Couverture empirique de 90.88 % sur le fold final.</sub>
 </td>
 </tr>
 </table>
@@ -335,16 +350,30 @@ Pour éliminer les biais d'échantillonnage géographique et démographique, ISM
 <tr>
 <td width="58%">
 
-- **Données réelles (`yfinance` + Google News RSS)** : `501` jours de cotation (2 ans) et `240` dépêches financières réelles sur `12` valeurs semi-conducteurs & Big Tech.
-- **Méthodologie** : Alignement *zero look-ahead*, scoring lexical de stress narratif, graphe de corrélation pré-cutoff (`53` arêtes $r \ge 0.35$) et propagation 1-hop ($\alpha = 0.40$).
-- **Résultats Clés** : **`0.6250` ROC-AUC**, **`0.6571` Macro-F1** sur la détection de régime de haute volatilité réalisée hors-échantillon.
+#### A. Problématique & Contagion Systémique
+Dans l'écosystème semi-conducteurs et cloud (`NVDA`, `AMD`, `INTC`, `TSM`, `ASML`, `MSFT`, `AAPL`, `GOOGL`, `AMZN`, `META`, `AVGO`, `QCOM`), un choc sur un maillon critique se propage rapidement le long des interdépendances sectorielles. Les signaux sémantiques extraits des dépêches financières, combinés à un graphe de corrélation historique construit sans fuite future, permettent-ils d'anticiper les régimes de haute volatilité ?
+
+#### B. Démarche & Architecture Sans Fuite (*Zero Look-Ahead*)
+1. **Collecte Multi-Sources (`download_market_news.py`)** : Téléchargement de **501 jours de cotation** (`yfinance`, 2 ans) et de **240 dépêches financières réelles** (`Google News RSS`, 20 titres par valeur).
+2. **Scoring Sémantique (`sentiment_scorer.py`)** : Extraction de polarité financière `[-1, 1]` et du ratio d'incertitude lexicale agrégés par émetteur.
+3. **Graphe Temporel & Message Passing (`temporal_graph.py` & `graph_propagation.py`)** : Construction des arêtes ($r \ge 0.35$, **`53` arêtes**) uniquement sur les **75 % premiers jours** (`cutoff`), puis propagation 1-hop ($\alpha = 0.40$) évaluée sur le tercile de volatilité réalisée des **25 % jours finaux**.
+
+#### C. Résultats Métriques Clés
+- **Topologie pré-cutoff** : **`53` arêtes** actives reliant les 12 valeurs semi-conducteurs et Big Tech.
+- **Détection de régime haute volatilité (Walk-Forward)** : **`0.6250` ROC-AUC** (Mann-Whitney exact), **`0.6571` Macro-F1**.
+
+#### D. Conclusion Scientifique Définitive
+> [!IMPORTANT]
+> **Conclusion de l'étude** :
+> 1. **Discipline *Zero Look-Ahead* indispensable en finance** : En interdisant toute construction d'arête ou de document après la date de coupure, la validation reflète une performance réaliste et non gonflée par la fuite future.
+> 2. **Propagation inter-actifs cohérente** : Le graphe temporel capture la structure de co-mouvement entre fondeurs (`TSM`, `ASML`), concepteurs (`NVDA`, `AMD`) et *hyperscalers* (`MSFT`, `META`, `AMZN`).
 
 </td>
 <td width="42%" align="center">
 <img src="images/finsg_systemic_graph.png" alt="FINSG Systemic Graph" width="100%" /><br/>
-<sub><b>Figure 1. Graphe Temporel (12 Tickers, 53 Arêtes).</b> Propagation du stress narratif.</sub><br/><br/>
+<sub><b>Figure 1. Graphe Temporel (12 Tickers, 53 Arêtes).</b> Propagation du stress narratif pré-cutoff.</sub><br/><br/>
 <img src="images/finsg_ablation_roc_pr.png" alt="FINSG ROC PR" width="100%" /><br/>
-<sub><b>Figure 2. Courbes ROC & PR.</b> Détection de régime de volatilité haute.</sub>
+<sub><b>Figure 2. Courbes ROC & PR.</b> Détection hors-échantillon du régime de volatilité haute.</sub>
 </td>
 </tr>
 </table>
@@ -358,16 +387,30 @@ Pour éliminer les biais d'échantillonnage géographique et démographique, ISM
 <tr>
 <td width="58%">
 
-- **Données réelles (NASA C-MAPSS FD001)** : `100` moteurs d'entraînement (`20 631` cycles) + `100` moteurs de test censurés à droite (`RUL_FD001.txt`).
-- **Méthodologie** : `LightGBM Regressor` sous `GroupKFold` (5 folds par `unit_id`), estimation de survie Kaplan-Meier (`66` paliers) et optimisation du seuil sous coût asymétrique (`12 000 €` vs `1 500 €`).
-- **Résultats Clés** : **`18.31` cycles RMSE**, **`13.37` cycles MAE**, **`10.05` Score Asymétrique NASA**, **`0.6057` C-index**, coût optimal **`810.00 EUR/unité`**.
+#### A. Problématique Industrielle & Asymétrie du Risque
+En maintenance aéronautique, prédire la durée de vie résiduelle (*Remaining Useful Life — RUL*) d'un turboréacteur impose deux contraintes critiques : gérer la **censure à droite** des moteurs encore en service et refléter la forte **asymétrie économique** entre un remplacement prématuré (`1 500 EUR/unité`) et une panne non planifiée (`12 000 EUR/unité`).
+
+#### B. Démarche & Pipeline NASA C-MAPSS FD001
+1. **Données officielles (`download_cmapss.py`)** : Téléchargement des fichiers NASA C-MAPSS `FD001` (`100` moteurs d'entraînement / `20 631` cycles, `100` moteurs de test censurés à droite, `RUL_FD001.txt`).
+2. **Features Causales & Validation `GroupKFold`** : Moyennes glissantes sur 5 cycles des `14` capteurs actifs (`groupby("unit_id")`), entraînement `LightGBM Regressor` sous **`GroupKFold` 5-folds par `unit_id`** (zéro fuite inter-moteurs).
+3. **Survie & Politique Décisionnelle (`kaplan_meier.py` & `maintenance_policy.py`)** : Courbe de Kaplan-Meier sur les 200 moteurs (`66` paliers) et sélection du seuil d'intervention minimisant le coût total attendu.
+
+#### C. Résultats Métriques Clés
+- **Prédiction RUL (`100` moteurs `test_FD001`)** : **`18.31` cycles RMSE**, **`13.37` cycles MAE**, **`10.05` Score Asymétrique NASA**.
+- **Analyse de Survie & Décision** : **`0.6057` Harrell's C-index**, **`66` paliers Kaplan-Meier**, coût optimal **`810.00 EUR/unité`** au seuil **`0.90`**.
+
+#### D. Conclusion Scientifique Définitive
+> [!IMPORTANT]
+> **Conclusion de l'étude** :
+> 1. **Intégrité par `GroupKFold` sur `unit_id`** : L'isolation stricte par moteur garantit que le modèle généralise à des équipements inconnus (`18.31` cycles RMSE sur `test_FD001`) plutôt que de mémoriser les trajectoires individuelles.
+> 2. **Alignement décisionnel sur le coût asymétrique** : Coupler la courbe de survie censurée à droite avec une fonction de coût explicite (`12 000 €` vs `1 500 €`) réduit le coût attendu de flotte à **810 EUR/unité**.
 
 </td>
 <td width="42%" align="center">
 <img src="images/cbmx_kaplan_meier_survival.png" alt="CBMX Kaplan Meier" width="100%" /><br/>
-<sub><b>Figure 1. Survie Kaplan-Meier (FD001).</b> Stratification par tercile de dégradation.</sub><br/><br/>
+<sub><b>Figure 1. Survie Kaplan-Meier (FD001).</b> Stratification par tercile de dégradation sous censure à droite.</sub><br/><br/>
 <img src="images/cbmx_rul_prediction_asymmetric.png" alt="CBMX RUL Predictions" width="100%" /><br/>
-<sub><b>Figure 2. Prédictions RUL (100 Moteurs Test).</b> Parité & erreur asymétrique NASA.</sub>
+<sub><b>Figure 2. Prédictions RUL (100 Moteurs Test).</b> Parité & distribution des erreurs asymétriques NASA.</sub>
 </td>
 </tr>
 </table>
