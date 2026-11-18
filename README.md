@@ -306,26 +306,71 @@ Pour éliminer les biais d'échantillonnage géographique et démographique, ISM
 ---
 
 ### 6. [ERGF — European Renewable Grid & Price Forecasting](./ERGF)
-> **Dépôt officiel** : [`elm-as/ERGF`](https://github.com/elm-as/ERGF) &bull; **Dataset** : [`data/eu_grid_hourly.csv`](./ERGF/data/eu_grid_hourly.csv) &bull; **Cible** : `Séries Temporelles Probabilistes, Énergie & Inférence Causale`
+> **Dépôt officiel** : [`elm-as/ERGF`](https://github.com/elm-as/ERGF) &bull; **Dashboard** : [`artifacts/dashboard.html`](./ERGF/artifacts/dashboard.html) &bull; **Cible** : `Séries Temporelles Probabilistes, Énergie & Inférence Causale`
 
-- **Problématique & Architecture** : Quantification causale de l'effet *merit-order* des renouvelables sur les prix spot *day-ahead* via *Double Machine Learning* (orthogonalisation contre la charge résiduelle) et prévision probabiliste calibrée par *Split Conformal Prediction* sous validation glissante avec embargo de 24h (5 folds, 2 160 observations horaires).
-- **Résultats Clés (`artifacts/results.json`)** : Effet causal **`-2.1910 EUR/MWh/GW`** (`SE = 0.0150`), **`7.67%` wMAPE**, **`93.45%` PICP (90%)**, **`3.3947` Pinball Loss (q50)**.
+<table align="center">
+<tr>
+<td width="58%">
+
+- **Données réelles (DE-LU 2024)** : `8 784` heures réelles téléchargées depuis l'API publique Fraunhofer ISE Energy-Charts (`data/de_lu_2024_hourly.csv`), incluant **457 heures à prix négatifs**.
+- **Méthodologie** : *Double Machine Learning* pour l'effet *merit-order* + prévision causale sous *Split Conformal Prediction* en validation glissante (6 folds, embargo 24h).
+- **Résultats Clés** : Effet causal **`-3.1763 EUR/MWh/GW`** (`SE = 0.0283`), **`90.88%` PICP (90%)**, **`17.37%` wMAPE**, **`7.5233` Pinball Loss (q50)**.
+
+</td>
+<td width="42%" align="center">
+<img src="images/ergf_merit_order_causal.png" alt="ERGF Merit Order" width="100%" /><br/>
+<sub><b>Figure 1. Effet Merit-Order (DE-LU 2024).</b> Compression des prix spot par les renouvelables.</sub><br/><br/>
+<img src="images/ergf_conformal_forecast.png" alt="ERGF Conformal Forecast" width="100%" /><br/>
+<sub><b>Figure 2. Prévision Conforme 168h.</b> Couverture empirique de 90.88%.</sub>
+</td>
+</tr>
+</table>
 
 ---
 
 ### 7. [FINSG — Financial Narrative & Systemic Graph Intelligence](./FINSG)
-> **Dépôt officiel** : [`elm-as/FINSG`](https://github.com/elm-as/FINSG) &bull; **Datasets** : [`data/financial_corpus.json`](./FINSG/data/financial_corpus.json), [`data/entity_returns.csv`](./FINSG/data/entity_returns.csv) &bull; **Cible** : `NLP Financier & Graphes Temporels de Contagion`
+> **Dépôt officiel** : [`elm-as/FINSG`](https://github.com/elm-as/FINSG) &bull; **Dashboard** : [`artifacts/dashboard.html`](./FINSG/artifacts/dashboard.html) &bull; **Cible** : `NLP Financier & Graphes Temporels de Contagion`
 
-- **Problématique & Architecture** : Alignement temporel strict des communiqués financiers (*zero look-ahead*), extraction de polarité et d'incertitude lexicale, puis propagation de risque sur un graphe de corrélations historiques construit exclusivement avant la date de coupure (12 émetteurs, 34 arêtes temporelles).
-- **Résultats Clés (`artifacts/results.json`)** : **`1.0000` ROC-AUC**, **`1.0000` Macro-F1** sur la détection de régime de stress systémique.
+<table align="center">
+<tr>
+<td width="58%">
+
+- **Données réelles (`yfinance` + Google News RSS)** : `501` jours de cotation (2 ans) et `240` dépêches financières réelles sur `12` valeurs semi-conducteurs & Big Tech.
+- **Méthodologie** : Alignement *zero look-ahead*, scoring lexical de stress narratif, graphe de corrélation pré-cutoff (`53` arêtes $r \ge 0.35$) et propagation 1-hop ($\alpha = 0.40$).
+- **Résultats Clés** : **`0.6250` ROC-AUC**, **`0.6571` Macro-F1** sur la détection de régime de haute volatilité réalisée hors-échantillon.
+
+</td>
+<td width="42%" align="center">
+<img src="images/finsg_systemic_graph.png" alt="FINSG Systemic Graph" width="100%" /><br/>
+<sub><b>Figure 1. Graphe Temporel (12 Tickers, 53 Arêtes).</b> Propagation du stress narratif.</sub><br/><br/>
+<img src="images/finsg_ablation_roc_pr.png" alt="FINSG ROC PR" width="100%" /><br/>
+<sub><b>Figure 2. Courbes ROC & PR.</b> Détection de régime de volatilité haute.</sub>
+</td>
+</tr>
+</table>
 
 ---
 
 ### 8. [CBMX — Condition-Based Maintenance & Survival Intelligence](./CBMX)
-> **Dépôt officiel** : [`elm-as/CBMX`](https://github.com/elm-as/CBMX) &bull; **Dataset** : [`data/turbofan_fleet.csv`](./CBMX/data/turbofan_fleet.csv) &bull; **Cible** : `Analyse de Survie Censurée à Droite & Politique RUL`
+> **Dépôt officiel** : [`elm-as/CBMX`](https://github.com/elm-as/CBMX) &bull; **Dashboard** : [`artifacts/dashboard.html`](./CBMX/artifacts/dashboard.html) &bull; **Cible** : `Analyse de Survie Censurée à Droite & Politique RUL`
 
-- **Problématique & Architecture** : Modélisation conjointe de la dégradation multi-capteurs (60 unités, 6 192 cycles) sous censure à droite par estimateur de Kaplan-Meier, évaluation par *GroupSplit* strict par `unit_id`, et sélection du seuil d'intervention minimisant le coût asymétrique entre panne non planifiée et remplacement préventif.
-- **Résultats Clés (`artifacts/results.json`)** : **`0.9655` Harrell's C-index**, **`10` paliers Kaplan-Meier**, politique optimale à **`1 500.00 EUR/unité`** (seuil `0.05`).
+<table align="center">
+<tr>
+<td width="58%">
+
+- **Données réelles (NASA C-MAPSS FD001)** : `100` moteurs d'entraînement (`20 631` cycles) + `100` moteurs de test censurés à droite (`RUL_FD001.txt`).
+- **Méthodologie** : `LightGBM Regressor` sous `GroupKFold` (5 folds par `unit_id`), estimation de survie Kaplan-Meier (`66` paliers) et optimisation du seuil sous coût asymétrique (`12 000 €` vs `1 500 €`).
+- **Résultats Clés** : **`18.31` cycles RMSE**, **`13.37` cycles MAE**, **`10.05` Score Asymétrique NASA**, **`0.6057` C-index**, coût optimal **`810.00 EUR/unité`**.
+
+</td>
+<td width="42%" align="center">
+<img src="images/cbmx_kaplan_meier_survival.png" alt="CBMX Kaplan Meier" width="100%" /><br/>
+<sub><b>Figure 1. Survie Kaplan-Meier (FD001).</b> Stratification par tercile de dégradation.</sub><br/><br/>
+<img src="images/cbmx_rul_prediction_asymmetric.png" alt="CBMX RUL Predictions" width="100%" /><br/>
+<sub><b>Figure 2. Prédictions RUL (100 Moteurs Test).</b> Parité & erreur asymétrique NASA.</sub>
+</td>
+</tr>
+</table>
 
 ---
 
@@ -340,9 +385,9 @@ Le tableau suivant récapitule les enseignements empiriques fondamentaux dégag�
 | **Pneumonia** | IA Clinique Pédiatrique | 5 856 radiographies | ResNet-18 + Tête MLP + Youden | **99.23% Sensibilité** (390 cas) | La perte asymétrique garantit zéro omission virale (100%) ; Grad-CAM valide les foyers de condensation anatomiques. |
 | **GCMDL** | Microstructure Crypto | 1 000 crypto-actifs | Soft-Voting GBDT + Youden | **0.9996 Tail-Risk AUC** | Un faible ratio de flottant avec fort overhang FDV prédit à 99.9% un effondrement supérieur à -85% du pic. |
 | **ISML** | Chronobiologie & Dépression | 6 532 sujets (113 pays) | GBDT Pondéré + Youden + OLS | **0.9962 Dépression AUC / 98.69% Acc** | Le ratio écran/sommeil > 1.0 déclenche +179% de stress ; l'activité physique constitue un bouclier protecteur (-84% de dépression). |
-| **ERGF** | Énergie & Prix Spot | 2 160 heures (90 jours) | DML Merit-Order + Conformal | **`-2.191 EUR/MWh/GW` · 93.45% PICP** | Chaque GW renouvelable comprime causalement le prix spot ; la calibration conformale garantit la couverture hors-échantillon. |
-| **FINSG** | NLP & Risque Systémique | 12 émetteurs · 60 jours | Scorer Lexical + Graphe Temporel | **1.0000 ROC-AUC · 1.0000 Macro-F1** | La propagation sur graphe pré-cutoff capture la contagion sectorielle sans fuite temporelle. |
-| **CBMX** | Survie & Maintenance | 60 unités (6 192 cycles) | Kaplan-Meier + RUL + Coût Asym. | **0.9655 C-index · 1 500 EUR/unité** | La pente de dérive thermique ordonne fidèlement le risque de panne censuré et réduit le coût de maintenance. |
+| **ERGF** | Énergie & Prix Spot | 8 784 heures (DE-LU 2024) | DML Merit-Order + Conformal | **`-3.176 €/GW` · 90.88% PICP** | Chaque GW renouvelable comprime causalement le prix spot ; 457 h de prix négatifs observées. |
+| **FINSG** | NLP & Risque Systémique | 501j · 240 dépêches · 12 titres | Scorer Lexical + Graphe Temporel | **0.6250 ROC-AUC · 0.6571 Macro-F1** | La propagation sur graphe pré-cutoff capture la contagion sectorielle sans fuite temporelle. |
+| **CBMX** | Survie & Maintenance | 200 moteurs (NASA FD001) | LightGBM GroupKFold + KM | **18.31 RMSE · 10.05 NASA Score** | La maintenance optimisée au seuil 0.90 réduit le coût attendu à 810 €/unité. |
 
 ---
 
