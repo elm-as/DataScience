@@ -6,9 +6,9 @@
 <br/>
 
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)
-![Git Submodules](https://img.shields.io/badge/Git-5%20Submodules%20Hub-F05032?style=flat-square&logo=git&logoColor=white)
+![Git Submodules](https://img.shields.io/badge/Git-8%20Submodules%20Hub-F05032?style=flat-square&logo=git&logoColor=white)
 ![Architectural Charter](https://img.shields.io/badge/Architecture-ElmasCore%20Charter-blue?style=flat-square)
-![Status](https://img.shields.io/badge/Status-5%20Active%20Systems-6366F1?style=flat-square)
+![Status](https://img.shields.io/badge/Status-8%20Active%20Systems-6366F1?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-22C55E?style=flat-square)
 
 <br/>
@@ -22,7 +22,7 @@ Le hub d'orchestration souverain regroupant cinq projets de data science avancé
 
 <table align="center">
 <tr>
-<td align="center"><h2>5</h2><sub>systèmes souverains</sub></td>
+<td align="center"><h2>8</h2><sub>systèmes souverains</sub></td>
 <td align="center"><h2>1,016,508</h2><sub>observations analysées</sub></td>
 <td align="center"><h2>0.95331</h2><sub>PCCF Public (#26 Top 2.0%)</sub></td>
 <td align="center"><h2>99.23%</h2><sub>Pneumonia Sensibilité</sub></td>
@@ -43,6 +43,9 @@ Le hub d'orchestration souverain regroupant cinq projets de data science avancé
    - [3. Pneumonia — Pediatric Chest Radiography Deep Diagnostic System](#3-pneumonia--pediatric-chest-radiography-deep-diagnostic-system)
    - [4. GCMDL — Global Crypto Market Dynamics & Liquidity 2026](#4-gcmdl--global-crypto-market-dynamics--liquidity-2026)
    - [5. ISML — Impact of Social Media on Life (Architecture Tri-Cohortes : 6 532 Sujets sur 113 Pays)](#5-isml--impact-of-social-media-on-life-architecture-tri-cohortes--6-532-sujets-sur-113-pays)
+   - [6. ERGF — European Renewable Grid & Price Forecasting](#6-ergf--european-renewable-grid--price-forecasting)
+   - [7. FINSG — Financial Narrative & Systemic Graph Intelligence](#7-finsg--financial-narrative--systemic-graph-intelligence)
+   - [8. CBMX — Condition-Based Maintenance & Survival Intelligence](#8-cbmx--condition-based-maintenance--survival-intelligence)
 4. [Synthèse Comparative des Enseignements & Conclusions Déclaratives](#synthèse-comparative-des-enseignements--conclusions-déclaratives)
 5. [Protocole de Gouvernance & Synchronisation Multi-Dépôts](#protocole-de-gouvernance--synchronisation-multi-dépôts)
 6. [Clonage & Reproduction Intégrale](#clonage--reproduction-intégrale)
@@ -73,6 +76,9 @@ flowchart TD
     ROOT --> SUB3["Pneumonia (elm-as/Pneumonia)"]
     ROOT --> SUB4["GCMDL (elm-as/GCMDL)"]
     ROOT --> SUB5["ISML (elm-as/ISML)"]
+    ROOT --> SUB6["ERGF (elm-as/ERGF)"]
+    ROOT --> SUB7["FINSG (elm-as/FINSG)"]
+    ROOT --> SUB8["CBMX (elm-as/CBMX)"]
 
     SUB1 --> P_SRC["src/ Domain Architecture"]
     SUB1 --> P_SUB["submissions/ Nelder-Mead Rank-Logit Blend"]
@@ -89,12 +95,19 @@ flowchart TD
     SUB5 --> IS_SRC["src/ Tri-Cohort Architecture (6,532 Subjects)"]
     SUB5 --> IS_DASH["artifacts/ Interactive Plotly Dashboard"]
 
+    SUB6 --> ER_SRC["src/ DML Merit-Order & Conformal Forecast"]
+    SUB7 --> FN_SRC["src/ Financial NLP & Temporal Graph Propagation"]
+    SUB8 --> CB_SRC["src/ Right-Censored Survival & RUL Policy"]
+
     style ROOT fill:#EEF2FF,stroke:#6366F1,color:#1e1b4b
     style SUB1 fill:#ECFDF5,stroke:#10B981,color:#064e3b
     style SUB2 fill:#FEF3C7,stroke:#D97706,color:#78350F
     style SUB3 fill:#FCE7F3,stroke:#DB2777,color:#831843
     style SUB4 fill:#E0F2FE,stroke:#0284C7,color:#0c4a6e
     style SUB5 fill:#F3E8FF,stroke:#8B5CF6,color:#581c87
+    style SUB6 fill:#ECFDF5,stroke:#059669,color:#064e3b
+    style SUB7 fill:#EFF6FF,stroke:#2563EB,color:#1e3a8a
+    style SUB8 fill:#FFF7ED,stroke:#EA580C,color:#7c2d12
 ```
 
 ---
@@ -292,6 +305,30 @@ Pour éliminer les biais d'échantillonnage géographique et démographique, ISM
 
 ---
 
+### 6. [ERGF — European Renewable Grid & Price Forecasting](./ERGF)
+> **Dépôt officiel** : [`elm-as/ERGF`](https://github.com/elm-as/ERGF) &bull; **Dataset** : [`data/eu_grid_hourly.csv`](./ERGF/data/eu_grid_hourly.csv) &bull; **Cible** : `Séries Temporelles Probabilistes, Énergie & Inférence Causale`
+
+- **Problématique & Architecture** : Quantification causale de l'effet *merit-order* des renouvelables sur les prix spot *day-ahead* via *Double Machine Learning* (orthogonalisation contre la charge résiduelle) et prévision probabiliste calibrée par *Split Conformal Prediction* sous validation glissante avec embargo de 24h (5 folds, 2 160 observations horaires).
+- **Résultats Clés (`artifacts/results.json`)** : Effet causal **`-2.1910 EUR/MWh/GW`** (`SE = 0.0150`), **`7.67%` wMAPE**, **`93.45%` PICP (90%)**, **`3.3947` Pinball Loss (q50)**.
+
+---
+
+### 7. [FINSG — Financial Narrative & Systemic Graph Intelligence](./FINSG)
+> **Dépôt officiel** : [`elm-as/FINSG`](https://github.com/elm-as/FINSG) &bull; **Datasets** : [`data/financial_corpus.json`](./FINSG/data/financial_corpus.json), [`data/entity_returns.csv`](./FINSG/data/entity_returns.csv) &bull; **Cible** : `NLP Financier & Graphes Temporels de Contagion`
+
+- **Problématique & Architecture** : Alignement temporel strict des communiqués financiers (*zero look-ahead*), extraction de polarité et d'incertitude lexicale, puis propagation de risque sur un graphe de corrélations historiques construit exclusivement avant la date de coupure (12 émetteurs, 34 arêtes temporelles).
+- **Résultats Clés (`artifacts/results.json`)** : **`1.0000` ROC-AUC**, **`1.0000` Macro-F1** sur la détection de régime de stress systémique.
+
+---
+
+### 8. [CBMX — Condition-Based Maintenance & Survival Intelligence](./CBMX)
+> **Dépôt officiel** : [`elm-as/CBMX`](https://github.com/elm-as/CBMX) &bull; **Dataset** : [`data/turbofan_fleet.csv`](./CBMX/data/turbofan_fleet.csv) &bull; **Cible** : `Analyse de Survie Censurée à Droite & Politique RUL`
+
+- **Problématique & Architecture** : Modélisation conjointe de la dégradation multi-capteurs (60 unités, 6 192 cycles) sous censure à droite par estimateur de Kaplan-Meier, évaluation par *GroupSplit* strict par `unit_id`, et sélection du seuil d'intervention minimisant le coût asymétrique entre panne non planifiée et remplacement préventif.
+- **Résultats Clés (`artifacts/results.json`)** : **`0.9655` Harrell's C-index**, **`10` paliers Kaplan-Meier**, politique optimale à **`1 500.00 EUR/unité`** (seuil `0.05`).
+
+---
+
 ## Synthèse Comparative des Enseignements & Conclusions Déclaratives
 
 Le tableau suivant récapitule les enseignements empiriques fondamentaux dégagés par chaque système :
@@ -303,6 +340,9 @@ Le tableau suivant récapitule les enseignements empiriques fondamentaux dégag�
 | **Pneumonia** | IA Clinique Pédiatrique | 5 856 radiographies | ResNet-18 + Tête MLP + Youden | **99.23% Sensibilité** (390 cas) | La perte asymétrique garantit zéro omission virale (100%) ; Grad-CAM valide les foyers de condensation anatomiques. |
 | **GCMDL** | Microstructure Crypto | 1 000 crypto-actifs | Soft-Voting GBDT + Youden | **0.9996 Tail-Risk AUC** | Un faible ratio de flottant avec fort overhang FDV prédit à 99.9% un effondrement supérieur à -85% du pic. |
 | **ISML** | Chronobiologie & Dépression | 6 532 sujets (113 pays) | GBDT Pondéré + Youden + OLS | **0.9962 Dépression AUC / 98.69% Acc** | Le ratio écran/sommeil > 1.0 déclenche +179% de stress ; l'activité physique constitue un bouclier protecteur (-84% de dépression). |
+| **ERGF** | Énergie & Prix Spot | 2 160 heures (90 jours) | DML Merit-Order + Conformal | **`-2.191 EUR/MWh/GW` · 93.45% PICP** | Chaque GW renouvelable comprime causalement le prix spot ; la calibration conformale garantit la couverture hors-échantillon. |
+| **FINSG** | NLP & Risque Systémique | 12 émetteurs · 60 jours | Scorer Lexical + Graphe Temporel | **1.0000 ROC-AUC · 1.0000 Macro-F1** | La propagation sur graphe pré-cutoff capture la contagion sectorielle sans fuite temporelle. |
+| **CBMX** | Survie & Maintenance | 60 unités (6 192 cycles) | Kaplan-Meier + RUL + Coût Asym. | **0.9655 C-index · 1 500 EUR/unité** | La pente de dérive thermique ordonne fidèlement le risque de panne censuré et réduit le coût de maintenance. |
 
 ---
 
@@ -321,7 +361,7 @@ L'orchestration des dépôts satellites et la cohérence de livraison entre le h
 
 ## Clonage & Reproduction Intégrale
 
-Pour cloner l'ensemble du hub et l'intégralité de ses 5 sous-modules en une seule commande :
+Pour cloner l'ensemble du hub et l'intégralité de ses 8 sous-modules en une seule commande :
 
 ```bash
 git clone --recurse-submodules https://github.com/elm-as/DataScience.git

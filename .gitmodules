@@ -13,3 +13,12 @@
 [submodule "ISML"]
 	path = ISML
 	url = https://github.com/elm-as/ISML.git
+[submodule "ERGF"]
+	path = ERGF
+	url = https://github.com/elm-as/ERGF.git
+[submodule "FINSG"]
+	path = FINSG
+	url = https://github.com/elm-as/FINSG.git
+[submodule "CBMX"]
+	path = CBMX
+	url = https://github.com/elm-as/CBMX.git
