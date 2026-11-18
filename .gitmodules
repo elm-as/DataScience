@@ -22,3 +22,12 @@
 [submodule "CBMX"]
 	path = CBMX
 	url = https://github.com/elm-as/CBMX.git
+[submodule "CHDCF"]
+	path = CHDCF
+	url = https://github.com/elm-as/CHDCF.git
+[submodule "CCARP"]
+	path = CCARP
+	url = https://github.com/elm-as/CCARP.git
+[submodule "BCCRI"]
+	path = BCCRI
+	url = https://github.com/elm-as/BCCRI.git

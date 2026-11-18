@@ -6,9 +6,9 @@
 <br/>
 
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)
-![Git Submodules](https://img.shields.io/badge/Git-8%20Submodules%20Hub-F05032?style=flat-square&logo=git&logoColor=white)
+![Git Submodules](https://img.shields.io/badge/Git-11%20Submodules%20Hub-F05032?style=flat-square&logo=git&logoColor=white)
 ![Architectural Charter](https://img.shields.io/badge/Architecture-ElmasCore%20Charter-blue?style=flat-square)
-![Status](https://img.shields.io/badge/Status-8%20Active%20Systems-6366F1?style=flat-square)
+![Status](https://img.shields.io/badge/Status-11%20Active%20Systems-6366F1?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-22C55E?style=flat-square)
 
 <br/>
@@ -22,7 +22,7 @@ Le hub d'orchestration souverain regroupant cinq projets de data science avancé
 
 <table align="center">
 <tr>
-<td align="center"><h2>8</h2><sub>systèmes souverains</sub></td>
+<td align="center"><h2>11</h2><sub>systèmes souverains</sub></td>
 <td align="center"><h2>1,016,508</h2><sub>observations analysées</sub></td>
 <td align="center"><h2>0.95331</h2><sub>PCCF Public (#26 Top 2.0%)</sub></td>
 <td align="center"><h2>99.23%</h2><sub>Pneumonia Sensibilité</sub></td>
@@ -46,6 +46,9 @@ Le hub d'orchestration souverain regroupant cinq projets de data science avancé
    - [6. ERGF — European Renewable Grid & Price Forecasting](#6-ergf--european-renewable-grid--price-forecasting)
    - [7. FINSG — Financial Narrative & Systemic Graph Intelligence](#7-finsg--financial-narrative--systemic-graph-intelligence)
    - [8. CBMX — Condition-Based Maintenance & Survival Intelligence](#8-cbmx--condition-based-maintenance--survival-intelligence)
+   - [9. CHDCF — Clinical Heart Disease Calibration & Fairness (CDC BRFSS 2022)](#9-chdcf--clinical-heart-disease-calibration--fairness-cdc-brfss-2022)
+   - [10. CCARP — Credit Card Approval Risk & Expected Profit Optimization](#10-ccarp--credit-card-approval-risk--expected-profit-optimization)
+   - [11. BCCRI — Bank Customer Churn & Retention ROI Intelligence](#11-bccri--bank-customer-churn--retention-roi-intelligence)
 4. [Synthèse Comparative des Enseignements & Conclusions Déclaratives](#synthèse-comparative-des-enseignements--conclusions-déclaratives)
 5. [Protocole de Gouvernance & Synchronisation Multi-Dépôts](#protocole-de-gouvernance--synchronisation-multi-dépôts)
 6. [Clonage & Reproduction Intégrale](#clonage--reproduction-intégrale)
@@ -79,6 +82,9 @@ flowchart TD
     ROOT --> SUB6["ERGF (elm-as/ERGF)"]
     ROOT --> SUB7["FINSG (elm-as/FINSG)"]
     ROOT --> SUB8["CBMX (elm-as/CBMX)"]
+    ROOT --> SUB9["CHDCF (elm-as/CHDCF)"]
+    ROOT --> SUB10["CCARP (elm-as/CCARP)"]
+    ROOT --> SUB11["BCCRI (elm-as/BCCRI)"]
 
     SUB1 --> P_SRC["src/ Domain Architecture"]
     SUB1 --> P_SUB["submissions/ Nelder-Mead Rank-Logit Blend"]
@@ -98,6 +104,9 @@ flowchart TD
     SUB6 --> ER_SRC["src/ DML Merit-Order & Conformal Forecast"]
     SUB7 --> FN_SRC["src/ Financial NLP & Temporal Graph Propagation"]
     SUB8 --> CB_SRC["src/ Right-Censored Survival & RUL Policy"]
+    SUB9 --> CH_SRC["src/ Nested OOF Calibration, Proxy Ablation & Fairness"]
+    SUB10 --> CC_SRC["src/ Multi-Table Credit Scoring & Profit Optimization"]
+    SUB11 --> BC_SRC["src/ Leakage Audit, SHAP Levers & Retention ROI"]
 
     style ROOT fill:#EEF2FF,stroke:#6366F1,color:#1e1b4b
     style SUB1 fill:#ECFDF5,stroke:#10B981,color:#064e3b
@@ -108,6 +117,9 @@ flowchart TD
     style SUB6 fill:#ECFDF5,stroke:#059669,color:#064e3b
     style SUB7 fill:#EFF6FF,stroke:#2563EB,color:#1e3a8a
     style SUB8 fill:#FFF7ED,stroke:#EA580C,color:#7c2d12
+    style SUB9 fill:#FEF2F2,stroke:#DC2626,color:#7f1d1d
+    style SUB10 fill:#F0FDF4,stroke:#16A34A,color:#14532d
+    style SUB11 fill:#FDF4FF,stroke:#C026D3,color:#701a75
 ```
 
 ---
@@ -417,6 +429,118 @@ En maintenance aéronautique, prédire la durée de vie résiduelle (*Remaining 
 
 ---
 
+### 9. [CHDCF — Clinical Heart Disease Calibration & Fairness (CDC BRFSS 2022)](./CHDCF)
+> **Dépôt officiel** : [`elm-as/CHDCF`](https://github.com/elm-as/CHDCF) &bull; **Dashboard** : [`artifacts/dashboard.html`](./CHDCF/artifacts/dashboard.html) &bull; **Cible** : `Épidémiologie Cardiovasculaire, Calibration Clinique & Équité`
+
+<table align="center">
+<tr>
+<td width="58%">
+
+#### A. Problématique Clinique & Enjeux Épidémiologiques
+Sur la cohorte populationnelle américaine **CDC BRFSS 2022** (`246 022` adultes, prévalence d'infarctus `5.46 %`), la prédiction du risque cardiovasculaire se heurte à trois défis critiques : l'effet trompeur des proxys cliniques post-événement (`HadAngina`, `ChestScan`), la sous-détection catastrophique au seuil par défaut `0.50` (`20.39 %` de sensibilité) et le risque de disparités de calibration entre groupes démographiques.
+
+#### B. Démarche & Architecture Calibration / Équité
+1. **Ingestion Kaggle (`brfss_downloader.py`)** : Téléchargement et audit d'intégrité de `kamilpytlak/personal-key-indicators-of-heart-disease` (`246 022 × 40`, prétraitement strictement intra-pli).
+2. **Calibration Imbriquée & Ablation des Proxys (`oof_calibrator.py`, `proxy_ablation_runner.py`)** : Comparaison `Full (39 vars)` (`LightGBM + Isotonic`) vs `Non-Proxy` (`LogisticRegression + Platt`) avec attribution SHAP.
+3. **Audit d'Équité & Seuil Clinique `10:1` (`subgroup_fairness.py`, `threshold_optimizer.py`)** : Audit par `Sex`, `AgeCategory`, `RaceEthnicityCategory` et optimisation du seuil décisionnel sous coût asymétrique `10:1`.
+
+#### C. Résultats Métriques Clés
+- **Modèle Complet (`LightGBM + Isotonic`)** : **`0.8861` ROC-AUC**, **`0.4113` PR-AUC**, **`0.0391` Brier Score**, **`0.00017` ECE-10**.
+- **Modèle Prévention Primaire sans Proxys (`LogReg + Platt`)** : **`0.8372` ROC-AUC**, **`0.2500` PR-AUC**, **`0.00268` ECE-10**.
+- **Seuil Clinique Optimal (`0.0909`, coût `10:1`)** : **`68.60%` Sensibilité**, **`89.26%` Spécificité**, coût clinique réduit de `0.4423` à **`0.2730`**.
+
+#### D. Conclusion Scientifique Définitive
+> [!IMPORTANT]
+> **Conclusion de l'étude** :
+> 1. **Calibration isotonique quasi parfaite (`ECE = 0.00017`)** : Des probabilités calibrées hors-pli rendent le seuil analytique `0.0909` directement exploitable en triage clinique, triplant la sensibilité (`20.39%` → `68.60%`).
+> 2. **Transparence de l'ablation des proxys** : Retirer les proxys post-événement réduit l'AUC de `0.8861` à `0.8372`, quantifiant précisément le pouvoir prédictif réellement mobilisable en prévention primaire.
+
+</td>
+<td width="42%" align="center">
+<img src="images/chdcf_calibration_reliability.png" alt="CHDCF Calibration" width="100%" /><br/>
+<sub><b>Figure 1. Fiabilité & Calibration (246 022 Adultes).</b> ECE-10 abaissée à 0.00017.</sub><br/><br/>
+<img src="images/chdcf_threshold_clinical_impact.png" alt="CHDCF Clinical Threshold" width="100%" /><br/>
+<sub><b>Figure 2. Optimisation Clinique (10:1).</b> Sensibilité de 68.60 % au seuil 0.0909.</sub>
+</td>
+</tr>
+</table>
+
+---
+
+### 10. [CCARP — Credit Card Approval Risk & Expected Profit Optimization](./CCARP)
+> **Dépôt officiel** : [`elm-as/CCARP`](https://github.com/elm-as/CCARP) &bull; **Dashboard** : [`artifacts/dashboard.html`](./CCARP/artifacts/dashboard.html) &bull; **Cible** : `Scoring de Crédit Multi-Tables, Zéro Fuite Temporelle & Profit Net`
+
+<table align="center">
+<tr>
+<td width="58%">
+
+#### A. Problématique & Piège de la Fuite Temporelle Multi-Tables
+Sur le jeu multi-tables `rikdifos/credit-card-approval-prediction` (`438 557` dossiers × `1 048 575` mois d'historique), la majorité des notebooks publics souffrent de deux fuites majeures : agrégation de l'historique futur dans les features (`AUC = 0.9988` illusoire) et présence de **`82.35 %` de clients dans des clusters démographiques multi-ID** (`6 943` groupes pour `17 220` dossiers).
+
+#### B. Démarche & Validation `StratifiedGroupKFold` Sans Fuite
+1. **Fenêtrage Temporel Strict (`t_obs = -12`)** : Séparation nette entre fenêtre d'observation ($\le -12$ mois) et fenêtre de performance ($[-11, 0]$), produisant une cohorte propre de `17 220` demandeurs (`156` défauts, `0.906 %`).
+2. **Audit de Duplication & Ablation (`StratifiedGroupKFold`)** : Regroupement strict par empreinte démographique pour bloquer la mémorisation inter-plis.
+3. **Optimisation du Profit Portefeuille** : Calibration *Platt* sur `CatBoost` et calcul de la courbe d'espérance de profit net par taux d'acceptation.
+
+#### C. Résultats Métriques Clés
+- **Leak-Free `StratifiedGroupKFold(5)`** : **`0.9267` ROC-AUC**, **`0.4081` PR-AUC**, **`0.0065` Brier Score**, **`0.0016` ECE-10**, **`0.6784` KS** (vs `0.9988` naïf avec fuite).
+- **Politique de Profit Optimal (`CatBoost + Platt`)** : Seuil optimal **`0.070`** (`98.55 %` d'acceptation, taux de défaut approuvé divisé par 2 à **`0.418 %`**), générant **`2 935 320 €`** de profit portefeuille (**`170.46 €/demandeur`**).
+
+#### D. Conclusion Scientifique Définitive
+> [!IMPORTANT]
+> **Conclusion de l'étude** :
+> 1. **L'illusion du 0.999 AUC en scoring crédit** : Sans coupure temporelle `t_obs = -12` et sans `StratifiedGroupKFold` sur les clusters multi-ID (`82.35 %` des dossiers), les scores de validation surestiment massivement la généralisation réelle.
+> 2. **Maximisation du profit ajusté du risque** : Un filtrage ciblé rejetant seulement `1.45 %` des dossiers les plus risqués coupe de plus de moitié le taux de défaut approuvé et maximise le profit net portefeuille.
+
+</td>
+<td width="42%" align="center">
+<img src="images/ccarp_temporal_window_leakage.png" alt="CCARP Temporal Leakage" width="100%" /><br/>
+<sub><b>Figure 1. Ablation Temporelle & Multi-ID.</b> Écart entre protocole sans fuite (0.9267) et naïf (0.9988).</sub><br/><br/>
+<img src="images/ccarp_expected_profit_curve.png" alt="CCARP Expected Profit" width="100%" /><br/>
+<sub><b>Figure 2. Courbe de Profit Net.</b> Optimum portefeuille à 2.94 M€ (170.46 €/demandeur).</sub>
+</td>
+</tr>
+</table>
+
+---
+
+### 11. [BCCRI — Bank Customer Churn & Retention ROI Intelligence](./BCCRI)
+> **Dépôt officiel** : [`elm-as/BCCRI`](https://github.com/elm-as/BCCRI) &bull; **Dashboard** : [`artifacts/dashboard.html`](./BCCRI/artifacts/dashboard.html) &bull; **Cible** : `Attrition Bancaire, Audit de Fuite Post-Événement & ROI de Rétention`
+
+<table align="center">
+<tr>
+<td width="58%">
+
+#### A. Problématique & Détection de Fuite Post-Événement
+Sur `radheshyamkollipara/bank-customer-churn` (`10 000` clients bancaires, taux d'attrition `20.38 %`), une variable piège — **`Complain`** — affiche une corrélation de **`r = 0.9957`** (`AUC univariée = 0.9984`) car la réclamation est enregistrée *au moment du départ*. L'objectif est d'auditer et purger cette fuite, isoler les leviers d'action réels via SHAP et maximiser le ROI net de rétention.
+
+#### B. Démarche & Simulation Unit-Economics CLV
+1. **Audit de Fuite Automatisé (`leakage_auditor.py`)** : Exclusion obligatoire de `Complain` (`MANDATORY_EXCLUDE_POST_EVENT_LEAKAGE`) et ablation auditée de `Satisfaction Score` (`r = -0.0058`).
+2. **Benchmark Calibré & Partition SHAP (`stratified_benchmark.py`, `shap_lever_segmenter.py`)** : Validation croisée stratifiée 5-folds (`CatBoost`, `LightGBM`, etc.) et séparation du signal SHAP entre leviers actionnables (`52.2 %` : `NumOfProducts`, `IsActiveMember`, `Balance`) et contexte structurel.
+3. **Simulation ROI de Rétention (`retention_roi_simulator.py`)** : Priorisation par espérance de valeur nette (`Net EV = p_cal * save_rate * CLV - cost`) comparée au classement par risque brut et au tirage aléatoire.
+
+#### C. Résultats Métriques Clés
+- **Modèle Purgé de Fuite (`CatBoost`, 5-Fold OOF)** : **`0.8694` ROC-AUC**, **`0.7126` PR-AUC**, **`0.6359` F1 optimal** (seuil `0.31`), **`0.09997` Brier Score**, **`0.0068` ECE**.
+- **Simulation ROI Rétention (`EV / Lever-Targeted`)** : Optimum à **`25 %`** du portefeuille (`2 500` clients ciblés, `179.9` clients sauvés), générant **`+460 015 €` de gain net (`342.2 %` ROI)** — soit **`+19 929 €`** au-dessus d'un ciblage par risque pur.
+
+#### D. Conclusion Scientifique Définitive
+> [!IMPORTANT]
+> **Conclusion de l'étude** :
+> 1. **Hygiène anti-fuite prioritaire** : Purger `Complain` (`r = 0.9957`) fait retomber l'AUC d'un mirage `0.999` à la vraie capacité prédictive pré-départ (`0.8694`).
+> 2. **Ciblage par Espérance de Valeur (EV) > Risque Brut** : Éviter de subventionner les départs structurels à faible élasticité maximise le ROI net (`+460 015 €`, `342.2 %` ROI) tout en réduisant le volume de campagne de 5 points.
+
+</td>
+<td width="42%" align="center">
+<img src="images/bccri_leakage_audit_shap.png" alt="BCCRI Leakage Audit SHAP" width="100%" /><br/>
+<sub><b>Figure 1. Audit de Fuite & Partition SHAP.</b> Purge de Complain (r=0.9957) et 52.2 % de leviers actionnables.</sub><br/><br/>
+<img src="images/bccri_retention_roi_simulation.png" alt="BCCRI Retention ROI" width="100%" /><br/>
+<sub><b>Figure 2. Frontière ROI de Rétention.</b> Gain net de +460 015 € (342.2 % ROI) à 25 % de ciblage.</sub>
+</td>
+</tr>
+</table>
+
+---
+
 ## Synthèse Comparative des Enseignements & Conclusions Déclaratives
 
 Le tableau suivant récapitule les enseignements empiriques fondamentaux dégagés par chaque système :
@@ -431,6 +555,9 @@ Le tableau suivant récapitule les enseignements empiriques fondamentaux dégag�
 | **ERGF** | Énergie & Prix Spot | 8 784 heures (DE-LU 2024) | DML Merit-Order + Conformal | **`-3.176 €/GW` · 90.88% PICP** | Chaque GW renouvelable comprime causalement le prix spot ; 457 h de prix négatifs observées. |
 | **FINSG** | NLP & Risque Systémique | 501j · 240 dépêches · 12 titres | Scorer Lexical + Graphe Temporel | **0.6250 ROC-AUC · 0.6571 Macro-F1** | La propagation sur graphe pré-cutoff capture la contagion sectorielle sans fuite temporelle. |
 | **CBMX** | Survie & Maintenance | 200 moteurs (NASA FD001) | LightGBM GroupKFold + KM | **18.31 RMSE · 10.05 NASA Score** | La maintenance optimisée au seuil 0.90 réduit le coût attendu à 810 €/unité. |
+| **CHDCF** | Épidémiologie Cardiaque | 246 022 adultes (BRFSS) | LightGBM + Isotonic + SHAP | **0.8861 AUC · 0.00017 ECE** | La calibration isotonique au seuil 0.0909 triple la sensibilité clinique (68.60 %) tout en auditént les proxys et l'équité. |
+| **CCARP** | Scoring Crédit | 17 220 dossiers (multi-tables) | CatBoost + Platt + GroupKFold | **0.9267 AUC · 2.94 M€ Profit** | Le fenêtrage `t_obs = -12` et le groupement multi-ID éliminent la fuite (0.9988 → 0.9267) et optimisent le profit net. |
+| **BCCRI** | Rétention & CLV | 10 000 clients bancaires | CatBoost + SHAP + Net EV | **0.8694 AUC · +460 k€ (342% ROI)** | Purger `Complain` (r=0.9957) et cibler par Net EV surpasse le classement par risque brut de +19 929 €. |
 
 ---
 
@@ -449,7 +576,7 @@ L'orchestration des dépôts satellites et la cohérence de livraison entre le h
 
 ## Clonage & Reproduction Intégrale
 
-Pour cloner l'ensemble du hub et l'intégralité de ses 8 sous-modules en une seule commande :
+Pour cloner l'ensemble du hub et l'intégralité de ses 11 sous-modules en une seule commande :
 
 ```bash
 git clone --recurse-submodules https://github.com/elm-as/DataScience.git
