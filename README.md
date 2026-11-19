@@ -128,7 +128,7 @@ flowchart TD
 
 ---
 
-### 1. [PCCF — Predicting Credit Card Fraud (Kaggle S6E11)](./PCCF)
+### 1. [PCCF — Predicting Credit Card Fraud (Kaggle S6E11)](https://github.com/elm-as/PCCF)
 > **Dépôt officiel** : [`elm-as/PCCF`](https://github.com/elm-as/PCCF) &bull; **Kaggle Standing** : **`Rank #26 / 1 294 (Top 2.01%)`** &bull; **Score Public** : **`0.95331 ROC-AUC`**
 
 <table align="center">
@@ -164,8 +164,8 @@ Dans les flux de transactions financières bancaires à très fort déséquilibr
 
 ---
 
-### 2. [GGVCF — Global Gun Violence & Civilian Firearms (2000–2024)](./GGVCF)
-> **Dépôt officiel** : [`elm-as/GGVCF`](https://github.com/elm-as/GGVCF) &bull; **Dashboard** : [`artifacts/dashboard.html`](./GGVCF/artifacts/dashboard.html) &bull; **Cible** : `Économétrie Causale & Criminologie`
+### 2. [GGVCF — Global Gun Violence & Civilian Firearms (2000–2024)](https://github.com/elm-as/GGVCF)
+> **Dépôt officiel** : [`elm-as/GGVCF`](https://github.com/elm-as/GGVCF) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/GGVCF/blob/main/artifacts/dashboard.html) &bull; **Cible** : `Économétrie Causale & Criminologie`
 
 <table align="center">
 <tr>
@@ -201,7 +201,7 @@ Dans le débat international sur les politiques publiques de sécurité, une ass
 
 ---
 
-### 3. [Pneumonia — Pediatric Chest Radiography Deep Diagnostic System](./Pneumonia)
+### 3. [Pneumonia — Pediatric Chest Radiography Deep Diagnostic System](https://github.com/elm-as/Pneumonia)
 > **Dépôt officiel** : [`elm-as/Pneumonia`](https://github.com/elm-as/Pneumonia) &bull; **Benchmark Clinique** : `Cell 2018 (Kermany et al.)` &bull; **Cible** : `Imagerie Médicale & Explicabilité`
 
 <table align="center">
@@ -239,8 +239,8 @@ La pneumonie pédiatrique constitue la première cause infectieuse de mortalité
 
 ---
 
-### 4. [GCMDL — Global Crypto Market Dynamics & Liquidity 2026](./GCMDL)
-> **Dépôt officiel** : [`elm-as/GCMDL`](https://github.com/elm-as/GCMDL) &bull; **Dashboard** : [`artifacts/dashboard.html`](./GCMDL/artifacts/dashboard.html) &bull; **Cible** : `Microstructure Financière & Risque Extrême`
+### 4. [GCMDL — Global Crypto Market Dynamics & Liquidity 2026](https://github.com/elm-as/GCMDL)
+> **Dépôt officiel** : [`elm-as/GCMDL`](https://github.com/elm-as/GCMDL) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/GCMDL/blob/main/artifacts/dashboard.html) &bull; **Cible** : `Microstructure Financière & Risque Extrême`
 
 <table align="center">
 <tr>
@@ -276,8 +276,8 @@ Le marché mondial des crypto-actifs ($2.84 Trillions USD de capitalisation, 57.
 
 ---
 
-### 5. [ISML — Impact of Social Media on Life (Architecture Tri-Cohortes : 6 532 Sujets sur 113 Pays)](./ISML)
-> **Dépôt officiel** : [`elm-as/ISML`](https://github.com/elm-as/ISML) &bull; **Dashboard** : [`artifacts/dashboard.html`](./ISML/artifacts/dashboard.html) &bull; **Cible** : `Psychométrie, Chronobiologie & Dépression Adolescente`
+### 5. [ISML — Impact of Social Media on Life (Architecture Tri-Cohortes : 6 532 Sujets sur 113 Pays)](https://github.com/elm-as/ISML)
+> **Dépôt officiel** : [`elm-as/ISML`](https://github.com/elm-as/ISML) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/ISML/blob/main/artifacts/dashboard.html) &bull; **Cible** : `Psychométrie, Chronobiologie & Dépression Adolescente`
 
 <table align="center">
 <tr>
@@ -317,8 +317,8 @@ Pour éliminer les biais d'échantillonnage géographique et démographique, ISM
 
 ---
 
-### 6. [ERGF — European Renewable Grid & Price Forecasting](./ERGF)
-> **Dépôt officiel** : [`elm-as/ERGF`](https://github.com/elm-as/ERGF) &bull; **Dashboard** : [`artifacts/dashboard.html`](./ERGF/artifacts/dashboard.html) &bull; **Cible** : `Séries Temporelles Probabilistes, Énergie & Inférence Causale`
+### 6. [ERGF — European Renewable Grid & Price Forecasting](https://github.com/elm-as/ERGF)
+> **Dépôt officiel** : [`elm-as/ERGF`](https://github.com/elm-as/ERGF) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/ERGF/blob/main/artifacts/dashboard.html) &bull; **Cible** : `Séries Temporelles Probabilistes, Énergie & Inférence Causale`
 
 <table align="center">
 <tr>
@@ -355,8 +355,8 @@ L'essor massif du solaire et de l'éolien sur le réseau électrique européen t
 
 ---
 
-### 7. [FINSG — Financial Narrative & Systemic Graph Intelligence](./FINSG)
-> **Dépôt officiel** : [`elm-as/FINSG`](https://github.com/elm-as/FINSG) &bull; **Dashboard** : [`artifacts/dashboard.html`](./FINSG/artifacts/dashboard.html) &bull; **Cible** : `NLP Financier & Graphes Temporels de Contagion`
+### 7. [FINSG — Financial Narrative & Systemic Graph Intelligence](https://github.com/elm-as/FINSG)
+> **Dépôt officiel** : [`elm-as/FINSG`](https://github.com/elm-as/FINSG) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/FINSG/blob/main/artifacts/dashboard.html) &bull; **Cible** : `NLP Financier & Graphes Temporels de Contagion`
 
 <table align="center">
 <tr>
@@ -392,8 +392,8 @@ Dans l'écosystème semi-conducteurs et cloud (`NVDA`, `AMD`, `INTC`, `TSM`, `AS
 
 ---
 
-### 8. [CBMX — Condition-Based Maintenance & Survival Intelligence](./CBMX)
-> **Dépôt officiel** : [`elm-as/CBMX`](https://github.com/elm-as/CBMX) &bull; **Dashboard** : [`artifacts/dashboard.html`](./CBMX/artifacts/dashboard.html) &bull; **Cible** : `Analyse de Survie Censurée à Droite & Politique RUL`
+### 8. [CBMX — Condition-Based Maintenance & Survival Intelligence](https://github.com/elm-as/CBMX)
+> **Dépôt officiel** : [`elm-as/CBMX`](https://github.com/elm-as/CBMX) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/CBMX/blob/main/artifacts/dashboard.html) &bull; **Cible** : `Analyse de Survie Censurée à Droite & Politique RUL`
 
 <table align="center">
 <tr>
@@ -429,8 +429,8 @@ En maintenance aéronautique, prédire la durée de vie résiduelle (*Remaining 
 
 ---
 
-### 9. [CHDCF — Clinical Heart Disease Calibration & Fairness (CDC BRFSS 2022)](./CHDCF)
-> **Dépôt officiel** : [`elm-as/CHDCF`](https://github.com/elm-as/CHDCF) &bull; **Dashboard** : [`artifacts/dashboard.html`](./CHDCF/artifacts/dashboard.html) &bull; **Cible** : `Épidémiologie Cardiovasculaire, Calibration Clinique & Équité`
+### 9. [CHDCF — Clinical Heart Disease Calibration & Fairness (CDC BRFSS 2022)](https://github.com/elm-as/CHDCF)
+> **Dépôt officiel** : [`elm-as/CHDCF`](https://github.com/elm-as/CHDCF) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/CHDCF/blob/main/artifacts/dashboard.html) &bull; **Cible** : `Épidémiologie Cardiovasculaire, Calibration Clinique & Équité`
 
 <table align="center">
 <tr>
@@ -467,8 +467,8 @@ Sur la cohorte populationnelle américaine **CDC BRFSS 2022** (`246 022` adultes
 
 ---
 
-### 10. [CCARP — Credit Card Approval Risk & Expected Profit Optimization](./CCARP)
-> **Dépôt officiel** : [`elm-as/CCARP`](https://github.com/elm-as/CCARP) &bull; **Dashboard** : [`artifacts/dashboard.html`](./CCARP/artifacts/dashboard.html) &bull; **Cible** : `Scoring de Crédit Multi-Tables, Zéro Fuite Temporelle & Profit Net`
+### 10. [CCARP — Credit Card Approval Risk & Expected Profit Optimization](https://github.com/elm-as/CCARP)
+> **Dépôt officiel** : [`elm-as/CCARP`](https://github.com/elm-as/CCARP) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/CCARP/blob/main/artifacts/dashboard.html) &bull; **Cible** : `Scoring de Crédit Multi-Tables, Zéro Fuite Temporelle & Profit Net`
 
 <table align="center">
 <tr>
@@ -504,8 +504,8 @@ Sur le jeu multi-tables `rikdifos/credit-card-approval-prediction` (`438 557` do
 
 ---
 
-### 11. [BCCRI — Bank Customer Churn & Retention ROI Intelligence](./BCCRI)
-> **Dépôt officiel** : [`elm-as/BCCRI`](https://github.com/elm-as/BCCRI) &bull; **Dashboard** : [`artifacts/dashboard.html`](./BCCRI/artifacts/dashboard.html) &bull; **Cible** : `Attrition Bancaire, Audit de Fuite Post-Événement & ROI de Rétention`
+### 11. [BCCRI — Bank Customer Churn & Retention ROI Intelligence](https://github.com/elm-as/BCCRI)
+> **Dépôt officiel** : [`elm-as/BCCRI`](https://github.com/elm-as/BCCRI) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/BCCRI/blob/main/artifacts/dashboard.html) &bull; **Cible** : `Attrition Bancaire, Audit de Fuite Post-Événement & ROI de Rétention`
 
 <table align="center">
 <tr>
