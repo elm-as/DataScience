@@ -6,15 +6,15 @@
 <br/>
 
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)
-![Git Submodules](https://img.shields.io/badge/Git-11%20Submodules%20Hub-F05032?style=flat-square&logo=git&logoColor=white)
+![Git Submodules](https://img.shields.io/badge/Git-15%20Submodules%20Hub-F05032?style=flat-square&logo=git&logoColor=white)
 ![Architectural Charter](https://img.shields.io/badge/Architecture-ElmasCore%20Charter-blue?style=flat-square)
-![Status](https://img.shields.io/badge/Status-11%20Active%20Systems-6366F1?style=flat-square)
+![Status](https://img.shields.io/badge/Status-15%20Active%20Systems-6366F1?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-22C55E?style=flat-square)
 
 <br/>
 
 **"From Data to Systems"**  
-Le hub d'orchestration souverain regroupant cinq projets de data science avancée, pipelines compétitifs Kaggle, monographies causales, systèmes d'imagerie clinique, télémétrie de microstructure financière et atlas psychométrique tri-cohortes.
+Le hub d'orchestration souverain regroupant **quinze systèmes** de data science appliquée : compétitions ML Kaggle, épidémiologie clinique, cybersécurité zero-day, supply chain relationnelle, économétrie agricole et climatique, énergie renouvelable, survie industrielle et télémétrie financière.
 
 </div>
 
@@ -22,12 +22,12 @@ Le hub d'orchestration souverain regroupant cinq projets de data science avancé
 
 <table align="center">
 <tr>
-<td align="center"><h2>11</h2><sub>systèmes souverains</sub></td>
-<td align="center"><h2>1,016,508</h2><sub>observations analysées</sub></td>
+<td align="center"><h2>15</h2><sub>systèmes souverains</sub></td>
+<td align="center"><h2>1,483,124</h2><sub>observations auditées</sub></td>
 <td align="center"><h2>0.95331</h2><sub>PCCF Public (#26 Top 2.0%)</sub></td>
-<td align="center"><h2>99.23%</h2><sub>Pneumonia Sensibilité</sub></td>
-<td align="center"><h2>0.9996</h2><sub>GCMDL Tail-Risk AUC</sub></td>
-<td align="center"><h2>0.9962</h2><sub>ISML Dépression AUC</sub></td>
+<td align="center"><h2>80.77%</h2><sub>NIDSZ Recall @ 0.1% FPR</sub></td>
+<td align="center"><h2>+$4.42M</h2><sub>HREOP Économie HRRP</sub></td>
+<td align="center"><h2>0.9658</h2><sub>AGCRS R² Hors-Temps</sub></td>
 </tr>
 </table>
 
@@ -49,6 +49,10 @@ Le hub d'orchestration souverain regroupant cinq projets de data science avancé
    - [9. CHDCF — Clinical Heart Disease Calibration & Fairness (CDC BRFSS 2022)](#9-chdcf--clinical-heart-disease-calibration--fairness-cdc-brfss-2022)
    - [10. CCARP — Credit Card Approval Risk & Expected Profit Optimization](#10-ccarp--credit-card-approval-risk--expected-profit-optimization)
    - [11. BCCRI — Bank Customer Churn & Retention ROI Intelligence](#11-bccri--bank-customer-churn--retention-roi-intelligence)
+   - [12. SCLDO — Supply Chain Late-Delivery & SLA Risk Intelligence (Olist 9 Tables)](#12-scldo--supply-chain-late-delivery--sla-risk-intelligence-olist-9-tables)
+   - [13. HREOP — Hospital 30-Day Readmission & Clinical Triage Optimization (130 US Hospitals)](#13-hreop--hospital-30-day-readmission--clinical-triage-optimization-130-us-hospitals)
+   - [14. NIDSZ — Network Intrusion Detection & Zero-Day Generalization (UNSW-NB15)](#14-nidsz--network-intrusion-detection--zero-day-generalization-unsw-nb15)
+   - [15. AGCRS — Global Agricultural Yield, Climate Shocks & Parametric Crop Insurance](#15-agcrs--global-agricultural-yield-climate-shocks--parametric-crop-insurance)
 4. [Synthèse Comparative des Enseignements & Conclusions Déclaratives](#synthèse-comparative-des-enseignements--conclusions-déclaratives)
 5. [Protocole de Gouvernance & Synchronisation Multi-Dépôts](#protocole-de-gouvernance--synchronisation-multi-dépôts)
 6. [Clonage & Reproduction Intégrale](#clonage--reproduction-intégrale)
@@ -85,6 +89,10 @@ flowchart TD
     ROOT --> SUB9["CHDCF (elm-as/CHDCF)"]
     ROOT --> SUB10["CCARP (elm-as/CCARP)"]
     ROOT --> SUB11["BCCRI (elm-as/BCCRI)"]
+    ROOT --> SUB12["SCLDO (elm-as/SCLDO)"]
+    ROOT --> SUB13["HREOP (elm-as/HREOP)"]
+    ROOT --> SUB14["NIDSZ (elm-as/NIDSZ)"]
+    ROOT --> SUB15["AGCRS (elm-as/AGCRS)"]
 
     SUB1 --> P_SRC["src/ Domain Architecture"]
     SUB1 --> P_SUB["submissions/ Nelder-Mead Rank-Logit Blend"]
@@ -107,6 +115,10 @@ flowchart TD
     SUB9 --> CH_SRC["src/ Nested OOF Calibration, Proxy Ablation & Fairness"]
     SUB10 --> CC_SRC["src/ Multi-Table Credit Scoring & Profit Optimization"]
     SUB11 --> BC_SRC["src/ Leakage Audit, SHAP Levers & Retention ROI"]
+    SUB12 --> SC_SRC["src/ 9-Table OOT Delay, Causal 1-Star & 8:1 SLA Policy"]
+    SUB13 --> HR_SRC["src/ Mortality Purge, Patient GroupKFold & HRRP Triage"]
+    SUB14 --> NI_SRC["src/ Zero-Day LOAO, Low-FPR SOC & Shortcut Ablation"]
+    SUB15 --> AG_SRC["src/ Dedup Panel FE, Climate Shocks & Conformal Insurance"]
 
     style ROOT fill:#EEF2FF,stroke:#6366F1,color:#1e1b4b
     style SUB1 fill:#ECFDF5,stroke:#10B981,color:#064e3b
@@ -120,6 +132,10 @@ flowchart TD
     style SUB9 fill:#FEF2F2,stroke:#DC2626,color:#7f1d1d
     style SUB10 fill:#F0FDF4,stroke:#16A34A,color:#14532d
     style SUB11 fill:#FDF4FF,stroke:#C026D3,color:#701a75
+    style SUB12 fill:#EFF6FF,stroke:#1D4ED8,color:#1e3a8a
+    style SUB13 fill:#FEF2F2,stroke:#B91C1C,color:#7f1d1d
+    style SUB14 fill:#ECFDF5,stroke:#0F766E,color:#134e4a
+    style SUB15 fill:#FEFCE8,stroke:#B45309,color:#78350f
 ```
 
 ---
@@ -541,6 +557,157 @@ Sur `radheshyamkollipara/bank-customer-churn` (`10 000` clients bancaires, taux 
 
 ---
 
+### 12. [SCLDO — Supply Chain Late-Delivery & SLA Risk Intelligence (Olist 9 Tables)](https://github.com/elm-as/SCLDO)
+> **Dépôt officiel** : [`elm-as/SCLDO`](https://github.com/elm-as/SCLDO) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/SCLDO/blob/main/artifacts/dashboard.html) &bull; **Cible** : `Supply Chain E-Commerce, Risque de Retard Pré-Expédition & Politique SLA`
+
+<table align="center">
+<tr>
+<td width="58%">
+
+#### A. Problématique & Enjeux Opérationnels
+Sur le jeu relationnel réel `olistbr/brazilian-ecommerce` (**9 tables**, `99 441` commandes brutes → **`96 470` commandes livrées valides**, taux de retard `8.11 %`), comment anticiper les retards *avant expédition* sans fuite de dates transporteur (`order_delivered_carrier_date`), quantifier l'effet causal réel du retard sur la satisfaction client (`note 1★`), et optimiser les interventions SLA proactives sous coût asymétrique ?
+
+#### B. Démarche & Validation Chronologique Sans Fuite
+1. **Jointure 9 Tables & Historique Vendeur Passé Pur** : Distance géodésique Haversine (`99.51 %` de couverture sur `19 010` codes postaux géolocalisés), ratio fret/prix, délai promis et taux de retard vendeur strictement antérieur (`shift(1)` chronologique).
+2. **Split Out-of-Time Strict & Ablation Fuite Transporteur** : Entraînement `≤ 2018-04-30` (`71 118` commandes, `8.79 %` retards), test hors-temps `2018-05 → 2018-08` (`25 352` commandes, `6.21 %`), CV temporelle expansive 5 plis et calibration isotonique imbriquée.
+3. **Économétrie Causale Retard → Note `1★` & Politique SLA `8:1`** : Standardisation sur 9 groupes de confondants + contre-vérification IPW (120 réplications bootstrap, `n = 95 824`) et optimisation de seuil (`C_proactive = 10 R$` vs `C_loss = 80 R$`).
+
+#### C. Résultats Métriques Clés
+- **Modèle Pré-Expédition Propre (`LightGBM` OOT)** : **`0.7346` ROC-AUC**, **`0.1291` PR-AUC**, **`0.0574` Brier**, **`0.0093` ECE-10** (vs **`0.8456` ROC-AUC / `+0.1110` illusoire** lorsque `order_delivered_carrier_date` fuit).
+- **Falaise Causale Note `1★`** : **`6.59 %`** à l'heure → **`14.37 %`** (`+7.78 pp`) à `1–3j` → **`52.74 %`** (**`+46.15 pp`**) à `4–7j` → **`66.72 %`** (**`+60.13 pp`**) au-delà de `7j`.
+- **Politique SLA Optimale (`τ* = 0.130`)** : **`48.00 %`** de rappel (`21.38 %` ciblées), économisant **`2 477 R$` / 10 000 commandes** (vs `0.00 %` de rappel au seuil `0.50`).
+
+#### D. Conclusion Scientifique Définitive
+> [!IMPORTANT]
+> **Conclusion de l'étude** :
+> 1. **Le seuil critique logistique se situe à J+4** : L'effet causal du retard sur la probabilité d'un avis `1★` bondit brutalement de `+7.78 pp` (`1–3j`) à `+46.15 pp` (`4–7j`), justifiant des interventions préventives avant ce basculement.
+> 2. **Ne jamais inclure les dates transporteur en scoring pré-expédition** : La fuite post-transporteur gonfle artificiellement l'AUC de `+0.1110` et masque les vrais leviers actionnables (délai promis, distance, historique vendeur passé).
+
+</td>
+<td width="42%" align="center">
+<img src="images/scldo_causal_delay_reviews.png" alt="SCLDO Causal Delay to 1-Star Reviews" width="100%" /><br/>
+<sub><b>Figure 1. Effet Causal Retard → Note 1★.</b> Basculement brutal à +46.2 pp (4–7j) et +60.1 pp (>7j).</sub><br/><br/>
+<img src="images/scldo_sla_policy_economics.png" alt="SCLDO SLA Policy Economics" width="100%" /><br/>
+<sub><b>Figure 2. Optimisation SLA 8:1.</b> Économie nette de 2 477 R$ / 10 000 commandes au seuil τ* = 0.130.</sub>
+</td>
+</tr>
+</table>
+
+---
+
+### 13. [HREOP — Hospital 30-Day Readmission & Clinical Triage Optimization (130 US Hospitals)](https://github.com/elm-as/HREOP)
+> **Dépôt officiel** : [`elm-as/HREOP`](https://github.com/elm-as/HREOP) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/HREOP/blob/main/artifacts/dashboard.html) &bull; **Cible** : `Réadmission Hospitalière à 30 Jours, GroupKFold Patient & Capacité Infirmière HRRP`
+
+<table align="center">
+<tr>
+<td width="58%">
+
+#### A. Problématique Clinique & Double Piège Méthodologique
+Sur les `101 766` séjours hospitaliers réels de 130 hôpitaux américains (`brandao/diabetes`, `71 518` patients uniques), deux biais invalident la majorité des modèles publiés : la **censure de mortalité** (inclure les patients décédés ou transférés en soins palliatifs, impossibles à réadmettre) et la **fuite d'identité patient** (`46.0 %` des séjours proviennent de `16 341` patients récurrents qui se retrouvent à la fois en train et en validation sous split aléatoire).
+
+#### B. Démarche & Optimisation Capacitaire HRRP
+1. **Purge de Mortalité/Hospice & Mapping ICD-9** : Exclusion stricte de **`2 423` séjours** (`discharge_disposition_id ∈ {11,13,14,19,20,21}`), cohorte survivante de **`99 343` séjours / `69 990` patients** (`11.39 %` réadmis `<30j`), mapping ICD-9 en groupes cliniques CCS.
+2. **Audit de Fuite `StratifiedGroupKFold` vs `StratifiedKFold` Naïf** : **`0.00 %`** de chevauchement patient contre **`41.57 %`** (`14 214` patients partagés) en split naïf, avec calibration imbriquée `5×3` Platt & Isotonic.
+3. **Politique Infirmière de Transition & Équité** : Optimisation sous contrainte de capacité hospitalière (Top `5 %`–`20 %`, réadmission `$12 000` vs suivi `$600`, efficacité `30 %`) et audit d'équité (`gender`, `race`, `age`).
+
+#### C. Résultats Métriques Clés
+- **Meilleur Modèle Sans Fuite (`LightGBM`, Patient `GroupKFold`)** : **`0.6787` ROC-AUC**, **`0.2365` PR-AUC**, **`0.09549` Brier**, **`0.00236` ECE-10** (`HistGradientBoosting + Isotonic` atteint `0.00048` ECE-10) ; fuite naïve quantifiée jusqu'à **`+0.00431` PR-AUC**.
+- **Optimum Capacitaire HRRP (Top `15 %`, `τ = 0.1745`)** : **`14 902`** sorties suivies, **`32.81 %`** de sensibilité, **`24.91 %` PPV (`2.19×` lift)**, **`1 114`** réadmissions évitées, **`+$4 422 000` d'économie nette (`ROI +0.49×`)** — tandis que Top `5 %` culmine à `ROI +1.08×` (`PPV 34.60 %`, `3.04×` lift).
+
+#### D. Conclusion Scientifique Définitive
+> [!IMPORTANT]
+> **Conclusion de l'étude** :
+> 1. **Le seuil Bayes théorique (`20:1`, `τ = 0.0476`) est économiquement destructeur sous efficacité partielle (`30 %`)** : il mobilise `89.12 %` des sorties et perd `-$13.78M`, alors qu'un ciblage capacitaire au **Top `15 %`** dégage **`+$4.42M` nets**.
+> 2. **Les antécédents d'hospitalisation (`number_inpatient`, de `8.22 %` à `28.09 %` de réadmission) et le mode de sortie (`discharge_disposition_id`) dominent largement la prédiction clinique.**
+
+</td>
+<td width="42%" align="center">
+<img src="images/hreop_leakage_and_calibration.png" alt="HREOP Patient Leakage and Calibration" width="100%" /><br/>
+<sub><b>Figure 1. Audit de Fuite Patient & Calibration.</b> 0.00 % de chevauchement en GroupKFold vs 41.57 % en split naïf.</sub><br/><br/>
+<img src="images/hreop_triage_capacity_economics.png" alt="HREOP HRRP Triage Capacity Economics" width="100%" /><br/>
+<sub><b>Figure 2. Économie Capacitaire HRRP.</b> Pic d'économie nette à +$4.42M au Top 15 % des sorties.</sub>
+</td>
+</tr>
+</table>
+
+---
+
+### 14. [NIDSZ — Network Intrusion Detection & Zero-Day Generalization (UNSW-NB15)](https://github.com/elm-as/NIDSZ)
+> **Dépôt officiel** : [`elm-as/NIDSZ`](https://github.com/elm-as/NIDSZ) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/NIDSZ/blob/main/artifacts/dashboard.html) &bull; **Cible** : `Cybersécurité Réseau, Généralisation Zero-Day (LOAO) & Contrainte Anti-Fatigue SOC`
+
+<table align="center">
+<tr>
+<td width="58%">
+
+#### A. Problématique Cybersécurité & Illusion des Scores Globaux
+Sur le benchmark réseau réel `UNSW-NB15` (**`257 673` flux** : `175 341` train officiel / `82 332` holdout test officiel, 9 familles d'attaques), un `ROC-AUC` global de `0.98+` masque deux réalités critiques d'un vrai SOC : la **fatigue d'alerte** (un FPR de `5 %` inonde les analystes de milliers de fausses alertes/heure) et l'effondrement sur les **familles d'attaques jamais vues (*zero-day*)**.
+
+#### B. Démarche : Ablation Raccourcis Lab, LOAO Zero-Day & Budget FPR `0.1 %`
+1. **Partition Officielle & Audit d'Ablation (`Full-34` vs `Behavioral-24`)** : Zéro mélange train/test (`25.33 %` de chevauchement exact inter-splits audité) et retrait de `10` raccourcis d'en-têtes/tables du banc d'essai (`state`, `swin`, `ct_dst_sport_ltm`… représentant `13.11 %` du SHAP global).
+2. **Protocole *Leave-One-Attack-Family-Out* (LOAO)** : Entraînement en retirant *intégralement* chacune des 7 familles majeures (`Backdoor`, `DoS`, `Worms`, `Exploits`, `Reconnaissance`, `Fuzzers`, `Shellcode`) pour mesurer le vrai rappel *zero-day* face aux `37 000` flux `Normal` du test.
+3. **Points de Fonctionnement SOC & Latence** : Évaluation stricte à **`FPR ≤ 0.1 %`**, `0.5 %`, `1.0 %` + benchmark débit temps réel (`flux/sec`, `µs/flux`).
+
+#### C. Résultats Métriques Clés
+- **Holdout Officiel (`82 332` flux, `LightGBM + Platt OOF`)** : **`0.9810` ROC-AUC**, **`0.9864` PR-AUC**, **`80.77 %` Recall @ FPR ≤ 0.1 %**, **`86.43 %` @ 1.0 %**, **`100 688` flux/sec (`9.93 µs/flux`)**.
+- **Modèle Comportemental Pur (`Behavioral-24`)** : **`0.9809` ROC-AUC**, **`85.08 %` @ 0.5 % FPR**, **`142 948` flux/sec (`7.00 µs/flux`)**, et **améliore la détection zero-day** sur `Exploits` (`+3.33 pp` @ 0.1 % FPR), `Worms` (`+2.27 pp`) et `Fuzzers` (`+0.0256` AUC).
+- **Hétérogénéité Zero-Day LOAO (@ 1.0 % FPR)** : `Backdoor` **`96.40 %`**, `DoS` **`90.93 %`**, `Worms` **`79.55 %`**, mais chute sévère sur `Shellcode` (**`27.25 %`**, `5.03 %` @ 0.1 % FPR) et `Fuzzers` (`24.17 %`) ; `IsolationForest` non supervisé plafonne à `< 7 %`.
+
+#### D. Conclusion Scientifique Définitive
+> [!IMPORTANT]
+> **Conclusion de l'étude** :
+> 1. **Purger les raccourcis de banc d'essai accélère l'inférence (`+42 %`, `7.0 µs/flux`) et renforce la généralisation *zero-day*** sur les exploits et vers inconnus.
+> 2. **Platt bat Isotonic dans la queue extrême `FPR ≤ 0.1 %`** (en évitant les paliers en escalier) ; toutefois, les charges furtives (`Shellcode`, `Fuzzers`) exigent une défense en profondeur au-delà des seules statistiques de flux.
+
+</td>
+<td width="42%" align="center">
+<img src="images/nidsz_zero_day_loao_recall.png" alt="NIDSZ Zero-Day LOAO Recall" width="100%" /><br/>
+<sub><b>Figure 1. Généralisation Zero-Day (LOAO).</b> Rappel sur familles d'attaques jamais vues et gain d'ablation comportementale.</sub><br/><br/>
+<img src="images/nidsz_soc_roc_low_fpr.png" alt="NIDSZ Low-FPR SOC ROC" width="100%" /><br/>
+<sub><b>Figure 2. Frontière Anti-Fatigue SOC.</b> 80.77 % de rappel à FPR ≤ 0.1 % avec calibration Platt OOF.</sub>
+</td>
+</tr>
+</table>
+
+---
+
+### 15. [AGCRS — Global Agricultural Yield, Climate Shocks & Parametric Crop Insurance](https://github.com/elm-as/AGCRS)
+> **Dépôt officiel** : [`elm-as/AGCRS`](https://github.com/elm-as/AGCRS) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/AGCRS/blob/main/artifacts/dashboard.html) &bull; **Cible** : `Sécurité Alimentaire, Stress-Test Climatique & Assurance Agricole Paramétrique Conforme`
+
+<table align="center">
+<tr>
+<td width="58%">
+
+#### A. Problématique Agronomique & Bug Caché de Duplication Multi-Stations
+Sur le panel FAO/Banque Mondiale (`patelris/crop-yield-prediction-dataset`, `28 242` lignes brutes sur `101` pays et `10` cultures vivrières majeures — dont `Maize`, `Cassava`, `Sorghum`, `Yams`, `Plantains`, `Rice, paddy`), un piège caché corrompt l'écrasante majorité des études publiques : une jointure multi-stations duplique jusqu'à **`22×`** le même `(Pays, Culture, Année)` (Inde `22×`, Brésil `11×`), gonflant le jeu de **`+115 %`** et créant une fuite triviale en validation croisée.
+
+#### B. Démarche : Déduplication Stricte, Économétrie Climatique & Prédiction Conforme
+1. **Audit & Purge du Panel** : Réduction de `28 242` → **`13 130` observations uniques `(Area, Item, Year)`** (**`-53.51 %`** de lignes redondantes supprimées) et détection de l'invariance temporelle de la pluie annuelle moyenne FAO.
+2. **Validation Out-of-Time (`2011–2013`) & Spatiale *Leave-One-Region-Out* (6 régions FAO)** : `Ridge Fixed-Effects (α=50)` vs `HistGradientBoosting` vs `LightGBM` sur lags strictement passés, puis **Split-Conformal Adaptatif 90 %**.
+3. **Stress-Test `+2 °C` / `-20 %` Sécheresse & Assurance Paramétrique** : Modèle semi-log quadratique à effets fixes et simulation d'une assurance indicielle déclenchée sous `80 %` du rendement local historique.
+
+#### C. Résultats Métriques Clés
+- **Prévision Hors-Temps `2011–2013` (`Ridge Fixed-Effects`)** : **`R² = 0.9658`**, **`RMSE = 16 314.7 hg/ha`**, **`MAE = 7 722.8`**, **`MAPE = 15.02 %`** ; **LORO 6 régions** : `R² moyen = 0.9536` (`Afrique subsaharienne` 26 pays : `R² = 0.9256`).
+- **Intervalles Conformes Adaptatifs 90 %** : Couverture empirique **`89.77 %`** avec largeur médiane réduite de **`-33.7 %`** (`24 959 hg/ha`) et stabilité par culture (`Cassava 90.24 %`, `Maize 89.45 %`, `Yams 90.32 %`).
+- **Vulnérabilité Climatique & Assurance Paramétrique** : Le **Sorgho** (`-4.82 %` à `+2 °C`, `-6.29 %` en sécheresse `-20 %`) et le **Maïs** (`-7.39 %` en sécheresse) sont les céréales vivrières les plus exposées ; l'**Afrique subsaharienne** affiche le plus haut taux de sinistre (`11.43 %`, prime pure `3.83 %`, risque de base FN `7.80 %`).
+
+#### D. Conclusion Scientifique Définitive
+> [!IMPORTANT]
+> **Conclusion de l'étude** :
+> 1. **La déduplication du panel (`-53.51 %`) et la séparation chronologique sont indispensables** : un modèle linéaire régularisé à effets fixes (`Ridge FE`) surpasse les arbres profonds hors-temps (`R² = 0.9658`) et en transfert géographique (`LORO R² = 0.9536`).
+> 2. **L'assurance paramétrique basée uniquement sur des agrégats climatiques annuels présente un risque de base FN élevé (`7.80 %` en Afrique subsaharienne)**, imposant des indices pluviométriques infra-saisonniers pour une indemnisation équitable.
+
+</td>
+<td width="42%" align="center">
+<img src="images/agcrs_climate_shock_stress_test.png" alt="AGCRS Climate Shock Stress Test" width="100%" /><br/>
+<sub><b>Figure 1. Stress-Test Climatique (+2 °C / -20 % Pluie).</b> Sensibilité des cultures vivrières africaines et mondiales.</sub><br/><br/>
+<img src="images/agcrs_temporal_benchmark_conformal.png" alt="AGCRS Temporal Benchmark and Conformal Intervals" width="100%" /><br/>
+<sub><b>Figure 2. Prévision Hors-Temps & Conformal Adaptatif.</b> R² = 0.9658 et couverture 89.77 % (-33.7 % de largeur).</sub>
+</td>
+</tr>
+</table>
+
+---
+
 ## Synthèse Comparative des Enseignements & Conclusions Déclaratives
 
 Le tableau suivant récapitule les enseignements empiriques fondamentaux dégagés par chaque système :
@@ -558,6 +725,10 @@ Le tableau suivant récapitule les enseignements empiriques fondamentaux dégag�
 | **CHDCF** | Épidémiologie Cardiaque | 246 022 adultes (BRFSS) | LightGBM + Isotonic + SHAP | **0.8861 AUC · 0.00017 ECE** | La calibration isotonique au seuil 0.0909 triple la sensibilité clinique (68.60 %) tout en auditént les proxys et l'équité. |
 | **CCARP** | Scoring Crédit | 17 220 dossiers (multi-tables) | CatBoost + Platt + GroupKFold | **0.9267 AUC · 2.94 M€ Profit** | Le fenêtrage `t_obs = -12` et le groupement multi-ID éliminent la fuite (0.9988 → 0.9267) et optimisent le profit net. |
 | **BCCRI** | Rétention & CLV | 10 000 clients bancaires | CatBoost + SHAP + Net EV | **0.8694 AUC · +460 k€ (342% ROI)** | Purger `Complain` (r=0.9957) et cibler par Net EV surpasse le classement par risque brut de +19 929 €. |
+| **SCLDO** | Supply Chain & SLA | 96 470 commandes (Olist 9 tables) | LightGBM OOT + Causal IPW | **0.7346 AUC · +46.2 pp (4–7j)** | La falaise causale `1★` s'ouvre dès J+4 (+46.2 pp) ; l'alerte SLA 8:1 économise 2 477 R$ / 10k commandes. |
+| **HREOP** | Clinique & Triage HRRP | 99 343 séjours (69 990 patients) | LightGBM Patient GroupKFold | **0.6787 AUC · +$4.42M HRRP** | Purger décès/hospice et grouper par patient élimine 41.57 % de fuite ; le Top 15 % maximise l'économie nette. |
+| **NIDSZ** | Cybersécurité Zero-Day | 257 673 flux (UNSW-NB15) | LightGBM Platt + LOAO | **80.77% @ 0.1% FPR · 143k/s** | L'ablation des raccourcis lab accélère le débit (+42 %) et renforce le zero-day `Exploits`/`Worms`, mais `Shellcode` reste fragile. |
+| **AGCRS** | Agronomie & Climat | 13 130 panel unique (101 pays) | Ridge FE + Conformal Adaptatif | **0.9658 R² · 89.77% PICP** | Dédupliquer -53.51 % révèle la vraie résilience ; Sorgho & Maïs subissent le choc sécheresse (-6.3 % à -7.4 %) et l'Afrique un risque FN de 7.80 %. |
 
 ---
 
@@ -576,7 +747,7 @@ L'orchestration des dépôts satellites et la cohérence de livraison entre le h
 
 ## Clonage & Reproduction Intégrale
 
-Pour cloner l'ensemble du hub et l'intégralité de ses 11 sous-modules en une seule commande :
+Pour cloner l'ensemble du hub et l'intégralité de ses 15 sous-modules en une seule commande :
 
 ```bash
 git clone --recurse-submodules https://github.com/elm-as/DataScience.git
@@ -601,5 +772,5 @@ Consultez **[`ELMAS.md`](./ELMAS.md)** pour le manifeste complet des règles de 
 
 <div align="center">
 <sub>Hub souverain développé par <b>ElmasCore Research & Engineering</b> — "From Data to Systems"</sub><br/>
-<sub>Auteur : <b>Elmas Trésor</b> ([@elm-as](https://github.com/elm-as))</sub>
+<sub>Auteur : <b>Elmas Tresor Oulobo</b> ([@elm-as](https://github.com/elm-as))</sub>
 </div>

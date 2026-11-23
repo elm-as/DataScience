@@ -31,3 +31,15 @@
 [submodule "BCCRI"]
 	path = BCCRI
 	url = https://github.com/elm-as/BCCRI.git
+[submodule "SCLDO"]
+	path = SCLDO
+	url = https://github.com/elm-as/SCLDO.git
+[submodule "HREOP"]
+	path = HREOP
+	url = https://github.com/elm-as/HREOP.git
+[submodule "NIDSZ"]
+	path = NIDSZ
+	url = https://github.com/elm-as/NIDSZ.git
+[submodule "AGCRS"]
+	path = AGCRS
+	url = https://github.com/elm-as/AGCRS.git
