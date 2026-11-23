@@ -6,15 +6,15 @@
 <br/>
 
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)
-![Git Submodules](https://img.shields.io/badge/Git-15%20Submodules%20Hub-F05032?style=flat-square&logo=git&logoColor=white)
+![Git Submodules](https://img.shields.io/badge/Git-16%20Submodules%20Hub-F05032?style=flat-square&logo=git&logoColor=white)
 ![Architectural Charter](https://img.shields.io/badge/Architecture-ElmasCore%20Charter-blue?style=flat-square)
-![Status](https://img.shields.io/badge/Status-15%20Active%20Systems-6366F1?style=flat-square)
+![Status](https://img.shields.io/badge/Status-16%20Active%20Systems-6366F1?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-22C55E?style=flat-square)
 
 <br/>
 
 **"From Data to Systems"**  
-Le hub d'orchestration souverain regroupant **quinze systèmes** de data science appliquée : compétitions ML Kaggle, épidémiologie clinique, cybersécurité zero-day, supply chain relationnelle, économétrie agricole et climatique, énergie renouvelable, survie industrielle et télémétrie financière.
+Le hub d'orchestration souverain regroupant **seize systèmes** de data science appliquée : compétitions ML Kaggle, épidémiologie clinique, cybersécurité zero-day, supply chain relationnelle, économétrie agricole et climatique, croissance créateur YouTube, énergie renouvelable, survie industrielle et télémétrie financière.
 
 </div>
 
@@ -22,8 +22,8 @@ Le hub d'orchestration souverain regroupant **quinze systèmes** de data science
 
 <table align="center">
 <tr>
-<td align="center"><h2>15</h2><sub>systèmes souverains</sub></td>
-<td align="center"><h2>1,483,124</h2><sub>observations auditées</sub></td>
+<td align="center"><h2>16</h2><sub>systèmes souverains</sub></td>
+<td align="center"><h2>1,486,604</h2><sub>observations auditées</sub></td>
 <td align="center"><h2>0.95331</h2><sub>PCCF Public (#26 Top 2.0%)</sub></td>
 <td align="center"><h2>80.77%</h2><sub>NIDSZ Recall @ 0.1% FPR</sub></td>
 <td align="center"><h2>+$4.42M</h2><sub>HREOP Économie HRRP</sub></td>
@@ -53,6 +53,7 @@ Le hub d'orchestration souverain regroupant **quinze systèmes** de data science
    - [13. HREOP - Hospital 30-Day Readmission & Clinical Triage Optimization (130 US Hospitals)](#13-hreop---hospital-30-day-readmission--clinical-triage-optimization-130-us-hospitals)
    - [14. NIDSZ - Network Intrusion Detection & Zero-Day Generalization (UNSW-NB15)](#14-nidsz---network-intrusion-detection--zero-day-generalization-unsw-nb15)
    - [15. AGCRS - Global Agricultural Yield, Climate Shocks & Parametric Crop Insurance](#15-agcrs---global-agricultural-yield-climate-shocks--parametric-crop-insurance)
+   - [16. FZYGA - FuzeIII YouTube Growth & Audience Intelligence (Fuze III, Fiouze & Fuzay2)](#16-fzyga---fuzeiii-youtube-growth--audience-intelligence-fuze-iii-fiouze--fuzay2)
 4. [Synthèse Comparative des Enseignements & Conclusions Déclaratives](#synthèse-comparative-des-enseignements--conclusions-déclaratives)
 5. [Protocole de Gouvernance & Synchronisation Multi-Dépôts](#protocole-de-gouvernance--synchronisation-multi-dépôts)
 6. [Clonage & Reproduction Intégrale](#clonage--reproduction-intégrale)
@@ -93,6 +94,7 @@ flowchart TD
     ROOT --> SUB13["HREOP (elm-as/HREOP)"]
     ROOT --> SUB14["NIDSZ (elm-as/NIDSZ)"]
     ROOT --> SUB15["AGCRS (elm-as/AGCRS)"]
+    ROOT --> SUB16["FZYGA (elm-as/FZYGA)"]
 
     SUB1 --> P_SRC["src/ Domain Architecture"]
     SUB1 --> P_SUB["submissions/ Nelder-Mead Rank-Logit Blend"]
@@ -119,6 +121,7 @@ flowchart TD
     SUB13 --> HR_SRC["src/ Mortality Purge, Patient GroupKFold & HRRP Triage"]
     SUB14 --> NI_SRC["src/ Zero-Day LOAO, Low-FPR SOC & Shortcut Ablation"]
     SUB15 --> AG_SRC["src/ Dedup Panel FE, Climate Shocks & Conformal Insurance"]
+    SUB16 --> FZ_SRC["src/ Multi-Channel YouTube OOT, Title NLP & 5M Roadmap"]
 
     style ROOT fill:#EEF2FF,stroke:#6366F1,color:#1e1b4b
     style SUB1 fill:#ECFDF5,stroke:#10B981,color:#064e3b
@@ -136,6 +139,7 @@ flowchart TD
     style SUB13 fill:#FEF2F2,stroke:#B91C1C,color:#7f1d1d
     style SUB14 fill:#ECFDF5,stroke:#0F766E,color:#134e4a
     style SUB15 fill:#FEFCE8,stroke:#B45309,color:#78350f
+    style SUB16 fill:#EFF6FF,stroke:#0284C7,color:#0c4a6e
 ```
 
 ---
@@ -636,6 +640,40 @@ Sur le panel FAO/Banque Mondiale (`patelris/crop-yield-prediction-dataset`, `28 
 
 ---
 
+### 16. [FZYGA - FuzeIII YouTube Growth & Audience Intelligence (Fuze III, Fiouze & Fuzay2)](https://github.com/elm-as/FZYGA)
+> **Dépôt officiel** : [`elm-as/FZYGA`](https://github.com/elm-as/FZYGA) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/FZYGA/blob/main/artifacts/dashboard.html) &bull; **Cible** : `Économie des Créateurs, NLP des Titres, Modélisation Virale Hors-Temps & Stratégie Cap 5M`
+
+#### A. Problématique & Plafond de Verre sous les 5 Millions
+L'écosystème long-format de FuzeIII (`Fuze III` 3,13 M, `Fiouze` 796 k, `Fuzay²` 551 k, hors Shorts) cumule déjà **4,48 millions d'abonnés** et **`1,91 milliard` de vues** sur **`3 480` vidéos longues**, mais la chaîne principale stagne loin des **5 millions**. Pourquoi ses vues ont-elles reculé depuis l'âge d'or Minecraft, ses chaînes secondaires captent-elles ses meilleurs concepts d'acquisition, et quels formats concrets peuvent débloquer le cap des 5M ?
+
+#### B. Démarche : Audit Complet 3 Chaînes, NLP Titres & Modélisation Hors-Temps
+1. **Catalogue Intégral Long-Format (`youtube_catalog.py`)** : Analyse des **`3 480` vidéos réelles** (`2 937` `Fuze III`, `368` `Fiouze`, `175` `Fuzay²`), classées en 7 piliers éditoriaux et ordonnées chronologiquement en 10 époques.
+2. **Audit de Fuite d'Audience & Tests Mann-Whitney U (`channel_diagnostics.py`, `growth_strategy.py`)** : Mesure du rendement par 100 abonnés, de la fatigue des séries numérotées, de la courbe de durée optimale et recensement des hits secondaires dépassant la médiane de `Fuze III`.
+3. **Modèle Résiduel Hors-Temps (`viral_predictor.py`) & NLP Titres (`title_nlp.py`)** : Entraînement sur les `80 %` les plus anciens (`2 783` vidéos) et test sur les `20 %` plus récents (`697` vidéos) uniquement à partir de variables connues *avant publication* + attribution TreeSHAP.
+
+<p align="center">
+  <img src="images/fzyga_channel_trajectory.png" alt="FZYGA Channel Trajectory and Efficiency" width="88%" /><br/>
+  <sub><b>Figure 1. Trajectoire Historique (10 Époques) & Rendement par Chaîne.</b> Contraction de 961k à 609k sur Fuze III pendant que Fiouze atteint 56,2 vues/100 abonnés.</sub>
+</p>
+
+#### C. Résultats Métriques Clés
+- **Contraction & Dispersion** : Sur `Fuze III`, la médiane passe de **`961 000`** (Époque 8) à **`609 000`** (Époque 10, **`-36,6 %`**). En parallèle, **`Fiouze`** affiche **`+219,5 %`** de rendement par abonné ($p = 7,4 \times 10^{-99}$), et **`121` vidéos** de `Fiouze`/`Fuzay²` battent la médiane récente de `Fuze III` (`643,5 k`), dont **`57` hits à `>= 1 M`** (`1,9 M` *Serveur abandonné*, `1,8 M` *Base de Michou*, `3,0 M` *100 Jours RAFT*, `929 k` *Ouvrir un bar* sur `Fuzay²`).
+- **Modèle Hors-Temps (`697` vidéos test)** : **`HistGradientBoosting` résiduel** atteint **`R² = 0.4860`**, **Spearman $\rho = 0.6471$** et **`0.7661` ROC-AUC** de détection des *breakout hits* (`Ridge` atteint **`0.7853` AUC**, `LightGBM` **`0.4606` R² / `0.7624` AUC** vs `0.3970` / `0.3523` baseline naïve).
+- **Leviers Formats & Titres** : Concept unique vs série numérotée **`+31,3 %`** ($p = 2,3 \times 10^{-14}$ ; `25,3 %` du poids SHAP), format **`25+ min`** **`+22,4 %`** (`46,5 %` de *breakout hits* au-delà de `45 min`), **Simulations IA** **`+52,1 %`** ($p = 1,4 \times 10^{-6}$, Scorecard **`100/100`**), **Enjeux Financiers** **`+28,4 %`**.
+
+#### D. Conclusion en Clair
+> [!IMPORTANT]
+> **Ce que montre l'étude concrètement** :
+> 1. **Fuze III n'a pas un problème d'idées, il disperse ses meilleures vidéos sur ses petites chaînes** : Plus de **120 vidéos** publiées sur `Fiouze` et `Fuzay²` font mieux que la moyenne actuelle de `Fuze III` (dont **57 vidéos au-dessus du million de vues**). En envoyant ses gros concepts grand public (simulations IA, rachat d'un serveur, collab Michou, ouverture d'un bar) sur ses chaînes secondaires, il empêche la chaîne principale de recruter de nouveaux abonnés.
+> 2. **Pour passer les 5 millions, il faut arrêter les numéros d'épisodes et miser sur les grands films autonomes de 35-45 min** : Les séries numérotées font chuter les vues de **24 %**, alors que les concepts uniques autour des **simulations IA (`+52 %`)**, des **vrais enjeux d'argent (`+28 %`)** et des **grands défis IRL** (Europe, USA, Van) sont ceux qui dépassent le million et convertissent un public qui ne joue pas à Minecraft.
+
+<p align="center">
+  <img src="images/fzyga_title_nlp_and_5m_roadmap.png" alt="FZYGA Title NLP and 5M Scorecard" width="88%" /><br/>
+  <sub><b>Figure 2. NLP des Titres & Scorecard Cap 5 Millions.</b> Les simulations IA (+52,1 %) et enjeux financiers (+28,4 %) surclassent largement les séries numérotées (-23,9 %).</sub>
+</p>
+
+---
+
 ## Synthèse Comparative des Enseignements & Conclusions Déclaratives
 
 Le tableau suivant récapitule les enseignements empiriques fondamentaux dégagés par chaque système :
@@ -657,6 +695,7 @@ Le tableau suivant récapitule les enseignements empiriques fondamentaux dégag�
 | **HREOP** | Clinique & Triage HRRP | 99 343 séjours (69 990 patients) | LightGBM Patient GroupKFold | **0.6787 AUC · +$4.42M HRRP** | Purger décès/hospice et grouper par patient élimine 41.57 % de fuite ; le Top 15 % maximise l'économie nette. |
 | **NIDSZ** | Cybersécurité Zero-Day | 257 673 flux (UNSW-NB15) | LightGBM Platt + LOAO | **80.77% @ 0.1% FPR · 143k/s** | L'ablation des raccourcis lab accélère le débit (+42 %) et renforce le zero-day `Exploits`/`Worms`, mais `Shellcode` reste fragile. |
 | **AGCRS** | Agronomie & Climat | 13 130 panel unique (101 pays) | Ridge FE + Conformal Adaptatif | **0.9658 R² · 89.77% PICP** | Dédupliquer -53.51 % révèle la vraie résilience ; Sorgho & Maïs subissent le choc sécheresse (-6.3 % à -7.4 %) et l'Afrique un risque FN de 7.80 %. |
+| **FZYGA** | Économie Créateurs YouTube | 3 480 vidéos (3 chaînes FuzeIII) | HGB / LightGBM Résiduel OOT + SHAP | **0.486 R² · 0.785 Hit AUC** | 121 hits Fiouze/Fuzay² battent la médiane Fuze III (57 >= 1M) ; rapatrier IA (+52 %), Business (+28 %) et formats 35-45 min débloque le cap 5M. |
 
 ---
 
@@ -675,7 +714,7 @@ L'orchestration des dépôts satellites et la cohérence de livraison entre le h
 
 ## Clonage & Reproduction Intégrale
 
-Pour cloner l'ensemble du hub et l'intégralité de ses 15 sous-modules en une seule commande :
+Pour cloner l'ensemble du hub et l'intégralité de ses 16 sous-modules en une seule commande :
 
 ```bash
 git clone --recurse-submodules https://github.com/elm-as/DataScience.git
