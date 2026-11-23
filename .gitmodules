@@ -43,6 +43,3 @@
 [submodule "AGCRS"]
 	path = AGCRS
 	url = https://github.com/elm-as/AGCRS.git
-[submodule "FZYGA"]
-	path = FZYGA
-	url = https://github.com/elm-as/FZYGA.git
