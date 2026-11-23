@@ -147,10 +147,6 @@ flowchart TD
 ### 1. [PCCF - Predicting Credit Card Fraud (Kaggle S6E11)](https://github.com/elm-as/PCCF)
 > **Dépôt officiel** : [`elm-as/PCCF`](https://github.com/elm-as/PCCF) &bull; **Kaggle Standing** : **`Rank #26 / 1 294 (Top 2.01%)`** &bull; **Score Public** : **`0.95331 ROC-AUC`**
 
-<table align="center">
-<tr>
-<td width="58%">
-
 #### A. Problématique & Enjeux Fondamentaux
 Dans les flux de transactions financières bancaires à très fort déséquilibre de classe (~1 transaction frauduleuse pour 175 régulières sur 1 000 000 d'enregistrements), comment détecter la fraude sans dégrader l'expérience des flux légitimes ? L'enjeu critique réside dans l'exploitation des données tabulaires synthétiques issues de générateurs profonds (CTGAN / Copules) : ces générateurs laissent-ils des traces spectrales exploitables dans les décimales des montants et la distribution des chiffres qui permettent de surpasser les approches classiques ?
 
@@ -164,28 +160,21 @@ Dans les flux de transactions financières bancaires à très fort déséquilibr
 - Gain de performance : **+0.00496** par rapport à la baseline locale (0.94835).
 - Progression : Ascension de **598 places** au leaderboard mondial en 24 heures.
 
+<p align="center">
+  <img src="images/model_benchmark_auc.png" alt="PCCF Model Benchmark" width="88%" /><br/>
+  <sub><b>Progression des Architectures.</b> Gain systématique de l'assemblage Rank-Logit vers le podium Kaggle.</sub>
+</p>
+
 #### D. Conclusion en Clair
 > [!IMPORTANT]
 > **Ce que montre l'étude concrètement** :
 > 1. **Les petits détails des montants trahissent les fraudes** : Regarder simplement les centimes et les premiers chiffres des paiements (loi de Benford) donne plus d'indices de fraude que des centaines de calculs complexes. Sur un million de paiements, ces détails suffisent à repérer des anomalies invisibles à l'oeil nu.
 > 2. **Plusieurs regards différents valent mieux qu'un seul super-modèle** : Combiner des modèles simples et des arbres de décision différents réduit fortement les erreurs, car ils ne se trompent pas sur les mêmes transactions.
 
-</td>
-<td width="42%" align="center">
-<img src="images/model_benchmark_auc.png" alt="PCCF Model Benchmark" width="100%" /><br/>
-<sub><b>Progression des Architectures.</b> Gain systématique de l'assemblage Rank-Logit vers le podium Kaggle.</sub>
-</td>
-</tr>
-</table>
-
 ---
 
 ### 2. [GGVCF - Global Gun Violence & Civilian Firearms (2000-2024)](https://github.com/elm-as/GGVCF)
 > **Dépôt officiel** : [`elm-as/GGVCF`](https://github.com/elm-as/GGVCF) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/GGVCF/blob/main/artifacts/dashboard.html) &bull; **Cible** : `Économétrie Causale & Criminologie`
-
-<table align="center">
-<tr>
-<td width="58%">
 
 #### A. Problématique & Enjeux Fondamentaux
 Dans le débat international sur les politiques publiques de sécurité, une assertion intuitive prévaut : *plus une société civile est saturée en armes à feu, plus son taux d'homicide par arme à feu serait élevé*. Cette relation est-elle confirmée empiriquement à l'échelle mondiale, ou s'agit-il d'une illusion écologique masquant des facteurs macroéconomiques et institutionnels profonds ?
@@ -201,28 +190,21 @@ Dans le débat international sur les politiques publiques de sécurité, une ass
 - **Poids de l'inégalité (Gini)** : **$59.8\%$** de la variance expliquée (Random Forest).
 - **Élasticité protectrice du PIB** : $\beta = -0.3491$ ($p = 0.084$), attestant qu'une croissance économique de 10% diminue les homicides de ~3.5%.
 
+<p align="center">
+  <img src="images/quadrant_scatter.png" alt="GGVCF Quadrant Scatter" width="88%" /><br/>
+  <sub><b>Le Paradoxe Empirique.</b> Découplage total entre densité d'armes civiles et taux d'homicide par arme.</sub>
+</p>
+
 #### D. Conclusion en Clair
 > [!IMPORTANT]
 > **Ce que montre l'étude concrètement** :
 > 1. **Avoir plus d'armes dans un pays ne veut pas dire plus d'homicides** : À l'échelle mondiale, il n'y a aucun lien direct entre le nombre d'armes détenues par des civils et le taux de meurtres. La Suisse et la Serbie comptent beaucoup d'armes mais très peu d'homicides (< 0.5 pour 100 000 habitants), alors que le Salvador ou la Jamaïque subissent une violence extrême avec peu d'armes civiles.
 > 2. **Ce qui fait exploser la violence, c'est la pauvreté et les inégalités** : Les écarts de richesse (indice de Gini) et la faiblesse de la justice expliquent l'essentiel des homicides. Réduire la violence passe d'abord par réduire les inégalités et renforcer les institutions, pas seulement par compter les armes.
 
-</td>
-<td width="42%" align="center">
-<img src="images/quadrant_scatter.png" alt="GGVCF Quadrant Scatter" width="100%" /><br/>
-<sub><b>Le Paradoxe Empirique.</b> Découplage total entre densité d'armes civiles et taux d'homicide par arme.</sub>
-</td>
-</tr>
-</table>
-
 ---
 
 ### 3. [Pneumonia - Pediatric Chest Radiography Deep Diagnostic System](https://github.com/elm-as/Pneumonia)
 > **Dépôt officiel** : [`elm-as/Pneumonia`](https://github.com/elm-as/Pneumonia) &bull; **Benchmark Clinique** : `Cell 2018 (Kermany et al.)` &bull; **Cible** : `Imagerie Médicale & Explicabilité`
-
-<table align="center">
-<tr>
-<td width="58%">
 
 #### A. Problématique & Enjeux Fondamentaux
 La pneumonie pédiatrique constitue la première cause infectieuse de mortalité chez les enfants de moins de 5 ans dans le monde. Dans les centres de triage hospitaliers sous tension, les radiographies thoraciques antéro-postérieures présentent un risque majeur : un faux négatif (enfant malade renvoyé à domicile) peut s'avérer fatal. Comment concevoir un modèle de vision par ordinateur garantissant une sensibilité clinique quasi absolue tout en distinguant les étiologies bactériennes des virales pour prévenir l'antibiorésistance ?
@@ -239,28 +221,21 @@ La pneumonie pédiatrique constitue la première cause infectieuse de mortalité
 - **Détection des Pneumonies Bactériennes** : **`98.76%` (239/242)**.
 - **Discrimination Globale** : **`0.9415` ROC-AUC** et **`0.9632` PR-AUC** sur les 624 patients test.
 
+<p align="center">
+  <img src="images/pneumonia_gradcam_panel.png" alt="Pneumonia Grad-CAM Panel" width="88%" /><br/>
+  <sub><b>Explicabilité Clinique Grad-CAM.</b> Localisation rigoureuse des consolidations et infiltrats parenchymateux.</sub>
+</p>
+
 #### D. Conclusion en Clair
 > [!IMPORTANT]
 > **Ce que montre l'étude concrètement** :
 > 1. **Ne presque jamais renvoyer un enfant malade chez lui** : En pénalisant beaucoup plus fort l'erreur qui consiste à rater une pneumonie, le système repère **99.23 %** des enfants malades (387 sur 390, et 100 % des formes virales), ce qui en fait un vrai filet de sécurité aux urgences pédiatriques.
 > 2. **L'IA regarde bien les poumons, pas les bords de la radio** : Les cartes de chaleur montrent que le modèle pointe exactement les taches infectieuses dans les poumons (et aide à distinguer virus et bactérie pour éviter de donner des antibiotiques inutilement).
 
-</td>
-<td width="42%" align="center">
-<img src="images/pneumonia_gradcam_panel.png" alt="Pneumonia Grad-CAM Panel" width="100%" /><br/>
-<sub><b>Explicabilité Clinique Grad-CAM.</b> Localisation rigoureuse des consolidations et infiltrats parenchymateux.</sub>
-</td>
-</tr>
-</table>
-
 ---
 
 ### 4. [GCMDL - Global Crypto Market Dynamics & Liquidity 2026](https://github.com/elm-as/GCMDL)
 > **Dépôt officiel** : [`elm-as/GCMDL`](https://github.com/elm-as/GCMDL) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/GCMDL/blob/main/artifacts/dashboard.html) &bull; **Cible** : `Microstructure Financière & Risque Extrême`
-
-<table align="center">
-<tr>
-<td width="58%">
 
 #### A. Problématique & Enjeux Fondamentaux
 Le marché mondial des crypto-actifs ($2.84 Trillions USD de capitalisation, 57.72% de dominance Bitcoin) est caractérisé par une concentration extrême du capital et des asymétries de liquidité massives. De nombreux actifs affichent des valorisations entièrement diluées (FDV) artificiellement gonflées masquant des carnets d'ordres désertiques, où les déblocages de tokens déclenchent des chutes brutales. Comment classifier les régimes réels de rotation de liquidité et modéliser le risque extrême d'effondrement cyclique (>85% du pic historique) ?
@@ -270,6 +245,11 @@ Le marché mondial des crypto-actifs ($2.84 Trillions USD de capitalisation, 57.
 2. **Ingénierie de microstructure financière** : Calcul de la vitesse de turnover $V = \text{Volume}_{24h} / \text{MCap}$, proxy d'illiquidité d'Amihud, estimateur de spread de volatilité de Corwin-Schultz et coefficient de dilution FDV.
 3. **Ensemble multi-classes soft-voting 5-folds** : Combinaison LightGBM et CatBoost pour les 4 régimes de turnover.
 4. **Prédicteur de risque extrême (Tail-Risk >85%)** : Modélisation non-linéaire avec optimisation de seuil décisionnel via Youden $J$.
+
+<p align="center">
+  <img src="images/gcmdl_liquidity_map.png" alt="GCMDL Microstructure Map" width="88%" /><br/>
+  <sub><b>Cartographie de Microstructure.</b> Distribution multidimensionnelle des 1 000 actifs crypto selon leur liquidité réelle.</sub>
+</p>
 
 #### C. Résultats Métriques Clés
 - **Classification du Turnover (Tâche 1)** : **`99.50%` Précision**, **`0.9958` Macro F1**, **`0.0141` Log-Loss**, **`0.0073` Brier Multi-Score**.
@@ -282,22 +262,10 @@ Le marché mondial des crypto-actifs ($2.84 Trillions USD de capitalisation, 57.
 > 1. **Une grosse valorisation crypto peut cacher un marché vide** : Plus de 40 % des 1 000 plus grosses cryptomonnaies manquent en réalité d'acheteurs. Dès que quelques gros porteurs vendent, le prix s'effondre instantanément.
 > 2. **Les projets qui gardent trop de tokens bloqués finissent presque toujours par s'écrouler** : Quand très peu de jetons circulent au lancement mais qu'une masse énorme reste à débloquer plus tard, le risque de chute de plus de 85 % est quasiment certain (prédit à 99.9 %). C'est un signal d'alerte simple à vérifier avant d'investir.
 
-</td>
-<td width="42%" align="center">
-<img src="images/gcmdl_liquidity_map.png" alt="GCMDL Microstructure Map" width="100%" /><br/>
-<sub><b>Cartographie de Microstructure.</b> Distribution multidimensionnelle des 1 000 actifs crypto selon leur liquidité réelle.</sub>
-</td>
-</tr>
-</table>
-
 ---
 
 ### 5. [ISML - Impact of Social Media on Life (Architecture Tri-Cohortes : 6 532 Sujets sur 113 Pays)](https://github.com/elm-as/ISML)
 > **Dépôt officiel** : [`elm-as/ISML`](https://github.com/elm-as/ISML) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/ISML/blob/main/artifacts/dashboard.html) &bull; **Cible** : `Psychométrie, Chronobiologie & Dépression Adolescente`
-
-<table align="center">
-<tr>
-<td width="58%">
 
 #### A. Problématique & Enjeux Fondamentaux
 L'expansion des plateformes sociales algorithmiques (TikTok, Instagram, YouTube) pose une question de santé publique globale : à partir de quel seuil d'exposition numérique bascule-t-on dans la rupture chronobiologique, la dégradation du sommeil, la détresse psychologique et l'effondrement académique ? Cette dynamique est-elle universelle à travers les cultures et les systèmes éducatifs internationaux ? Quels sont les facteurs protecteurs concrets capables de mitiger le risque de dépression clinique chez les adolescents ?
@@ -308,11 +276,21 @@ Pour éliminer les biais d'échantillonnage géographique et démographique, ISM
 2. **Cohorte 2 (Atlas Global, N = 832, 113 Nations)** : Enquête internationale standardisée analysant l'addiction numérique, la fréquence des conflits interpersonnels et la dégradation de la santé mentale à travers 113 pays.
 3. **Cohorte 3 (Dépression Clinique Adolescente, N = 1 200, Âges 13-19)** : Télémétrie sur le temps d'écran nocturne, l'activité physique et la détection du statut dépressif clinique ($2.58\%$ de prévalence, 31 cas réels).
 
+<p align="center">
+  <img src="images/isml_behavioral_quadrant.png" alt="ISML Behavioral Quadrant" width="88%" /><br/>
+  <sub><b>Figure 1. Quadrant Écran vs Sommeil (4 500 Étudiants).</b> Rupture chronobiologique nette.</sub>
+</p>
+
 #### C. Résultats Métriques Clés
 - **Cohorte 1 (Impact Global 3 Classes)** : **`98.69%` Précision**, **`0.9654` Macro F1**, **`0.9461` F1** sur la classe rare critique `Négatif`.
 - **Cohorte 1 (Stress Psychométrique PSS)** : **`0.6332` $R^2$**, **$\rho = 0.7500$ ($p < 10^{-15}$)** de corrélation de rang de Spearman.
 - **Cohorte 2 (Atlas 113 Nations)** : **$r = -0.6668$** entre addiction et santé mentale ; **$r = +0.6642$** entre addiction et conflits ; **$61.42\%$** des étudiants rapportent un impact négatif sévère sur leurs études.
 - **Cohorte 3 (Dépression Adolescente)** : **`0.9962` ROC-AUC**, **`0.9558` PR-AUC**, **`93.55%` Sensibilité Clinique** (29/31 cas détectés), **`100.00%` Spécificité**, **`0.9355` Youden $J$** au seuil optimal $\tau^* = 0.220$.
+
+<p align="center">
+  <img src="images/isml_teen_depression_clinical_curves.png" alt="ISML Teen Depression Curves" width="88%" /><br/>
+  <sub><b>Figure 2. Courbes ROC & PR Dépression Adolescente.</b> Sensibilité clinique de 93.55% à AUC = 0.9962.</sub>
+</p>
 
 #### D. Conclusion en Clair
 > [!IMPORTANT]
@@ -321,24 +299,10 @@ Pour éliminer les biais d'échantillonnage géographique et démographique, ISM
 > 2. **Universalité transculturelle de la friction sociale ($r = +0.6642$)** : À travers 113 nations, l'addiction numérique dégrade invariablement la santé mentale ($r = -0.6668$) en multipliant les conflits interpersonnels familiaux et amicaux.
 > 3. **L'activité physique comme bouclier protecteur clinique (-84% de risque)** : Chez les adolescents, le manque de sommeil est le principal facteur de vulnérabilité ($r = -0.1906$), mais la pratique sportive régulière neutralise significativement l'impact des écrans, réduisant la probabilité de dépression clinique de **84%**, même à temps d'écran élevé.
 
-</td>
-<td width="42%" align="center">
-<img src="images/isml_behavioral_quadrant.png" alt="ISML Behavioral Quadrant" width="100%" /><br/>
-<sub><b>Figure 1. Quadrant Écran vs Sommeil (4 500 Étudiants).</b> Rupture chronobiologique nette.</sub><br/><br/>
-<img src="images/isml_teen_depression_clinical_curves.png" alt="ISML Teen Depression Curves" width="100%" /><br/>
-<sub><b>Figure 2. Courbes ROC & PR Dépression Adolescente.</b> Sensibilité clinique de 93.55% à AUC = 0.9962.</sub>
-</td>
-</tr>
-</table>
-
 ---
 
 ### 6. [ERGF - European Renewable Grid & Price Forecasting](https://github.com/elm-as/ERGF)
 > **Dépôt officiel** : [`elm-as/ERGF`](https://github.com/elm-as/ERGF) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/ERGF/blob/main/artifacts/dashboard.html) &bull; **Cible** : `Séries Temporelles Probabilistes, Énergie & Inférence Causale`
-
-<table align="center">
-<tr>
-<td width="58%">
 
 #### A. Problématique & Enjeux Énergétiques
 L'essor massif du solaire et de l'éolien sur le réseau électrique européen transforme la formation des prix spot *day-ahead* : à demande égale, l'injection renouvelable à coût marginal quasi nul évince les centrales thermiques et multiplie les épisodes de prix négatifs. Comment isoler **causalement** cet effet *merit-order* sans biais de confusion lié à la demande, et produire des intervalles de prévision probabilistes calibrés sans fuite temporelle ?
@@ -348,10 +312,20 @@ L'essor massif du solaire et de l'éolien sur le réseau électrique européen t
 2. **Inférence Causale Double ML (`merit_order_dml.py`)** : Orthogonalisation de Frisch-Waugh-Lovell du traitement renouvelable (GW) et du prix spot par rapport à la charge électrique.
 3. **Prévision Conforme Glissante (`quantile_conformal.py` & `rolling_backtest.py`)** : Features strictement causales (lags `t`, `t-24`) évaluées sur **6 folds *rolling-origin*** avec fenêtre d'**embargo de 24h** et calibration conformale sur 20 % disjoints.
 
+<p align="center">
+  <img src="images/ergf_merit_order_causal.png" alt="ERGF Merit Order" width="88%" /><br/>
+  <sub><b>Figure 1. Effet Merit-Order (DE-LU 2024).</b> Compression des prix spot par les renouvelables et 457 h négatives.</sub>
+</p>
+
 #### C. Résultats Métriques Clés
 - **Effet Causal *Merit-Order* (DML)** : **`-3.1763 EUR/MWh/GW`** ($\text{SE} = 0.0283$).
 - **Prévision Probabiliste (6 Folds)** : **`90.88%` PICP** (couverture empirique pour une cible à 90 %), **`17.37%` wMAPE**, **`7.5233 EUR/MWh`** Pinball Loss médiane (`q50`).
 - **Régime extrême** : **`457` heures à prix négatifs** (5.20 % de l'année 2024) identifiées et modélisées.
+
+<p align="center">
+  <img src="images/ergf_conformal_forecast.png" alt="ERGF Conformal Forecast" width="88%" /><br/>
+  <sub><b>Figure 2. Prévision Conforme 168h.</b> Couverture empirique de 90.88 % sur le fold final.</sub>
+</p>
 
 #### D. Conclusion en Clair
 > [!IMPORTANT]
@@ -359,24 +333,10 @@ L'essor massif du solaire et de l'éolien sur le réseau électrique européen t
 > 1. **Plus il y a de soleil et de vent, moins l'électricité coûte cher** : En Allemagne et au Luxembourg en 2024, chaque gigawatt d'électricité solaire ou éolienne injecté sur le réseau fait baisser directement le prix du courant de **3.18 EUR/MWh**. Pendant 457 heures de l'année, le prix est même devenu négatif (les producteurs payaient pour écouler le surplus).
 > 2. **On peut prévoir les prix avec une vraie marge d'erreur fiable** : Au lieu de donner un seul chiffre souvent faux, le système donne une fourchette qui encadre correctement le vrai prix du lendemain dans **90.88 %** des cas.
 
-</td>
-<td width="42%" align="center">
-<img src="images/ergf_merit_order_causal.png" alt="ERGF Merit Order" width="100%" /><br/>
-<sub><b>Figure 1. Effet Merit-Order (DE-LU 2024).</b> Compression des prix spot par les renouvelables et 457 h négatives.</sub><br/><br/>
-<img src="images/ergf_conformal_forecast.png" alt="ERGF Conformal Forecast" width="100%" /><br/>
-<sub><b>Figure 2. Prévision Conforme 168h.</b> Couverture empirique de 90.88 % sur le fold final.</sub>
-</td>
-</tr>
-</table>
-
 ---
 
 ### 7. [FINSG - Financial Narrative & Systemic Graph Intelligence](https://github.com/elm-as/FINSG)
 > **Dépôt officiel** : [`elm-as/FINSG`](https://github.com/elm-as/FINSG) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/FINSG/blob/main/artifacts/dashboard.html) &bull; **Cible** : `NLP Financier & Graphes Temporels de Contagion`
-
-<table align="center">
-<tr>
-<td width="58%">
 
 #### A. Problématique & Contagion Systémique
 Dans l'écosystème semi-conducteurs et cloud (`NVDA`, `AMD`, `INTC`, `TSM`, `ASML`, `MSFT`, `AAPL`, `GOOGL`, `AMZN`, `META`, `AVGO`, `QCOM`), un choc sur un maillon critique se propage rapidement le long des interdépendances sectorielles. Les signaux sémantiques extraits des dépêches financières, combinés à un graphe de corrélation historique construit sans fuite future, permettent-ils d'anticiper les régimes de haute volatilité ?
@@ -386,9 +346,19 @@ Dans l'écosystème semi-conducteurs et cloud (`NVDA`, `AMD`, `INTC`, `TSM`, `AS
 2. **Scoring Sémantique (`sentiment_scorer.py`)** : Extraction de polarité financière `[-1, 1]` et du ratio d'incertitude lexicale agrégés par émetteur.
 3. **Graphe Temporel & Message Passing (`temporal_graph.py` & `graph_propagation.py`)** : Construction des arêtes ($r \ge 0.35$, **`53` arêtes**) uniquement sur les **75 % premiers jours** (`cutoff`), puis propagation 1-hop ($\alpha = 0.40$) évaluée sur le tercile de volatilité réalisée des **25 % jours finaux**.
 
+<p align="center">
+  <img src="images/finsg_systemic_graph.png" alt="FINSG Systemic Graph" width="88%" /><br/>
+  <sub><b>Figure 1. Graphe Temporel (12 Tickers, 53 Arêtes).</b> Propagation du stress narratif pré-cutoff.</sub>
+</p>
+
 #### C. Résultats Métriques Clés
 - **Topologie pré-cutoff** : **`53` arêtes** actives reliant les 12 valeurs semi-conducteurs et Big Tech.
 - **Détection de régime haute volatilité (Walk-Forward)** : **`0.6250` ROC-AUC** (Mann-Whitney exact), **`0.6571` Macro-F1**.
+
+<p align="center">
+  <img src="images/finsg_ablation_roc_pr.png" alt="FINSG ROC PR" width="88%" /><br/>
+  <sub><b>Figure 2. Courbes ROC & PR.</b> Détection hors-échantillon du régime de volatilité haute.</sub>
+</p>
 
 #### D. Conclusion en Clair
 > [!IMPORTANT]
@@ -396,24 +366,10 @@ Dans l'écosystème semi-conducteurs et cloud (`NVDA`, `AMD`, `INTC`, `TSM`, `AS
 > 1. **Dans la tech et les puces, quand un géant tousse, ses voisins s'enrhument** : Les mauvaises nouvelles qui touchent un fabricant de puces (`TSM`, `ASML`) ou un concepteur (`NVDA`, `AMD`) se répercutent très vite sur la nervosité boursière des géants du cloud (`MSFT`, `META`, `AMZN`).
 > 2. **En bourse, il faut rester réaliste et ne jamais tricher avec le futur** : Quand on teste honnêtement le modèle sans jamais regarder les nouvelles du lendemain, la prédiction de forte agitation reste modeste mais réelle (`0.625` AUC) : un bon signal d'alerte, pas une boule de cristal.
 
-</td>
-<td width="42%" align="center">
-<img src="images/finsg_systemic_graph.png" alt="FINSG Systemic Graph" width="100%" /><br/>
-<sub><b>Figure 1. Graphe Temporel (12 Tickers, 53 Arêtes).</b> Propagation du stress narratif pré-cutoff.</sub><br/><br/>
-<img src="images/finsg_ablation_roc_pr.png" alt="FINSG ROC PR" width="100%" /><br/>
-<sub><b>Figure 2. Courbes ROC & PR.</b> Détection hors-échantillon du régime de volatilité haute.</sub>
-</td>
-</tr>
-</table>
-
 ---
 
 ### 8. [CBMX - Condition-Based Maintenance & Survival Intelligence](https://github.com/elm-as/CBMX)
 > **Dépôt officiel** : [`elm-as/CBMX`](https://github.com/elm-as/CBMX) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/CBMX/blob/main/artifacts/dashboard.html) &bull; **Cible** : `Analyse de Survie Censurée à Droite & Politique RUL`
-
-<table align="center">
-<tr>
-<td width="58%">
 
 #### A. Problématique Industrielle & Asymétrie du Risque
 En maintenance aéronautique, prédire la durée de vie résiduelle (*Remaining Useful Life - RUL*) d'un turboréacteur impose deux contraintes critiques : gérer la **censure à droite** des moteurs encore en service et refléter la forte **asymétrie économique** entre un remplacement prématuré (`1 500 EUR/unité`) et une panne non planifiée (`12 000 EUR/unité`).
@@ -423,9 +379,19 @@ En maintenance aéronautique, prédire la durée de vie résiduelle (*Remaining 
 2. **Features Causales & Validation `GroupKFold`** : Moyennes glissantes sur 5 cycles des `14` capteurs actifs (`groupby("unit_id")`), entraînement `LightGBM Regressor` sous **`GroupKFold` 5-folds par `unit_id`** (zéro fuite inter-moteurs).
 3. **Survie & Politique Décisionnelle (`kaplan_meier.py` & `maintenance_policy.py`)** : Courbe de Kaplan-Meier sur les 200 moteurs (`66` paliers) et sélection du seuil d'intervention minimisant le coût total attendu.
 
+<p align="center">
+  <img src="images/cbmx_kaplan_meier_survival.png" alt="CBMX Kaplan Meier" width="88%" /><br/>
+  <sub><b>Figure 1. Survie Kaplan-Meier (FD001).</b> Stratification par tercile de dégradation sous censure à droite.</sub>
+</p>
+
 #### C. Résultats Métriques Clés
 - **Prédiction RUL (`100` moteurs `test_FD001`)** : **`18.31` cycles RMSE**, **`13.37` cycles MAE**, **`10.05` Score Asymétrique NASA**.
 - **Analyse de Survie & Décision** : **`0.6057` Harrell's C-index**, **`66` paliers Kaplan-Meier**, coût optimal **`810.00 EUR/unité`** au seuil **`0.90`**.
+
+<p align="center">
+  <img src="images/cbmx_rul_prediction_asymmetric.png" alt="CBMX RUL Predictions" width="88%" /><br/>
+  <sub><b>Figure 2. Prédictions RUL (100 Moteurs Test).</b> Parité & distribution des erreurs asymétriques NASA.</sub>
+</p>
 
 #### D. Conclusion en Clair
 > [!IMPORTANT]
@@ -433,24 +399,10 @@ En maintenance aéronautique, prédire la durée de vie résiduelle (*Remaining 
 > 1. **Réparer un moteur juste avant la panne coûte beaucoup moins cher que d'attendre qu'il casse** : Une panne d'avion non planifiée coûte 8 fois plus cher (`12 000 EUR`) qu'une maintenance anticipée (`1 500 EUR`). Les capteurs permettent d'estimer combien de vols il reste à un moteur inconnu à 18 cycles près.
 > 2. **Le bon moment pour intervenir fait tomber la facture** : En déclenchant la révision au bon seuil de risque, le coût moyen par moteur redescend à **810 EUR**, sans immobiliser les appareils trop tôt ni prendre le risque d'une casse en vol.
 
-</td>
-<td width="42%" align="center">
-<img src="images/cbmx_kaplan_meier_survival.png" alt="CBMX Kaplan Meier" width="100%" /><br/>
-<sub><b>Figure 1. Survie Kaplan-Meier (FD001).</b> Stratification par tercile de dégradation sous censure à droite.</sub><br/><br/>
-<img src="images/cbmx_rul_prediction_asymmetric.png" alt="CBMX RUL Predictions" width="100%" /><br/>
-<sub><b>Figure 2. Prédictions RUL (100 Moteurs Test).</b> Parité & distribution des erreurs asymétriques NASA.</sub>
-</td>
-</tr>
-</table>
-
 ---
 
 ### 9. [CHDCF - Clinical Heart Disease Calibration & Fairness (CDC BRFSS 2022)](https://github.com/elm-as/CHDCF)
 > **Dépôt officiel** : [`elm-as/CHDCF`](https://github.com/elm-as/CHDCF) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/CHDCF/blob/main/artifacts/dashboard.html) &bull; **Cible** : `Épidémiologie Cardiovasculaire, Calibration Clinique & Équité`
-
-<table align="center">
-<tr>
-<td width="58%">
 
 #### A. Problématique Clinique & Enjeux Épidémiologiques
 Sur la cohorte populationnelle américaine **CDC BRFSS 2022** (`246 022` adultes, prévalence d'infarctus `5.46 %`), la prédiction du risque cardiovasculaire se heurte à trois défis critiques : l'effet trompeur des proxys cliniques post-événement (`HadAngina`, `ChestScan`), la sous-détection catastrophique au seuil par défaut `0.50` (`20.39 %` de sensibilité) et le risque de disparités de calibration entre groupes démographiques.
@@ -460,10 +412,20 @@ Sur la cohorte populationnelle américaine **CDC BRFSS 2022** (`246 022` adultes
 2. **Calibration Imbriquée & Ablation des Proxys (`oof_calibrator.py`, `proxy_ablation_runner.py`)** : Comparaison `Full (39 vars)` (`LightGBM + Isotonic`) vs `Non-Proxy` (`LogisticRegression + Platt`) avec attribution SHAP.
 3. **Audit d'Équité & Seuil Clinique `10:1` (`subgroup_fairness.py`, `threshold_optimizer.py`)** : Audit par `Sex`, `AgeCategory`, `RaceEthnicityCategory` et optimisation du seuil décisionnel sous coût asymétrique `10:1`.
 
+<p align="center">
+  <img src="images/chdcf_calibration_reliability.png" alt="CHDCF Calibration" width="88%" /><br/>
+  <sub><b>Figure 1. Fiabilité & Calibration (246 022 Adultes).</b> ECE-10 abaissée à 0.00017.</sub>
+</p>
+
 #### C. Résultats Métriques Clés
 - **Modèle Complet (`LightGBM + Isotonic`)** : **`0.8861` ROC-AUC**, **`0.4113` PR-AUC**, **`0.0391` Brier Score**, **`0.00017` ECE-10**.
 - **Modèle Prévention Primaire sans Proxys (`LogReg + Platt`)** : **`0.8372` ROC-AUC**, **`0.2500` PR-AUC**, **`0.00268` ECE-10**.
 - **Seuil Clinique Optimal (`0.0909`, coût `10:1`)** : **`68.60%` Sensibilité**, **`89.26%` Spécificité**, coût clinique réduit de `0.4423` à **`0.2730`**.
+
+<p align="center">
+  <img src="images/chdcf_threshold_clinical_impact.png" alt="CHDCF Clinical Threshold" width="88%" /><br/>
+  <sub><b>Figure 2. Optimisation Clinique (10:1).</b> Sensibilité de 68.60 % au seuil 0.0909.</sub>
+</p>
 
 #### D. Conclusion en Clair
 > [!IMPORTANT]
@@ -471,24 +433,10 @@ Sur la cohorte populationnelle américaine **CDC BRFSS 2022** (`246 022` adultes
 > 1. **Un réglage standard rate 4 infarctus sur 5** : Avec un seuil classique à 50 %, l'algorithme ne détecte que 20 % des personnes à haut risque cardiaque. En abaissant le seuil au bon niveau de prudence (`9 %`), on repère **68.6 %** des cas à risque tout en gardant des examens complémentaires raisonnables.
 > 2. **Prévenir avant les symptômes reste possible** : Même si on retire les signes déjà évidents (douleurs thoraciques, scanner déjà passé), l'âge, l'état de santé général, le diabète, le tabac et le sommeil permettent déjà d'identifier très efficacement les personnes à dépister tôt.
 
-</td>
-<td width="42%" align="center">
-<img src="images/chdcf_calibration_reliability.png" alt="CHDCF Calibration" width="100%" /><br/>
-<sub><b>Figure 1. Fiabilité & Calibration (246 022 Adultes).</b> ECE-10 abaissée à 0.00017.</sub><br/><br/>
-<img src="images/chdcf_threshold_clinical_impact.png" alt="CHDCF Clinical Threshold" width="100%" /><br/>
-<sub><b>Figure 2. Optimisation Clinique (10:1).</b> Sensibilité de 68.60 % au seuil 0.0909.</sub>
-</td>
-</tr>
-</table>
-
 ---
 
 ### 10. [CCARP - Credit Card Approval Risk & Expected Profit Optimization](https://github.com/elm-as/CCARP)
 > **Dépôt officiel** : [`elm-as/CCARP`](https://github.com/elm-as/CCARP) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/CCARP/blob/main/artifacts/dashboard.html) &bull; **Cible** : `Scoring de Crédit Multi-Tables, Zéro Fuite Temporelle & Profit Net`
-
-<table align="center">
-<tr>
-<td width="58%">
 
 #### A. Problématique & Piège de la Fuite Temporelle Multi-Tables
 Sur le jeu multi-tables `rikdifos/credit-card-approval-prediction` (`438 557` dossiers × `1 048 575` mois d'historique), la majorité des notebooks publics souffrent de deux fuites majeures : agrégation de l'historique futur dans les features (`AUC = 0.9988` illusoire) et présence de **`82.35 %` de clients dans des clusters démographiques multi-ID** (`6 943` groupes pour `17 220` dossiers).
@@ -498,9 +446,19 @@ Sur le jeu multi-tables `rikdifos/credit-card-approval-prediction` (`438 557` do
 2. **Audit de Duplication & Ablation (`StratifiedGroupKFold`)** : Regroupement strict par empreinte démographique pour bloquer la mémorisation inter-plis.
 3. **Optimisation du Profit Portefeuille** : Calibration *Platt* sur `CatBoost` et calcul de la courbe d'espérance de profit net par taux d'acceptation.
 
+<p align="center">
+  <img src="images/ccarp_temporal_window_leakage.png" alt="CCARP Temporal Leakage" width="88%" /><br/>
+  <sub><b>Figure 1. Ablation Temporelle & Multi-ID.</b> Écart entre protocole sans fuite (0.9267) et naïf (0.9988).</sub>
+</p>
+
 #### C. Résultats Métriques Clés
 - **Leak-Free `StratifiedGroupKFold(5)`** : **`0.9267` ROC-AUC**, **`0.4081` PR-AUC**, **`0.0065` Brier Score**, **`0.0016` ECE-10**, **`0.6784` KS** (vs `0.9988` naïf avec fuite).
 - **Politique de Profit Optimal (`CatBoost + Platt`)** : Seuil optimal **`0.070`** (`98.55 %` d'acceptation, taux de défaut approuvé divisé par 2 à **`0.418 %`**), générant **`2 935 320 €`** de profit portefeuille (**`170.46 €/demandeur`**).
+
+<p align="center">
+  <img src="images/ccarp_expected_profit_curve.png" alt="CCARP Expected Profit" width="88%" /><br/>
+  <sub><b>Figure 2. Courbe de Profit Net.</b> Optimum portefeuille à 2.94 M€ (170.46 €/demandeur).</sub>
+</p>
 
 #### D. Conclusion en Clair
 > [!IMPORTANT]
@@ -508,24 +466,10 @@ Sur le jeu multi-tables `rikdifos/credit-card-approval-prediction` (`438 557` do
 > 1. **Pour gagner plus, une banque n'a pas besoin de refuser tout le monde** : En refusant seulement les **1.45 %** de demandes de crédit les plus risquées (et en acceptant 98.55 % des clients), la banque divise par deux son taux d'impayés et maximise son gain total (**2.94 millions d'euros**).
 > 2. **Beaucoup de modèles affichent 99 % par erreur** : Si l'on mélange l'historique futur du client ou les dossiers en double d'un même foyer dans l'entraînement, le modèle a l'air parfait sur le papier mais se trompe en agence. Un test propre montre sa vraie fiabilité.
 
-</td>
-<td width="42%" align="center">
-<img src="images/ccarp_temporal_window_leakage.png" alt="CCARP Temporal Leakage" width="100%" /><br/>
-<sub><b>Figure 1. Ablation Temporelle & Multi-ID.</b> Écart entre protocole sans fuite (0.9267) et naïf (0.9988).</sub><br/><br/>
-<img src="images/ccarp_expected_profit_curve.png" alt="CCARP Expected Profit" width="100%" /><br/>
-<sub><b>Figure 2. Courbe de Profit Net.</b> Optimum portefeuille à 2.94 M€ (170.46 €/demandeur).</sub>
-</td>
-</tr>
-</table>
-
 ---
 
 ### 11. [BCCRI - Bank Customer Churn & Retention ROI Intelligence](https://github.com/elm-as/BCCRI)
 > **Dépôt officiel** : [`elm-as/BCCRI`](https://github.com/elm-as/BCCRI) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/BCCRI/blob/main/artifacts/dashboard.html) &bull; **Cible** : `Attrition Bancaire, Audit de Fuite Post-Événement & ROI de Rétention`
-
-<table align="center">
-<tr>
-<td width="58%">
 
 #### A. Problématique & Détection de Fuite Post-Événement
 Sur `radheshyamkollipara/bank-customer-churn` (`10 000` clients bancaires, taux d'attrition `20.38 %`), une variable piège - **`Complain`** - affiche une corrélation de **`r = 0.9957`** (`AUC univariée = 0.9984`) car la réclamation est enregistrée *au moment du départ*. L'objectif est d'auditer et purger cette fuite, isoler les leviers d'action réels via SHAP et maximiser le ROI net de rétention.
@@ -535,9 +479,19 @@ Sur `radheshyamkollipara/bank-customer-churn` (`10 000` clients bancaires, taux 
 2. **Benchmark Calibré & Partition SHAP (`stratified_benchmark.py`, `shap_lever_segmenter.py`)** : Validation croisée stratifiée 5-folds (`CatBoost`, `LightGBM`, etc.) et séparation du signal SHAP entre leviers actionnables (`52.2 %` : `NumOfProducts`, `IsActiveMember`, `Balance`) et contexte structurel.
 3. **Simulation ROI de Rétention (`retention_roi_simulator.py`)** : Priorisation par espérance de valeur nette (`Net EV = p_cal * save_rate * CLV - cost`) comparée au classement par risque brut et au tirage aléatoire.
 
+<p align="center">
+  <img src="images/bccri_leakage_audit_shap.png" alt="BCCRI Leakage Audit SHAP" width="88%" /><br/>
+  <sub><b>Figure 1. Audit de Fuite & Partition SHAP.</b> Purge de Complain (r=0.9957) et 52.2 % de leviers actionnables.</sub>
+</p>
+
 #### C. Résultats Métriques Clés
 - **Modèle Purgé de Fuite (`CatBoost`, 5-Fold OOF)** : **`0.8694` ROC-AUC**, **`0.7126` PR-AUC**, **`0.6359` F1 optimal** (seuil `0.31`), **`0.09997` Brier Score**, **`0.0068` ECE**.
 - **Simulation ROI Rétention (`EV / Lever-Targeted`)** : Optimum à **`25 %`** du portefeuille (`2 500` clients ciblés, `179.9` clients sauvés), générant **`+460 015 €` de gain net (`342.2 %` ROI)** - soit **`+19 929 €`** au-dessus d'un ciblage par risque pur.
+
+<p align="center">
+  <img src="images/bccri_retention_roi_simulation.png" alt="BCCRI Retention ROI" width="88%" /><br/>
+  <sub><b>Figure 2. Frontière ROI de Rétention.</b> Gain net de +460 015 € (342.2 % ROI) à 25 % de ciblage.</sub>
+</p>
 
 #### D. Conclusion en Clair
 > [!IMPORTANT]
@@ -545,24 +499,10 @@ Sur `radheshyamkollipara/bank-customer-churn` (`10 000` clients bancaires, taux 
 > 1. **Attendre qu'un client se plaigne, c'est déjà trop tard** : Les plaintes en banque arrivent au moment où le client ferme son compte. Pour agir avant son départ, les vrais signaux utiles sont son inactivité, le nombre de produits qu'il détient et l'évolution de son solde.
 > 2. **Offrir un geste commercial au bon client rapporte gros** : En contactant uniquement les **25 %** de clients à la fois à risque et récupérables (au lieu d'arroser tout le monde), la banque sauve environ 180 clients et gagne **+460 000 EUR nets** (plus de 3 fois la mise).
 
-</td>
-<td width="42%" align="center">
-<img src="images/bccri_leakage_audit_shap.png" alt="BCCRI Leakage Audit SHAP" width="100%" /><br/>
-<sub><b>Figure 1. Audit de Fuite & Partition SHAP.</b> Purge de Complain (r=0.9957) et 52.2 % de leviers actionnables.</sub><br/><br/>
-<img src="images/bccri_retention_roi_simulation.png" alt="BCCRI Retention ROI" width="100%" /><br/>
-<sub><b>Figure 2. Frontière ROI de Rétention.</b> Gain net de +460 015 € (342.2 % ROI) à 25 % de ciblage.</sub>
-</td>
-</tr>
-</table>
-
 ---
 
 ### 12. [SCLDO - Supply Chain Late-Delivery & SLA Risk Intelligence (Olist 9 Tables)](https://github.com/elm-as/SCLDO)
 > **Dépôt officiel** : [`elm-as/SCLDO`](https://github.com/elm-as/SCLDO) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/SCLDO/blob/main/artifacts/dashboard.html) &bull; **Cible** : `Supply Chain E-Commerce, Risque de Retard Pré-Expédition & Politique SLA`
-
-<table align="center">
-<tr>
-<td width="58%">
 
 #### A. Problématique & Enjeux Opérationnels
 Sur le jeu relationnel réel `olistbr/brazilian-ecommerce` (**9 tables**, `99 441` commandes brutes → **`96 470` commandes livrées valides**, taux de retard `8.11 %`), comment anticiper les retards *avant expédition* sans fuite de dates transporteur (`order_delivered_carrier_date`), quantifier l'effet causal réel du retard sur la satisfaction client (`note 1★`), et optimiser les interventions SLA proactives sous coût asymétrique ?
@@ -577,30 +517,26 @@ Sur le jeu relationnel réel `olistbr/brazilian-ecommerce` (**9 tables**, `99 44
 - **Falaise Causale Note `1★`** : **`6.59 %`** à l'heure → **`14.37 %`** (`+7.78 pp`) à `1-3j` → **`52.74 %`** (**`+46.15 pp`**) à `4-7j` → **`66.72 %`** (**`+60.13 pp`**) au-delà de `7j`.
 - **Politique SLA Optimale (`τ* = 0.130`)** : **`48.00 %`** de rappel (`21.38 %` ciblées), économisant **`2 477 R$` / 10 000 commandes** (vs `0.00 %` de rappel au seuil `0.50`).
 
+<p align="center">
+  <img src="images/scldo_causal_delay_reviews.png" alt="SCLDO Causal Delay to 1-Star Reviews" width="88%" /><br/>
+  <sub><b>Figure 1. Effet Causal Retard → Note 1★.</b> Basculement brutal à +46.2 pp (4-7j) et +60.1 pp (>7j).</sub>
+</p>
+
 #### D. Conclusion en Clair
 > [!IMPORTANT]
 > **Ce que montre l'étude concrètement** :
 > 1. **Jusqu'à 3 jours de retard, le client pardonne encore ; à partir du 4e jour, il sanctionne** : Un colis arrivé à l'heure reçoit 6.6 % de notes 1 étoile. Entre 1 et 3 jours de retard, on monte à 14.4 %. Mais dès **4 à 7 jours de retard**, plus d'un client sur deux (**52.7 %**) met 1 étoile, et **2 clients sur 3 (66.7 %)** au-delà d'une semaine.
 > 2. **Prévenir le client avant qu'il ne s'énerve rapporte de l'argent** : On peut repérer les commandes à risque dès l'achat (selon le délai promis, la distance et l'historique du vendeur). Envoyer un message proactif ou un geste sur les 21 % de commandes les plus fragiles fait économiser **2 477 R$ par tranche de 10 000 commandes**.
 
-</td>
-<td width="42%" align="center">
-<img src="images/scldo_causal_delay_reviews.png" alt="SCLDO Causal Delay to 1-Star Reviews" width="100%" /><br/>
-<sub><b>Figure 1. Effet Causal Retard → Note 1★.</b> Basculement brutal à +46.2 pp (4-7j) et +60.1 pp (>7j).</sub><br/><br/>
-<img src="images/scldo_sla_policy_economics.png" alt="SCLDO SLA Policy Economics" width="100%" /><br/>
-<sub><b>Figure 2. Optimisation SLA 8:1.</b> Économie nette de 2 477 R$ / 10 000 commandes au seuil τ* = 0.130.</sub>
-</td>
-</tr>
-</table>
+<p align="center">
+  <img src="images/scldo_sla_policy_economics.png" alt="SCLDO SLA Policy Economics" width="88%" /><br/>
+  <sub><b>Figure 2. Optimisation SLA 8:1.</b> Économie nette de 2 477 R$ / 10 000 commandes au seuil τ* = 0.130.</sub>
+</p>
 
 ---
 
 ### 13. [HREOP - Hospital 30-Day Readmission & Clinical Triage Optimization (130 US Hospitals)](https://github.com/elm-as/HREOP)
 > **Dépôt officiel** : [`elm-as/HREOP`](https://github.com/elm-as/HREOP) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/HREOP/blob/main/artifacts/dashboard.html) &bull; **Cible** : `Réadmission Hospitalière à 30 Jours, GroupKFold Patient & Capacité Infirmière HRRP`
-
-<table align="center">
-<tr>
-<td width="58%">
 
 #### A. Problématique Clinique & Double Piège Méthodologique
 Sur les `101 766` séjours hospitaliers réels de 130 hôpitaux américains (`brandao/diabetes`, `71 518` patients uniques), deux biais invalident la majorité des modèles publiés : la **censure de mortalité** (inclure les patients décédés ou transférés en soins palliatifs, impossibles à réadmettre) et la **fuite d'identité patient** (`46.0 %` des séjours proviennent de `16 341` patients récurrents qui se retrouvent à la fois en train et en validation sous split aléatoire).
@@ -610,9 +546,19 @@ Sur les `101 766` séjours hospitaliers réels de 130 hôpitaux américains (`br
 2. **Audit de Fuite `StratifiedGroupKFold` vs `StratifiedKFold` Naïf** : **`0.00 %`** de chevauchement patient contre **`41.57 %`** (`14 214` patients partagés) en split naïf, avec calibration imbriquée `5×3` Platt & Isotonic.
 3. **Politique Infirmière de Transition & Équité** : Optimisation sous contrainte de capacité hospitalière (Top `5 %`-`20 %`, réadmission `$12 000` vs suivi `$600`, efficacité `30 %`) et audit d'équité (`gender`, `race`, `age`).
 
+<p align="center">
+  <img src="images/hreop_leakage_and_calibration.png" alt="HREOP Patient Leakage and Calibration" width="88%" /><br/>
+  <sub><b>Figure 1. Audit de Fuite Patient & Calibration.</b> 0.00 % de chevauchement en GroupKFold vs 41.57 % en split naïf.</sub>
+</p>
+
 #### C. Résultats Métriques Clés
 - **Meilleur Modèle Sans Fuite (`LightGBM`, Patient `GroupKFold`)** : **`0.6787` ROC-AUC**, **`0.2365` PR-AUC**, **`0.09549` Brier**, **`0.00236` ECE-10** (`HistGradientBoosting + Isotonic` atteint `0.00048` ECE-10) ; fuite naïve quantifiée jusqu'à **`+0.00431` PR-AUC**.
 - **Optimum Capacitaire HRRP (Top `15 %`, `τ = 0.1745`)** : **`14 902`** sorties suivies, **`32.81 %`** de sensibilité, **`24.91 %` PPV (`2.19×` lift)**, **`1 114`** réadmissions évitées, **`+$4 422 000` d'économie nette (`ROI +0.49×`)** - tandis que Top `5 %` culmine à `ROI +1.08×` (`PPV 34.60 %`, `3.04×` lift).
+
+<p align="center">
+  <img src="images/hreop_triage_capacity_economics.png" alt="HREOP HRRP Triage Capacity Economics" width="88%" /><br/>
+  <sub><b>Figure 2. Économie Capacitaire HRRP.</b> Pic d'économie nette à +$4.42M au Top 15 % des sorties.</sub>
+</p>
 
 #### D. Conclusion en Clair
 > [!IMPORTANT]
@@ -620,24 +566,10 @@ Sur les `101 766` séjours hospitaliers réels de 130 hôpitaux américains (`br
 > 1. **Un patient qui a déjà enchaîné les séjours à l'hôpital a 3 à 4 fois plus de risque d'y revenir dans le mois** : Le taux de retour rapide passe de **8.2 %** chez un patient sans séjour récent à **28.1 %** dès 3 hospitalisations antérieures. Le mode de sortie et les ajustements d'insuline sont aussi des signaux forts.
 > 2. **Mieux vaut bien suivre les 15 % les plus fragiles que vouloir appeler tout le monde** : En concentrant les appels infirmiers après la sortie sur les **15 %** de patients les plus à risque, l'hôpital évite **1 114 réadmissions** et économise **4.42 millions de dollars nets**, alors qu'un suivi massif sans ciblage ferait perdre de l'argent.
 
-</td>
-<td width="42%" align="center">
-<img src="images/hreop_leakage_and_calibration.png" alt="HREOP Patient Leakage and Calibration" width="100%" /><br/>
-<sub><b>Figure 1. Audit de Fuite Patient & Calibration.</b> 0.00 % de chevauchement en GroupKFold vs 41.57 % en split naïf.</sub><br/><br/>
-<img src="images/hreop_triage_capacity_economics.png" alt="HREOP HRRP Triage Capacity Economics" width="100%" /><br/>
-<sub><b>Figure 2. Économie Capacitaire HRRP.</b> Pic d'économie nette à +$4.42M au Top 15 % des sorties.</sub>
-</td>
-</tr>
-</table>
-
 ---
 
 ### 14. [NIDSZ - Network Intrusion Detection & Zero-Day Generalization (UNSW-NB15)](https://github.com/elm-as/NIDSZ)
 > **Dépôt officiel** : [`elm-as/NIDSZ`](https://github.com/elm-as/NIDSZ) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/NIDSZ/blob/main/artifacts/dashboard.html) &bull; **Cible** : `Cybersécurité Réseau, Généralisation Zero-Day (LOAO) & Contrainte Anti-Fatigue SOC`
-
-<table align="center">
-<tr>
-<td width="58%">
 
 #### A. Problématique Cybersécurité & Illusion des Scores Globaux
 Sur le benchmark réseau réel `UNSW-NB15` (**`257 673` flux** : `175 341` train officiel / `82 332` holdout test officiel, 9 familles d'attaques), un `ROC-AUC` global de `0.98+` masque deux réalités critiques d'un vrai SOC : la **fatigue d'alerte** (un FPR de `5 %` inonde les analystes de milliers de fausses alertes/heure) et l'effondrement sur les **familles d'attaques jamais vues (*zero-day*)**.
@@ -652,30 +584,26 @@ Sur le benchmark réseau réel `UNSW-NB15` (**`257 673` flux** : `175 341` train
 - **Modèle Comportemental Pur (`Behavioral-24`)** : **`0.9809` ROC-AUC**, **`85.08 %` @ 0.5 % FPR**, **`142 948` flux/sec (`7.00 µs/flux`)**, et **améliore la détection zero-day** sur `Exploits` (`+3.33 pp` @ 0.1 % FPR), `Worms` (`+2.27 pp`) et `Fuzzers` (`+0.0256` AUC).
 - **Hétérogénéité Zero-Day LOAO (@ 1.0 % FPR)** : `Backdoor` **`96.40 %`**, `DoS` **`90.93 %`**, `Worms` **`79.55 %`**, mais chute sévère sur `Shellcode` (**`27.25 %`**, `5.03 %` @ 0.1 % FPR) et `Fuzzers` (`24.17 %`) ; `IsolationForest` non supervisé plafonne à `< 7 %`.
 
+<p align="center">
+  <img src="images/nidsz_soc_roc_low_fpr.png" alt="NIDSZ Low-FPR SOC ROC" width="88%" /><br/>
+  <sub><b>Figure 1. Frontière Anti-Fatigue SOC.</b> 80.77 % de rappel à FPR ≤ 0.1 % avec calibration Platt OOF.</sub>
+</p>
+
 #### D. Conclusion en Clair
 > [!IMPORTANT]
 > **Ce que montre l'étude concrètement** :
 > 1. **On peut bloquer 8 attaques sur 10 sans saturer l'équipe de sécurité** : Le détecteur arrête **80.8 %** des intrusions tout en gardant moins d'une fausse alerte pour 1 000 connexions normales, et analyse jusqu'à **143 000 connexions par seconde**.
 > 2. **Aucune IA réseau seule n'arrête toutes les attaques inédites** : Face à une famille d'attaque jamais rencontrée avant, le modèle repère très bien les portes dérobées (`96 %`) et saturations DoS (`91 %`), mais rate la majorité des attaques discrètes de type `Shellcode` ou `Fuzzers`. En cybersécurité, il faut toujours plusieurs barrières complémentaires.
 
-</td>
-<td width="42%" align="center">
-<img src="images/nidsz_zero_day_loao_recall.png" alt="NIDSZ Zero-Day LOAO Recall" width="100%" /><br/>
-<sub><b>Figure 1. Généralisation Zero-Day (LOAO).</b> Rappel sur familles d'attaques jamais vues et gain d'ablation comportementale.</sub><br/><br/>
-<img src="images/nidsz_soc_roc_low_fpr.png" alt="NIDSZ Low-FPR SOC ROC" width="100%" /><br/>
-<sub><b>Figure 2. Frontière Anti-Fatigue SOC.</b> 80.77 % de rappel à FPR ≤ 0.1 % avec calibration Platt OOF.</sub>
-</td>
-</tr>
-</table>
+<p align="center">
+  <img src="images/nidsz_zero_day_loao_recall.png" alt="NIDSZ Zero-Day LOAO Recall" width="88%" /><br/>
+  <sub><b>Figure 2. Généralisation Zero-Day (LOAO).</b> Rappel sur familles d'attaques jamais vues et gain d'ablation comportementale.</sub>
+</p>
 
 ---
 
 ### 15. [AGCRS - Global Agricultural Yield, Climate Shocks & Parametric Crop Insurance](https://github.com/elm-as/AGCRS)
 > **Dépôt officiel** : [`elm-as/AGCRS`](https://github.com/elm-as/AGCRS) &bull; **Dashboard** : [`artifacts/dashboard.html`](https://github.com/elm-as/AGCRS/blob/main/artifacts/dashboard.html) &bull; **Cible** : `Sécurité Alimentaire, Stress-Test Climatique & Assurance Agricole Paramétrique Conforme`
-
-<table align="center">
-<tr>
-<td width="58%">
 
 #### A. Problématique Agronomique & Bug Caché de Duplication Multi-Stations
 Sur le panel FAO/Banque Mondiale (`patelris/crop-yield-prediction-dataset`, `28 242` lignes brutes sur `101` pays et `10` cultures vivrières majeures - dont `Maize`, `Cassava`, `Sorghum`, `Yams`, `Plantains`, `Rice, paddy`), un piège caché corrompt l'écrasante majorité des études publiques : une jointure multi-stations duplique jusqu'à **`22×`** le même `(Pays, Culture, Année)` (Inde `22×`, Brésil `11×`), gonflant le jeu de **`+115 %`** et créant une fuite triviale en validation croisée.
@@ -690,21 +618,21 @@ Sur le panel FAO/Banque Mondiale (`patelris/crop-yield-prediction-dataset`, `28 
 - **Intervalles Conformes Adaptatifs 90 %** : Couverture empirique **`89.77 %`** avec largeur médiane réduite de **`-33.7 %`** (`24 959 hg/ha`) et stabilité par culture (`Cassava 90.24 %`, `Maize 89.45 %`, `Yams 90.32 %`).
 - **Vulnérabilité Climatique & Assurance Paramétrique** : Le **Sorgho** (`-4.82 %` à `+2 °C`, `-6.29 %` en sécheresse `-20 %`) et le **Maïs** (`-7.39 %` en sécheresse) sont les céréales vivrières les plus exposées ; l'**Afrique subsaharienne** affiche le plus haut taux de sinistre (`11.43 %`, prime pure `3.83 %`, risque de base FN `7.80 %`).
 
+<p align="center">
+  <img src="images/agcrs_temporal_benchmark_conformal.png" alt="AGCRS Temporal Benchmark and Conformal Intervals" width="88%" /><br/>
+  <sub><b>Figure 1. Prévision Hors-Temps & Conformal Adaptatif.</b> R² = 0.9658 et couverture 89.77 % (-33.7 % de largeur).</sub>
+</p>
+
 #### D. Conclusion en Clair
 > [!IMPORTANT]
 > **Ce que montre l'étude concrètement** :
 > 1. **La sécheresse frappe d'abord le maïs et le sorgho, surtout en Afrique subsaharienne** : Quand la pluie baisse de 20 %, les récoltes de maïs chutent en moyenne de **7.4 %** et celles de sorgho de **6.3 %**. L'Afrique subsaharienne subit le plus haut taux de mauvaises récoltes sévères (**11.4 %** des saisons).
 > 2. **Une assurance météo basée seulement sur la moyenne de l'année ne protège pas assez les agriculteurs** : Elle laisse passer près de **8 %** de vraies mauvaises récoltes sans indemnisation en Afrique. Pour qu'une assurance agricole soit juste, il faut suivre la pluie mois par mois pendant la saison de pousse, pas uniquement le cumul annuel.
 
-</td>
-<td width="42%" align="center">
-<img src="images/agcrs_climate_shock_stress_test.png" alt="AGCRS Climate Shock Stress Test" width="100%" /><br/>
-<sub><b>Figure 1. Stress-Test Climatique (+2 °C / -20 % Pluie).</b> Sensibilité des cultures vivrières africaines et mondiales.</sub><br/><br/>
-<img src="images/agcrs_temporal_benchmark_conformal.png" alt="AGCRS Temporal Benchmark and Conformal Intervals" width="100%" /><br/>
-<sub><b>Figure 2. Prévision Hors-Temps & Conformal Adaptatif.</b> R² = 0.9658 et couverture 89.77 % (-33.7 % de largeur).</sub>
-</td>
-</tr>
-</table>
+<p align="center">
+  <img src="images/agcrs_climate_shock_stress_test.png" alt="AGCRS Climate Shock Stress Test" width="88%" /><br/>
+  <sub><b>Figure 2. Stress-Test Climatique (+2 °C / -20 % Pluie).</b> Sensibilité des cultures vivrières africaines et mondiales.</sub>
+</p>
 
 ---
 
